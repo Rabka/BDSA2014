@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9d3b9b48-c403-4cfe-a7c0-95bd20d457f6" name="stin7054@VIDR95PV8H 2014-09-05 14:34:35" runUser="DJES\stin7054" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="04115614-1aaf-4ba0-addb-7711795f6c7f">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="stin7054_VIDR95PV8H 2014-09-05 14_34_35">
+      <DeploymentItem filename="C:\Users\sttho102\Documents\Stinus Vikti\Projekter\VisualStudio-Projects\BDSA2013\Assignment36-ReversePolishCalculator\bin\Debug\Assignment36-ReversePolishCalculator.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-09-05T14:34:35.4862405+02:00" queuing="2014-09-05T14:34:38.4394094+02:00" start="2014-09-05T14:34:38.5504158+02:00" finish="2014-09-05T14:35:03.9488685+02:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="9" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="8" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="VIDR95PV8H" outcome="Error" timestamp="2014-09-05T14:35:03.9448682+02:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestAllOperaters" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="6816492e-f6d9-d09f-e8e1-8f7ece9c24e1">
+      <Execution id="c73e5e2a-9ece-48c3-a4d5-406bf92000d6" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestAllOperaters" />
+    </UnitTest>
+    <UnitTest name="TestComplexExpressions" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="b635c620-a2d1-e040-1736-0813a271094a">
+      <Execution id="8b9436b4-6c09-454a-90be-0c290f706c5e" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestComplexExpressions" />
+    </UnitTest>
+    <UnitTest name="InfixTestShouldGive14" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="ed58d528-690f-81c0-e15e-2862b47d7541">
+      <Execution id="d943f4f1-1523-4193-95f9-9fb9a4dd353b" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InfixTestShouldGive14" />
+    </UnitTest>
+    <UnitTest name="InfixTestNothingAndNull" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="d6db8c19-ab7e-ffde-44b8-2f34d1e5a36a">
+      <Execution id="d0cd03ad-9867-4d1a-94e4-9ab40a127e61" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InfixTestNothingAndNull" />
+    </UnitTest>
+    <UnitTest name="InfixTestXBeforePlus" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="8cd04349-3219-f9b3-8e49-09e993029a1e">
+      <Execution id="7592c3b1-d995-492e-ab13-113d3c97bd66" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InfixTestXBeforePlus" />
+    </UnitTest>
+    <UnitTest name="TestShouldGive14" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="49e695f6-490e-902c-6b27-fab8aeb2b9ff">
+      <Execution id="93585cdc-74f1-46ef-af38-90b012b6b3a0" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestShouldGive14" />
+    </UnitTest>
+    <UnitTest name="InfixTestComplexExpressions" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="28d73f5d-2d82-b391-2c82-c341a39bf487">
+      <Execution id="220b3f0d-c7d4-4277-b94e-57b13c4da9f0" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InfixTestComplexExpressions" />
+    </UnitTest>
+    <UnitTest name="InfixTestAllOperaters" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="4b751b85-919b-e8a3-8d21-28def13a1163">
+      <Execution id="04f39151-a7eb-499d-984f-e1972ae5cefa" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InfixTestAllOperaters" />
+    </UnitTest>
+    <UnitTest name="TestNothingAndNull" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="60aa980d-9d7a-64e5-f753-8048cd2a8b2d">
+      <Execution id="66f11e87-6cf1-4bdb-8ec2-a98b07b0a37d" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestNothingAndNull" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="60aa980d-9d7a-64e5-f753-8048cd2a8b2d" executionId="66f11e87-6cf1-4bdb-8ec2-a98b07b0a37d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6816492e-f6d9-d09f-e8e1-8f7ece9c24e1" executionId="c73e5e2a-9ece-48c3-a4d5-406bf92000d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b635c620-a2d1-e040-1736-0813a271094a" executionId="8b9436b4-6c09-454a-90be-0c290f706c5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="49e695f6-490e-902c-6b27-fab8aeb2b9ff" executionId="93585cdc-74f1-46ef-af38-90b012b6b3a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d6db8c19-ab7e-ffde-44b8-2f34d1e5a36a" executionId="d0cd03ad-9867-4d1a-94e4-9ab40a127e61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4b751b85-919b-e8a3-8d21-28def13a1163" executionId="04f39151-a7eb-499d-984f-e1972ae5cefa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28d73f5d-2d82-b391-2c82-c341a39bf487" executionId="220b3f0d-c7d4-4277-b94e-57b13c4da9f0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ed58d528-690f-81c0-e15e-2862b47d7541" executionId="d943f4f1-1523-4193-95f9-9fb9a4dd353b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8cd04349-3219-f9b3-8e49-09e993029a1e" executionId="7592c3b1-d995-492e-ab13-113d3c97bd66" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="66f11e87-6cf1-4bdb-8ec2-a98b07b0a37d" testId="60aa980d-9d7a-64e5-f753-8048cd2a8b2d" testName="TestNothingAndNull" computerName="VIDR95PV8H" duration="00:00:00.0583649" startTime="2014-09-05T14:34:38.6174196+02:00" endTime="2014-09-05T14:34:42.1636224+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66f11e87-6cf1-4bdb-8ec2-a98b07b0a37d">
+    </UnitTestResult>
+    <UnitTestResult executionId="c73e5e2a-9ece-48c3-a4d5-406bf92000d6" testId="6816492e-f6d9-d09f-e8e1-8f7ece9c24e1" testName="TestAllOperaters" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c73e5e2a-9ece-48c3-a4d5-406bf92000d6">
+    </UnitTestResult>
+    <UnitTestResult executionId="8b9436b4-6c09-454a-90be-0c290f706c5e" testId="b635c620-a2d1-e040-1736-0813a271094a" testName="TestComplexExpressions" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b9436b4-6c09-454a-90be-0c290f706c5e">
+    </UnitTestResult>
+    <UnitTestResult executionId="93585cdc-74f1-46ef-af38-90b012b6b3a0" testId="49e695f6-490e-902c-6b27-fab8aeb2b9ff" testName="TestShouldGive14" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93585cdc-74f1-46ef-af38-90b012b6b3a0">
+    </UnitTestResult>
+    <UnitTestResult executionId="d0cd03ad-9867-4d1a-94e4-9ab40a127e61" testId="d6db8c19-ab7e-ffde-44b8-2f34d1e5a36a" testName="InfixTestNothingAndNull" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0cd03ad-9867-4d1a-94e4-9ab40a127e61">
+    </UnitTestResult>
+    <UnitTestResult executionId="04f39151-a7eb-499d-984f-e1972ae5cefa" testId="4b751b85-919b-e8a3-8d21-28def13a1163" testName="InfixTestAllOperaters" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04f39151-a7eb-499d-984f-e1972ae5cefa">
+    </UnitTestResult>
+    <UnitTestResult executionId="220b3f0d-c7d4-4277-b94e-57b13c4da9f0" testId="28d73f5d-2d82-b391-2c82-c341a39bf487" testName="InfixTestComplexExpressions" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="220b3f0d-c7d4-4277-b94e-57b13c4da9f0">
+    </UnitTestResult>
+    <UnitTestResult executionId="d943f4f1-1523-4193-95f9-9fb9a4dd353b" testId="ed58d528-690f-81c0-e15e-2862b47d7541" testName="InfixTestShouldGive14" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d943f4f1-1523-4193-95f9-9fb9a4dd353b">
+    </UnitTestResult>
+    <UnitTestResult executionId="7592c3b1-d995-492e-ab13-113d3c97bd66" testId="8cd04349-3219-f9b3-8e49-09e993029a1e" testName="InfixTestXBeforePlus" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7592c3b1-d995-492e-ab13-113d3c97bd66">
+    </UnitTestResult>
+  </Results>
+</TestRun>

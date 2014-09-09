@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="947dce3d-b80f-4474-baeb-a99fabd4a656" name="stin7054@VIDR95PV8H 2014-09-05 14:11:05" runUser="DJES\stin7054" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="04115614-1aaf-4ba0-addb-7711795f6c7f">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="stin7054_VIDR95PV8H 2014-09-05 14_11_05">
+      <DeploymentItem filename="C:\Users\sttho102\Documents\Stinus Vikti\Projekter\VisualStudio-Projects\BDSA2013\Assignment36-ReversePolishCalculator\bin\Debug\Assignment36-ReversePolishCalculator.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-09-05T14:11:05.6796042+02:00" queuing="2014-09-05T14:11:07.7817244+02:00" start="2014-09-05T14:11:07.9067316+02:00" finish="2014-09-05T14:11:28.0058812+02:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="4" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="3" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="VIDR95PV8H" outcome="Error" timestamp="2014-09-05T14:11:28.0008809+02:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod4" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="13bebeec-fbd8-d0ab-bee5-240742b5f456">
+      <Execution id="b3e6ed4d-0e29-4012-8fb3-a3781dd1996b" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod4" />
+    </UnitTest>
+    <UnitTest name="TestMethod2" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="d45f36bc-2b4b-6b7b-1b25-e902792c7975">
+      <Execution id="66931ae1-07e1-4f6f-9972-537d57ebae3b" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod2" />
+    </UnitTest>
+    <UnitTest name="TestMethod1" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="74662d05-33e7-02fe-702d-ab7e3900e56f">
+      <Execution id="e7f9bbe0-8ce1-4ace-8f26-6622a89a2dd2" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="TestMethod3" storage="c:\users\sttho102\documents\stinus vikti\projekter\visualstudio-projects\bdsa2013\assignment36-reversepolishcalculator.tests\bin\debug\assignment36-reversepolishcalculator.tests.dll" id="8e369f6d-4f58-e2c6-5f94-d1b0ff6c4d39">
+      <Execution id="d6cea5f6-b2f1-49cd-b728-f14bf967c545" />
+      <TestMethod codeBase="C:/Users/sttho102/Documents/Stinus Vikti/Projekter/VisualStudio-Projects/BDSA2013/Assignment36-ReversePolishCalculator.Tests/bin/Debug/Assignment36-ReversePolishCalculator.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment36_ReversePolishCalculator.Tests.UnitTest1, Assignment36-ReversePolishCalculator.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod3" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="74662d05-33e7-02fe-702d-ab7e3900e56f" executionId="e7f9bbe0-8ce1-4ace-8f26-6622a89a2dd2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d45f36bc-2b4b-6b7b-1b25-e902792c7975" executionId="66931ae1-07e1-4f6f-9972-537d57ebae3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8e369f6d-4f58-e2c6-5f94-d1b0ff6c4d39" executionId="d6cea5f6-b2f1-49cd-b728-f14bf967c545" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13bebeec-fbd8-d0ab-bee5-240742b5f456" executionId="b3e6ed4d-0e29-4012-8fb3-a3781dd1996b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e7f9bbe0-8ce1-4ace-8f26-6622a89a2dd2" testId="74662d05-33e7-02fe-702d-ab7e3900e56f" testName="TestMethod1" computerName="VIDR95PV8H" duration="00:00:00.0540101" startTime="2014-09-05T14:11:08.0047372+02:00" endTime="2014-09-05T14:11:11.5229384+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7f9bbe0-8ce1-4ace-8f26-6622a89a2dd2">
+    </UnitTestResult>
+    <UnitTestResult executionId="66931ae1-07e1-4f6f-9972-537d57ebae3b" testId="d45f36bc-2b4b-6b7b-1b25-e902792c7975" testName="TestMethod2" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66931ae1-07e1-4f6f-9972-537d57ebae3b">
+    </UnitTestResult>
+    <UnitTestResult executionId="d6cea5f6-b2f1-49cd-b728-f14bf967c545" testId="8e369f6d-4f58-e2c6-5f94-d1b0ff6c4d39" testName="TestMethod3" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d6cea5f6-b2f1-49cd-b728-f14bf967c545">
+    </UnitTestResult>
+    <UnitTestResult executionId="b3e6ed4d-0e29-4012-8fb3-a3781dd1996b" testId="13bebeec-fbd8-d0ab-bee5-240742b5f456" testName="TestMethod4" computerName="VIDR95PV8H" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3e6ed4d-0e29-4012-8fb3-a3781dd1996b">
+    </UnitTestResult>
+  </Results>
+</TestRun>
