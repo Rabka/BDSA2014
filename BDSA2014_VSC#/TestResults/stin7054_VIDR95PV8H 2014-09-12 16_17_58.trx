@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ac2a4f62-c21f-4738-adf0-0c6e04c5c6f3" name="stin7054@VIDR95PV8H 2014-09-12 16:17:58" runUser="DJES\stin7054" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="04115614-1aaf-4ba0-addb-7711795f6c7f">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="stin7054_VIDR95PV8H 2014-09-12 16_17_58">
+      <DeploymentItem filename="C:\Users\stin7054\Documents\GitHub\BDSA2014\BDSA2013\Assignment37-TextProcessing\bin\Debug\Assignment37-TextProcessing.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-09-12T16:17:58.0629404+02:00" queuing="2014-09-12T16:18:07.8404997+02:00" start="2014-09-12T16:18:08.1825192+02:00" finish="2014-09-12T16:18:13.2408085+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\stin7054\documents\github\bdsa2014\bdsa2013\assignment37-textprocessing.tests\bin\debug\assignment37-textprocessing.tests.dll" id="fb526598-bf23-f82a-6ce1-d66a4f750b0f">
+      <Execution id="96f31424-ccf8-4dc9-9c84-75a884b4149c" />
+      <TestMethod codeBase="C:/Users/stin7054/Documents/GitHub/BDSA2014/BDSA2013/Assignment37-TextProcessing.Tests/bin/Debug/Assignment37-TextProcessing.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Assignment37_TextProcessing.Tests.UnitTest1, Assignment37-TextProcessing.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="fb526598-bf23-f82a-6ce1-d66a4f750b0f" executionId="96f31424-ccf8-4dc9-9c84-75a884b4149c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="96f31424-ccf8-4dc9-9c84-75a884b4149c" testId="fb526598-bf23-f82a-6ce1-d66a4f750b0f" testName="TestMethod1" computerName="VIDR95PV8H" duration="00:00:00.0409885" startTime="2014-09-12T16:18:08.9775647+02:00" endTime="2014-09-12T16:18:13.0617983+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96f31424-ccf8-4dc9-9c84-75a884b4149c">
+      <Output>
+        <StdOut>First man on moon Neil Armstrong dead at 82
+Posted: Sat, 25 Aug 2012 18:36:26 -0400
+(Reuters) - U.S. astronaut Neil Armstrong, who took a giant leap for mankind when he became the first person to walk on the moon, has died at the age of 82, his family said on Saturday.
+http://feeds.reuters.com/~r/reuters/topNews/~3/ptoAzETqy3w/us-usa-neilarmstrong-idUSBRE87O0B020120825
+------------------------
+Analysis: Europe far right shuns Breivik's acts, flirts with ideas
+Posted: Sun, 26 Aug 2012 04:06:16 -0400
+LONDON/ROME (Reuters) - Norwegian mass killer Anders Behring Breivik may have failed to ignite a race war with Muslims, but he succeeded in stoking anxieties about the stability of Europe's increasingly diverse societies.
+http://feeds.reuters.com/~r/reuters/topNews/~3/8_ZjdvnkrGI/us-norway-breivik-europe-idUSBRE87P01N20120826  
+------------------------
+Assad's forces accused of massacre near Syrian capital
+Posted: Sun, 26 Aug 2012 13:31:18 -0400
+ALEPPO, Syria (Reuters) - Syrian opposition activists accused President Bashar al-Assad's army on Sunday of massacring hundreds of people in a town close to the capital that government forces recaptured from rebels.
+http://feeds.reuters.com/~r/reuters/topNews/~3/LX-rY_dZ8Fo/us-syria-crisis-idUSBRE8610SH20120826
+------------------------
+Isaac bears down on Florida after lashing Caribbean
+Posted: Sun, 26 Aug 2012 13:24:12 -0400
+KEY WEST, Florida (Reuters) - Tropical Storm Isaac lashed south Florida with winds and heavy rain on Sunday after battering the Caribbean, disrupting plans for the Republican National Convention in Tampa and threatening to interrupt about half of U.S. offshore oil output.
+http://feeds.reuters.com/~r/reuters/topNews/~3/nBO_UUMM89s/us-storm-isaac-idUSBRE87L0PH20120826
+------------------------
+Britain wants to restart Assange talks with Ecuador
+Posted: Sun, 26 Aug 2012 13:27:10 -0400
+LONDON (Reuters) - Britain said on Sunday it remained committed to reaching a diplomatic solution to the presence of WikiLeaks founder Julian Assange in Ecuador's London embassy, after both countries took steps to defuse a row over his action in taking refuge there.
+http://feeds.reuters.com/~r/reuters/topNews/~3/P3str2NyRvg/us-wikileaks-assange-idUSBRE87P09F20120826
+------------------------
+After mourning, Lonmin in race to restart mining
+Posted: Sun, 26 Aug 2012 09:14:44 -0400
+JOHANNESBURG (Reuters) - World no. 3 platinum producer Lonmin is racing to resume ore extraction at its Marikana site, with no guarantee striking workers will return this week after a mourning period for comrades killed in a wave of labour unrest.
+http://feeds.reuters.com/~r/reuters/topNews/~3/Vouw6Dyvu5Y/us-safrica-lonmin-idUSBRE87P04U20120826  
+------------------------
+Two members of punk rock band flee Russia
+Posted: Sun, 26 Aug 2012 09:19:09 -0400
+MOSCOW (Reuters) - Two members of Russia's anti-Kremlin punk band Pussy Riot have fled the country to avoid prosecution for staging a protest against President Vladimir Putin at a church altar, the band said on Sunday.
+http://feeds.reuters.com/~r/reuters/topNews/~3/zcitjewIPDQ/us-russia-pussyriot-idUSBRE87P03O20120826</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
