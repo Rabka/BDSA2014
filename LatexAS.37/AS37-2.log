@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.24)  18 SEP 2014 11:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.24)  18 SEP 2014 12:41
 entering extended mode
 **AS37-2.tex
 (C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.37\AS37-2.tex
@@ -225,12 +225,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
  []
 
 
-Overfull \hbox (127.6675pt too wide) in paragraph at lines 81--140
+Overfull \hbox (127.6675pt too wide) in paragraph at lines 81--142
 [] 
  []
 
 
-Overfull \hbox (98.25085pt too wide) in paragraph at lines 81--140
+Overfull \hbox (98.25085pt too wide) in paragraph at lines 81--142
 [] 
  []
 
@@ -239,15 +239,15 @@ File: C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.37/UserCases.png Grap
 hic file (type png)
  <use C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.37/UserCases.png>
 Package pdftex.def Info: C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.37
-/UserCases.png used on input line 145.
+/UserCases.png used on input line 147.
 (pdftex.def)             Requested size: 452.75618pt x 358.54323pt.
 
-Overfull \hbox (132.75621pt too wide) in paragraph at lines 144--147
+Overfull \hbox (132.75621pt too wide) in paragraph at lines 146--149
 [] 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
@@ -255,18 +255,34 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Overfull \hbox (128.33403pt too wide) in paragraph at lines 150--163
+Overfull \hbox (128.33403pt too wide) in paragraph at lines 152--165
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--163
+Underfull \hbox (badness 10000) in paragraph at lines 152--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
+ []
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no § in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+Overfull \hbox (120.86192pt too wide) in paragraph at lines 170--202
+[][] 
  []
 
 [5] (C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.37\AS37-2.aux) ) 
@@ -285,7 +301,7 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on AS37-2.pdf (5 pages, 132754 bytes).
+Output written on AS37-2.pdf (5 pages, 134404 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -78,9 +78,9 @@
 		\pagebreak{}
 		\item[4.] Select 3 \textbf{non-trivial Use Cases} and document them using the use case table\\
 	\end{enumerate}
-	4.1\\
 \begin{tabular}{l r @{} l}
 	\multicolumn{2}{c}{} \\
+	4.1&&\\
 	\hline
 	Use case name:	&&Edit personal information\\
 	\hline
@@ -95,9 +95,10 @@
 	\hline
 \end{tabular}
 	\\
-	4.2\\
+	.\\
 \begin{tabular}{l r @{} l}
 	\multicolumn{2}{c}{} \\
+	4.2&&\\
 	\hline
 	Use case name:	&&Enable alert\\
 	\hline
@@ -118,9 +119,10 @@
 	\hline
 \end{tabular}
 	\\
-	4.2\\
+	.\\
 \begin{tabular}{l r @{} l}
 	\multicolumn{2}{c}{} \\
+	4.3&&\\
 	\hline
 	Use case name:	&&Send event alert\\
 	\hline
@@ -144,11 +146,11 @@
 		\item[5.] Identify \textbf{Relationships} between Actors and Use Cases and finalize the \verb= "sticky man"=  diagram\\
 		\includegraphics[scale = 0.38]{C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.37/UserCases.png}\\
 		\pagebreak{}
-		\item[6.] Identify \textbf{Initial Analysis Objects} and document them in a table (see Table 4-2)\\
+		\item[6.] Identify \textbf{Initial Analysis Objects} and document them in a table\\
 \end{enumerate}
 
 \begin{tabular}{l r @{} l}
-	\textbf{Table 4-2} Participating objects for the enable alert use case.\\
+	\textbf{Participating objects for the enable alert use case.}\\
 	\hline
 	\textbf{Server (web service):} Web service running on a server which regularly checks up on all events and \\
 	notifies users in case of an upcoming event. It is up to the user if he wants to have a notification sent,\\ 
@@ -162,7 +164,40 @@
 	\\
 
 \begin{enumerate}
-		\item[7.] Identify \textbf{Non-functional Requirements} and document them i a table (see Table 4-5)\\
+		\item[7.] Identify \textbf{Non-functional Requirements} and document them i a table\\
 \end{enumerate}
+
+\begin{tabular}{l r @{} l}
+	\textbf{Non-functional Requirements}\\
+	\hline
+	\textbf{Usability:} Users must be able to view (not edit) a shared event without having an account\\
+	 and without logging in. The user interface should be kept simple thus fancy features should be kept\\
+	 at a minimum. The only exception to the latter is if more features are kept isolated\\ 
+	 from the simple interface, meaning that there may be a page dedicated for advanced features.\\
+	\hline
+	\textbf{Reliability:} The system may not make changes to the database in a way where a failure\\
+	 could corrupt the database. For instance, a script may not make multiple statements that depend\\
+	 on each other and send them to the server individually, only collectively.\\
+	\hline
+	\textbf{Performance:} The asymptotic running time of the program must not increase propositionally\\
+	by the number of events.\\
+	\hline
+	\textbf{Supportability:} The system must be designed in a way, so that new notifications types besides\\
+	upcoming events notification can be implemented without the need to alter the implementation\\
+	of the upcoming event notification.\\
+	\hline
+	\textbf{Implementation:} The implementation must work on\\
+	at least one of the following main platform: Windows or Mac OS.\\
+	\hline
+	\textbf{Operation:} moderator maintains the users, but should be kept from seeing as much personal\\
+	 information from users as possible unless specifically requested by the moderator.\\
+	\hline
+	\textbf{Legal:}  As in accordance to the Danish law § 264,\\
+	 it is not legal to forward messages or pictures concerning another person’ private circumstances\\
+	 or pictures without permission from the person in question.\\ 
+	This also means that the calendar system must not publicize/distribute the user’ events\\
+	 or personal information (to the front page of the website etc.) without the user’ personal permission.\\
+	\hline
+\end{tabular}
 
 \end{document}
