@@ -6,21 +6,21 @@
 \usepackage[german]{babel}
 
 
-% For at få faver på texten skal man gå til "Format" og så "Syntax Colering".
+% For at få faver på texten skal man gå til ''Format" og så "Syntax Colering''.
 % Her kom jeg til https://www.youtube.com/watch?v=Xl1c_1yL47k
 
 \begin{document}
 
 	\title{Assignment 37}
-	\author{"pebj, smot"}
+	\author{pebj, smot}
 	\maketitle
 
 	\begin{enumerate}
 		\item Identify all relevant \textbf{Actors}.
 		\begin{enumerate}
-			\item[Nr.1] Client
-			\item[Nr.2] Server
-			\item[Nr.3] Moderater
+			\item[1)]Client
+			\item[2)]Server
+			\item[3)]Moderater
 		\end{enumerate}
 		\item Identify and describe \textbf{2 non-trivial Scenarios}.
 	\end{enumerate}
@@ -35,19 +35,19 @@
 	\hline
 	Flow of events	&1)&Claus' birthday is coming up, so he needs to invite any participants\\ 
 					&&who would like to come. therefore he makes an event in the CALENDAR.\\
-				&2)&When Claus have openet CALENDAR, he use the "Add a event" function. which\\ 
-					&&to open a new window for spisifikations of the event. \\
-				&3)&Then he enters the date, pladse and a shot diskription of the event.\\
-					&&Claus also choses a color for the event. a time he like to be alermet\\
+				&2)&When Claus have opened his CALENDAR, he uses the ''New event'' function. which\\ 
+					&&opens a new window for specifying the new event. \\
+				&3)&He enters the date, place and a short discription of the event.\\
+					&&Claus also choses a color for the event. A time he like to be alermed\\
 					&&of the event and then he confirms his input.\\
-				&4)&The CALENDAR closes the spisifikation window and shows Claus calender with\\
-					&&hes new event. Claus then use the "Share" function and gets a digital code\\
+				&4)&The CALENDAR closes the spicification window and shows Claus CALENDAR with\\
+					&&his new event. Claus then uses the ''Share'' function and gets a digital code\\
 					&&he copyes and pasts it on hes Facebook wall.\\
 				&5)&The friend Jan notices this digital code and wishes to take part in Claus' \\ 
 					&&birthday. He therefore uses the digital code to get to a window, where he can\\
-					&&chose to accept, which ther vill put the event in his calendar in CALENDAR.\\
-				&6)&Jan and Claus can new see the event in ther calendar, with date, place,\\
-					&&deskription and how many praticipan ther have acceptet the event.\\
+					&&chose to accept, which will put the event in his CALENDAR.\\
+				&6)&Jan and Claus can now see the event in their calendar, with date, place,\\
+					&&description and how many participants that have accepted the event.\\
 	\hline
 \end{tabular}
 \\
@@ -62,19 +62,18 @@
 	instances       	&&server: Server\\
 	\hline
 	Flow of events	&1)&A week ago Claus inserted an event to his CALENDAR where he added\\ 
-					&&a "event alert" to notifi him 2 hours before the event.\\
-				&2)&The server react to the "event alert" at the spisefid time, by sending\\
-					&&a message to the Client Claus with the ditails for the upcomming event.\\
-				&3)&Claus now gets an message notification from his smartphone\\ 
-					&&which he then uses to read the message.\\
-				&4)&The messagel tells him of the upcomming event and show him hes calender\\
+					&&an ''event alert'' to notify him 2 hours before the event.\\
+				&2)&The server reacts to the ''event alert'' at the spicified time, by sending\\
+					&&a message to the client Claus with the details for the upcomming event.\\
+				&3)&Claus now gets a message notification in the form of an email etc.\\ 
+				&4)&The message tells him of the upcomming event and shows him his CALENDAR\\
 					&&for today.\\
 	\hline
 \end{tabular}
 
 	\begin{enumerate}
 		\item[3.] Identify all  relevant \textbf{Use Cases} and draw the \verb= "sticky man" UML= diagram.\\
-		\includegraphics[scale = 0.38]{C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.37/UserCases.png}\\
+		\includegraphics[scale = 0.38]{UserCases.png}\\
 		\pagebreak{}
 		\item[4.] Select 3 \textbf{non-trivial Use Cases} and document them using the use case table\\
 	\end{enumerate}
@@ -104,14 +103,14 @@
 	\hline
 	Participating actors:&&User, Server \\
 	\hline
-	Flow of events:	&1.&User chooses to manage his calendar (login include has been profiled\\
-				&2.&by entry condition). User chooses to add a new event.\\
-				&3.&User chooses to enable an alert for his event (explained by the \flqq extend\frqq\\
+	Flow of events:	&1.&User chooses to manage his calendar (login \flqq include\frqq has been profiled\\
+				&&by entry condition). User chooses to add a new event.\\
+				&2.&User chooses to enable an alert for his event (explained by the \flqq extend\frqq\\
 					&& which tells us its an extension of the base case. You have to do the base case,\\
 					&& but you may do the extension).\\
-				&4.&The user chooses to enable the notification alert (due to the server participating\\
+				&3.&The user chooses to enable the notification alert (due to the server participating\\
 					&& in this, the server will act as an observer to your choice of enabling the event).\\
-				&5.&You enable the alert and the server will know the result.\\
+				&4.&You enable the alert and the server will know the result.\\
 	\hline
 	Entry condition:	&&User is logged into the system.\\
 	\hline
@@ -144,7 +143,7 @@
 
 \begin{enumerate}
 		\item[5.] Identify \textbf{Relationships} between Actors and Use Cases and finalize the \verb= "sticky man"=  diagram\\
-		\includegraphics[scale = 0.38]{C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.37/UserCases.png}\\
+		\includegraphics[scale = 0.38]{UserCases.png}\\
 		\pagebreak{}
 		\item[6.] Identify \textbf{Initial Analysis Objects} and document them in a table\\
 \end{enumerate}
@@ -152,13 +151,13 @@
 \begin{tabular}{l r @{} l}
 	\textbf{Participating objects for the enable alert use case.}\\
 	\hline
-	\textbf{Server (web service):} Web service running on a server which regularly checks up on all events and \\
+	\textbf{Server:} Server activity which regularly checks up on all events and \\
 	notifies users in case of an upcoming event. It is up to the user if he wants to have a notification sent,\\ 
 	so the server will participate in the user’ events and choice of enabling the notification alert.\\
 	\hline
 	\textbf{User} the user can create events in his calendar. As such he is the initiator of event creation and \\
-	other users may participate in those events. \\
-	Additionally a new possible event alert may be initiated which a server will participate in.\\
+	other users may participate in those events if they are shared. \\
+	Additionally a new possible event alert may be initiated which the server will participate in.\\
 	\hline
 \end{tabular}
 	\\
@@ -171,7 +170,7 @@
 	\textbf{Non-functional Requirements}\\
 	\hline
 	\textbf{Usability:} Users must be able to view (not edit) a shared event without having an account\\
-	 and without logging in. The user interface should be kept simple thus fancy features should be kept\\
+	 thus without logging in. The user interface should be kept simple, so fancy features should be kept\\
 	 at a minimum. The only exception to the latter is if more features are kept isolated\\ 
 	 from the simple interface, meaning that there may be a page dedicated for advanced features.\\
 	\hline
@@ -192,11 +191,11 @@
 	\textbf{Operation:} moderator maintains the users, but should be kept from seeing as much personal\\
 	 information from users as possible unless specifically requested by the moderator.\\
 	\hline
-	\textbf{Legal:}  As in accordance to the Danish law § 264,\\
+	\textbf{Legal:}  As in accordance to the Danish law \S 264,\\
 	 it is not legal to forward messages or pictures concerning another person’ private circumstances\\
 	 or pictures without permission from the person in question.\\ 
 	This also means that the calendar system must not publicize/distribute the user’ events\\
-	 or personal information (to the front page of the website etc.) without the user’ personal permission.\\
+	 or personal information (ads for software etc.) without the user’ personal permission.\\
 	\hline
 \end{tabular}
 
