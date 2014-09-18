@@ -174,9 +174,10 @@
 	 at a minimum. The only exception to the latter is if more features are kept isolated\\ 
 	 from the simple interface, meaning that there may be a page dedicated for advanced features.\\
 	\hline
-	\textbf{Reliability:} The system may not make changes to the database in a way where a failure\\
-	 could corrupt the database. For instance, a script may not make multiple statements that depend\\
-	 on each other and send them to the server individually, only collectively.\\
+	\textbf{Reliability:} The system may not make changes to the database in a way where a failure could\\
+	 corrupt the database structure itself. For instance, if two changes were needed to complete a task and\\
+	 only completing the first would cause the database to be corrupt, the software must not fail in\\
+	 between those changes.\\
 	\hline
 	\textbf{Performance:} The asymptotic running time of the program must not increase propositionally\\
 	by the number of events.\\

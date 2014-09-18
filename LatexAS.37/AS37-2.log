@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.8)  18 SEP 2014 13:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.8)  18 SEP 2014 14:29
 entering extended mode
 **C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.37/AS37-2.tex
 (C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.37/AS37-2.tex
@@ -252,13 +252,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 194.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 195.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 194.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
@@ -269,7 +269,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Overfull \hbox (114.69522pt too wide) in paragraph at lines 169--201
+Overfull \hbox (127.91736pt too wide) in paragraph at lines 169--202
 [][] 
  []
 
@@ -290,7 +290,7 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on AS37-2.pdf (5 pages, 162358 bytes).
+Output written on AS37-2.pdf (5 pages, 162394 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
