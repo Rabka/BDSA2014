@@ -1,0 +1,41 @@
+Classes taken from the User Cases diagram:
+
+ManageAccount<<Control>>
+	EditPersonalInformation
+	EditLoginData
+
+Login<<Control>>
+
+MaintainsUsers<<Control>>
+	UserCalendar
+	UserAccounts
+
+ManageCalendar<<Control>>
+	ShareAnEvent
+	GetSharedEvent
+	NewEvent
+	UpdateEvent
+	EnableAlertForEvent
+	ConflictOverlappingEvents
+
+Server<<Control>>
+	OpenStoredData
+	CheckCalendar
+	SendsANotification
+
+Classes taken from the Use Cases tables:
+
+Account<<Entity>>
+Event<<Entity>>
+Notification<<Entity>>
+
+calendar<<Boundary>>
+	??ManageAccountButton 			4.1 i 1.
+		??ManageAccountView<<Boundary>>	4.1 i 1.
+			??ChangeNameTextField	4.1 i 2.
+			??ChangeEmailTextField
+			??ChangePasswordTextField
+				??Check
+	??AddNewEventButton 			4.2 i 1.
+		??ManageEvent<<Boundary>> 	4.2 i 2.
+			??EnableAlertCheckBox	4.2 i 2.
