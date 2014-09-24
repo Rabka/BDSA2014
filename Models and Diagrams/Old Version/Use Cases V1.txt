@@ -1,0 +1,41 @@
+Use case name: 
+	Edit personal information 
+Participating actors: 
+	User
+Flow of events: 
+	1.User chooses to manage his account.
+	2.User chooses to edit his/hers personal information.
+Entry condition: 
+	User is logged into the system.
+Exit condition: 
+	The user updates his personal information.
+
+----------------------------------------------------------
+
+Use case name: 
+	Enable alert
+Participating actors: 
+	User, Server
+Flow of events: 
+	1.User chooses to manage his calendar (login includehas been profiled by entry condition). User chooses to add a new event.
+	2.User chooses to enable an alert for his event explained by the extend which tells us its an extension of the base case. You have to do the base case, but you may do the extension).
+	3.The user chooses to enable the notication alert (due to the server participating in this, the server will act as an observer to your choice of enabling the event).
+	4.You enable the alert and the server will know the result.
+Entry condition: 
+	User is logged into the system.
+Exit condition: 
+	The user chooses to enable/disable the alert.
+
+----------------------------------------------------------
+
+Use case name: 
+	Send event alert
+Participating actors: 
+	Server
+Flow of events: 
+	1.Server checks the events for all users.
+	2.On the condition that it nds an upcoming event, we will end up sending a notication to the user about it (using extend, we say that we arrive there as a condition is met, in this case, an event is an upcoming event).
+Entry condition: 
+	A timed loop chooses to have the server perform this task regularly.
+Exit condition: 
+	Event alerts have been sent for all upcoming events.

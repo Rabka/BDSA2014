@@ -1,0 +1,7 @@
+Participating objects for the enable alert use case.
+
+Server: 
+	Server activity which regularly checks up on all events and notifies users in case of an upcoming event. It is up to the user if he wants to have a notification sent,so the server will participate in the user events and choice of enabling the notification alert.
+
+User: 
+	the user can create events in his calendar. As such he is the initiator of event creation and other users may participate in those events if they are shared. Additionally a new possible event alert may be initiated which the server will participate in.

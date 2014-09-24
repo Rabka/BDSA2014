@@ -1,0 +1,29 @@
+Scenario name:	
+	Event sharing
+	
+Praticipating actor instances:	
+	Claus, Jan: Client
+
+Flow of events:
+	1)Claus' birthday is coming up, so he needs to invite any participants
+who would like to come. therefore he makes an event in the CALENDAR.
+	2)When Claus have opened his CALENDAR, he uses the "New event" function. Which opens a new window for specifying the new event.
+	3)He enters the date, place and a short discription of the event. Claus also choses a color for the event. A time he like to be alermed of the event and then he con_rms his input.
+	4)The CALENDAR closes the spici_cation window and shows Claus CALENDAR with his new event. Claus then uses the "Share" function and gets a digital code he copyes and pasts it on hes Facebook wall.
+	5)The friend Jan notices this digital code and wishes to take part in Claus' birthday. He therefore uses the digital code to get to a window, where he can chose to accept, which will put the event in his CALENDAR.
+	6)Jan and Claus can now see the event in their calendar, with date, place, description and how many participants that have accepted the event.
+
+----------------------------------------------------------
+
+Scenario name: 	
+	Upcomming event notication
+
+Praticipating actor instances: 
+	Claus: Client
+	server: Server
+
+Flow of events:
+	1)A week ago Claus inserted an event to his CALENDAR where he added an "event alert" to notify him 2 hours before the event.
+	2)The server reacts to the "event alert" at the spicied time, by sending a message to the client Claus with the details for the upcomming event.
+	3)Claus now gets a message notication in the form of an email etc.
+	4)The message tells him of the upcomming event and shows him his CALENDAR for today.

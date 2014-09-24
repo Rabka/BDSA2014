@@ -7,8 +7,8 @@ ManageAccount<<Control>>
 Login<<Control>>
 
 MaintainsUsers<<Control>>
-	UserCalendar
-	UserAccounts
+	UserCalendar<<Boundary>>
+	UserAccounts<<Boundary>>
 
 ManageCalendar<<Control>>
 	ShareAnEvent
@@ -30,12 +30,18 @@ Event<<Entity>>
 Notification<<Entity>>
 
 calendar<<Boundary>>
-	??ManageAccountButton 			4.1 i 1.
-		??ManageAccountView<<Boundary>>	4.1 i 1.
-			??ChangeNameTextField	4.1 i 2.
-			??ChangeEmailTextField
-			??ChangePasswordTextField
-				??Check
-	??AddNewEventButton 			4.2 i 1.
-		??ManageEvent<<Boundary>> 	4.2 i 2.
-			??EnableAlertCheckBox	4.2 i 2.
+	ManageAccountButton
+	EditEventButton
+	AddNewEventButton
+	
+ManageAccountView<<Boundary>>
+	ChangeNameTextField
+	ChangeEmailTextField
+	ChangePasswordTextField
+	PasswordTextField
+	SaveButton
+	
+
+ManageEvent<<Boundary>>
+	EnableAlertCheckBox
+	SaveButton

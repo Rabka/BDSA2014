@@ -1,0 +1,21 @@
+Non-functional Requirements 
+Usability: 
+	Users must be able to view (not edit) a shared event without having an account and without logging in. The user interface should be kept simple thus fancy features should be kept at a minimum. The only exception to the latter is if more features are kept isolated from the simple interface, meaning that there may be a page dedicated for advanced features.
+
+Reliability: 
+	The system may not make changes to the database in a way where a failure could corrupt the database. For instance, a script may not make multiple statements that depend on each other and send them to the server individually, only collectively.
+ 
+Performance: 
+	The asymptotic running time of the program must not increase propositionally by the number of events.
+
+Supportability: 
+	The system must be designed in a way, so that new notifications types besides upcoming events notification can be implemented without the need to alter the implementation of the upcoming event notification.
+
+Implementation: 
+	The implementation must work on at least one of the following main platform: Windows or Mac OS.
+
+Operation: 
+	A moderator maintains the users, but should be kept from seeing as much personal information from users as possible unless specifically requested by the moderator.
+
+Legal: 
+	As in accordance to the Danish law § 264, it is not legal to forward messages or pictures concerning another person’ private circumstances or pictures without permission from the person in question. This also means that the calendar system must not publicize/distribute the user’ events or personal information (to the front page of the website etc.) without the user’ personal permission.
