@@ -4,7 +4,7 @@ Participating actors:
 	User
 Flow of events: 
 	1.The user clicks on ManageAccountButton and the system brings up a new window with his personal information.
-	2.Then the user clicks in the ChangeNameTextField, deletes his old name and write a new.
+	2.Then the user clicks in the ChangeNameTextField, deletes his old name and write a new, dose the same for ChangePasswordTextField and ChangeEmailTextField.
 	3.Then he write his password in the PasswordTextField and clicks on SaveButton.
 Entry condition: 
 	User is logged into the system.
