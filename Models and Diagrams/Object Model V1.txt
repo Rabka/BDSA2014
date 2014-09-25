@@ -26,7 +26,14 @@ Server<<Control>>
 Classes taken from the Use Cases tables:
 
 Account<<Entity>>
+	account id
+	name
+	email
 Event<<Entity>>
+	startTime
+	??(varihed)??
+	deskription
+	
 Notification<<Entity>>
 
 calendar<<Boundary>>
