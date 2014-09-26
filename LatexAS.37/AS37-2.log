@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.8)  18 SEP 2014 14:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.24)  25 SEP 2014 21:59
 entering extended mode
-**C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.37/AS37-2.tex
-(C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.37/AS37-2.tex
+**AS37-2.tex
+(C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.37\AS37-2.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -99,10 +99,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks19
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
@@ -150,7 +150,7 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@austrian = a dialect from \language\l@german 
 Package babel Info: Making " an active character on input line 102.
 ))
-(C:\Users\patr0805\Documents\GitHub\BDSA2014\LatexAS.37\AS37-2.aux)
+(C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.37\AS37-2.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
@@ -209,7 +209,7 @@ File: UserCases.png Graphic file (type png)
  <use UserCases.png>
 Package pdftex.def Info: UserCases.png used on input line 76.
 (pdftex.def)             Requested size: 271.6537pt x 215.12593pt.
- [2 <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.37/UserCases.png>]
+ [2 <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.37/UserCases.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
@@ -273,15 +273,15 @@ Overfull \hbox (127.91736pt too wide) in paragraph at lines 169--202
 [][] 
  []
 
-[5] (C:\Users\patr0805\Documents\GitHub\BDSA2014\LatexAS.37\AS37-2.aux) ) 
+[5] (C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.37\AS37-2.aux) ) 
 Here is how much of TeX's memory you used:
  2419 strings out of 493921
- 30156 string characters out of 3144868
- 87863 words of memory out of 3000000
+ 30156 string characters out of 3144867
+ 87856 words of memory out of 3000000
  5700 multiletter control sequences out of 15000+200000
  10759 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,8n,26p,299b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,26p,244b,200s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
@@ -290,7 +290,7 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on AS37-2.pdf (5 pages, 162394 bytes).
+Output written on AS37-2.pdf (5 pages, 162438 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
