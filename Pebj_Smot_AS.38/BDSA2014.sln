@@ -6,9 +6,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Local.testsettings = Local.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment38_ReversePolishCalculator", "Assignment37-ReversePolishCalculator\Assignment38_ReversePolishCalculator.csproj", "{E1E40115-4412-46E7-A504-D1508F744A61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment38_ReversePolishCalculator", "Assignment38-ReversePolishCalculator\Assignment38_ReversePolishCalculator.csproj", "{E1E40115-4412-46E7-A504-D1508F744A61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment38_ReversePolishCalculator.test", "Assignment37_ReversePolishCalculator.test\Assignment38_ReversePolishCalculator.test.csproj", "{DA00338B-A9A2-4A9F-A7A5-9AC51AAA30B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment38_ReversePolishCalculator.test", "Assignment38_ReversePolishCalculator.test\Assignment38_ReversePolishCalculator.test.csproj", "{DA00338B-A9A2-4A9F-A7A5-9AC51AAA30B7}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution

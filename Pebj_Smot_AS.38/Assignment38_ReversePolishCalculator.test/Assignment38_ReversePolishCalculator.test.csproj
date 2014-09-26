@@ -49,7 +49,7 @@
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Assignment37-ReversePolishCalculator\Assignment38_ReversePolishCalculator.csproj">
+    <ProjectReference Include="..\Assignment38-ReversePolishCalculator\Assignment38_ReversePolishCalculator.csproj">
       <Project>{E1E40115-4412-46E7-A504-D1508F744A61}</Project>
       <Name>Assignment38_ReversePolishCalculator</Name>
     </ProjectReference>
