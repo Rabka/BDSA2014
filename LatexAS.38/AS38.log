@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.8)  26 SEP 2014 03:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.24)  26 SEP 2014 03:18
 entering extended mode
-**C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38/AS38.tex
-(C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38/AS38.tex
+**AS38.tex
+(C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.38\AS38.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -99,10 +99,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks19
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
@@ -149,6 +149,12 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 )
 \l@austrian = a dialect from \language\l@german 
 Package babel Info: Making " an active character on input line 102.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
@@ -166,7 +172,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 )
 \c@ContinuedFloat=\count101
 )
-(C:\Users\patr0805\Documents\GitHub\BDSA2014\LatexAS.38\AS38.aux)
+(C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.38\AS38.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
@@ -207,6 +213,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (1.49794pt too wide) in paragraph at lines 20--20
+[]\OT1/cmr/bx/n/14.4 Analysis Ob-ject Model (Static Model), in-clud-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
@@ -217,6 +228,11 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+
+Underfull \hbox (badness 2486) in paragraph at lines 53--53
+[]\OT1/cmr/m/n/10 The event en-tity de-
+ []
+
 
 Overfull \hbox (28.1316pt too wide) in paragraph at lines 25--65
 [][] 
@@ -229,52 +245,77 @@ Underfull \hbox (badness 1052) in paragraph at lines 81--81
 
 
 Underfull \hbox (badness 1590) in paragraph at lines 88--88
-\OT1/cmr/m/n/10 on-li-ne ac-ces-sa-ble con-
+\OT1/cmr/m/n/10 on-line ac-cess-able con-
  []
 
 
 Underfull \hbox (badness 4341) in paragraph at lines 88--88
-\OT1/cmr/m/n/10 trol (webser-vice etc.)
+\OT1/cmr/m/n/10 trol (web-ser-vice etc.)
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 88--88
-\OT1/cmr/m/n/10 that runs end-les-sly
+\OT1/cmr/m/n/10 that runs end-lessly
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 88--88
-\OT1/cmr/m/n/10 and re-gural-ly checks
+\OT1/cmr/m/n/10 and re-gu-rally checks
  []
 
 
-Underfull \hbox (badness 5711) in paragraph at lines 97--97
-\OT1/cmr/m/n/10 ry. Any ac-ti-on that
+Underfull \hbox (badness 7667) in paragraph at lines 97--97
+[]\OT1/cmr/m/n/10 ManageCalendar han-
  []
 
 
-Underfull \hbox (badness 2521) in paragraph at lines 105--105
-[]\OT1/cmr/m/n/10 ManageAccount hand-
+Underfull \hbox (badness 2726) in paragraph at lines 97--97
+\OT1/cmr/m/n/10 dles all ac-tions done
  []
 
 
-Underfull \hbox (badness 6995) in paragraph at lines 105--105
-\OT1/cmr/m/n/10 les all ac-ti-ons do-ne
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+\OT1/cmr/m/n/10 would in-volve an
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 105--105
-\OT1/cmr/m/n/10 View Boun-da-ry. Ac-ti-
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+\OT1/cmr/m/n/10 event change/retrival
  []
 
 
-Underfull \hbox (badness 4024) in paragraph at lines 105--105
-\OT1/cmr/m/n/10 ons that ac-ces-ses or
+Underfull \hbox (badness 3623) in paragraph at lines 97--97
+\OT1/cmr/m/n/10 will be done though
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 105--105
-\OT1/cmr/m/n/10 be do-ne though Ac-
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[]\OT1/cmr/m/n/10 ManageAccount han-
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 105--105
+\OT1/cmr/m/n/10 dles all ac-tions done
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+\OT1/cmr/m/n/10 in-side Man-ageAc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+\OT1/cmr/m/n/10 countView Bound-ary.
+ []
+
+
+Underfull \hbox (badness 3375) in paragraph at lines 105--105
+\OT1/cmr/m/n/10 Ac-tions that ac-cesses
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 105--105
+\OT1/cmr/m/n/10 will be done though
  []
 
 
@@ -289,57 +330,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--123
 
 
 Underfull \hbox (badness 2635) in paragraph at lines 123--123
-\OT1/cmr/m/n/10 any ac-ti-vi-ty that in-
+\OT1/cmr/m/n/10 any ac-tiv-ity that in-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 123--123
-\OT1/cmr/m/n/10 vol-ves get-ting and
+\OT1/cmr/m/n/10 volves get-ting and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]\OT1/cmr/m/n/10 AccountLogic per-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+\OT1/cmr/m/n/10 forms any ac-tiv-ity
+ []
+
+
+Underfull \hbox (badness 6961) in paragraph at lines 131--131
+\OT1/cmr/m/n/10 that in-volves get-ting
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 150--150
-[]\OT1/cmr/m/n/10 ManageEvent hand-les
+[]\OT1/cmr/m/n/10 ManageEvent han-dles
  []
 
 
 Underfull \hbox (badness 4660) in paragraph at lines 150--150
-\OT1/cmr/m/n/10 ac-ti-vi-ties do-ne in-si-de
+\OT1/cmr/m/n/10 ac-tiv-i-ties done in-side
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 150--150
-\OT1/cmr/m/n/10 Ma-na-ge-Event-View
+\OT1/cmr/m/n/10 Man-ageEventView
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 150--150
-\OT1/cmr/m/n/10 and uses event-lo-gic
+\OT1/cmr/m/n/10 and uses event-logic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
-[]\OT1/cmr/m/n/10 MaintainUsers boun-
+Underfull \hbox (badness 4995) in paragraph at lines 171--171
+[]\OT1/cmr/m/n/10 MaintainUsers bound-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
-\OT1/cmr/m/n/10 da-ry al-lows a mo-
+Underfull \hbox (badness 3919) in paragraph at lines 171--171
+\OT1/cmr/m/n/10 ary al-lows a mod-er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
-\OT1/cmr/m/n/10 de-ra-tor to ma-na-ge
+Underfull \hbox (badness 3792) in paragraph at lines 171--171
+\OT1/cmr/m/n/10 a-tor to man-age (ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
-\OT1/cmr/m/n/10 (ac-cess,edit,remove)
+Underfull \hbox (badness 4156) in paragraph at lines 171--171
+\OT1/cmr/m/n/10 cess,edit,remove) user'
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 180--180
-\OT1/cmr/m/n/10 ry al-lows a mo-de-ra-
+Underfull \hbox (badness 4927) in paragraph at lines 180--180
+[]\OT1/cmr/m/n/10 UserCalendars bound-
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 180--180
+\OT1/cmr/m/n/10 ary al-lows a mod-er-a-
  []
 
 
@@ -348,18 +409,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--187
  []
 
 
+Underfull \hbox (badness 3396) in paragraph at lines 187--187
+\OT1/cmr/m/n/10 er-a-tor to cre-ate and
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 196--196
 []\OT1/cmr/m/n/10 ManageAccountView
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 196--196
-\OT1/cmr/m/n/10 chan-ges to the at-tri-
- []
-
-
-Underfull \hbox (badness 1917) in paragraph at lines 196--196
-\OT1/cmr/m/n/10 bu-tes of his ac-count,
+Underfull \hbox (badness 10000) in paragraph at lines 196--196
+\OT1/cmr/m/n/10 changes to the at-
  []
 
 
@@ -383,7 +444,7 @@ Overfull \hbox (83.92575pt too wide) in paragraph at lines 216--218
 [][] 
  []
 
-[6 <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38/AnalysisObjectModel.
+[6 <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.38/AnalysisObjectModel.
 png>]
 <SequenceModelEditpersonalinformation.png, id=29, 714.87074pt x 566.115pt>
 File: SequenceModelEditpersonalinformation.png Graphic file (type png)
@@ -410,8 +471,8 @@ Overfull \hbox (83.92575pt too wide) in paragraph at lines 237--239
 
 [7
 
- <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38/SequenceModelEditperso
-nalinformation.png>] [8 <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38
+ <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.38/SequenceModelEditperso
+nalinformation.png>] [8 <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.38
 /SequenceModelEnableAlert.png>]
 <SequenceModelSendEventAlert.png, id=40, 714.87074pt x 566.115pt>
 File: SequenceModelSendEventAlert.png Graphic file (type png)
@@ -427,7 +488,7 @@ Overfull \hbox (83.92575pt too wide) in paragraph at lines 244--246
 
 [9
 
- <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38/SequenceModelSendEvent
+ <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.38/SequenceModelSendEvent
 Alert.png>] <SendAlertStateMachine.png, id=45, 714.87074pt x 566.115pt>
 File: SendAlertStateMachine.png Graphic file (type png)
 
@@ -452,18 +513,18 @@ Overfull \hbox (83.92575pt too wide) in paragraph at lines 260--262
 
 [10
 
- <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38/SendAlertStateMachine.
-png>] [11 <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.38/NewEventState
+ <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.38/SendAlertStateMachine.
+png>] [11 <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.38/NewEventState
 Machine.png>]
-(C:\Users\patr0805\Documents\GitHub\BDSA2014\LatexAS.38\AS38.aux) ) 
+(C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.38\AS38.aux) ) 
 Here is how much of TeX's memory you used:
- 3487 strings out of 493921
- 49976 string characters out of 3144868
- 115444 words of memory out of 3000000
- 6757 multiletter control sequences out of 15000+200000
+ 3494 strings out of 493921
+ 50162 string characters out of 3144867
+ 115859 words of memory out of 3000000
+ 6761 multiletter control sequences out of 15000+200000
  11503 words of font info for 45 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,9n,38p,297b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,9n,38p,251b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
@@ -471,7 +532,7 @@ s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on AS38.pdf (11 pages, 284572 bytes).
+Output written on AS38.pdf (11 pages, 284643 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
