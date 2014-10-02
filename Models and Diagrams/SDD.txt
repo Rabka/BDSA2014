@@ -1,0 +1,17 @@
+1. Introduction
+	1.1 Purpose of the system
+	1.2 Design goals
+	1.3 Definitions, acronyms, and abbreviations
+	1.4 References
+	1.5 Overview
+2. Current software architecture
+3. Proposed software architecture
+	3.1 Overview
+	3.2 Subsystem decomposition
+	3.3 Hardware/software mapping
+	3.4 Persistent data management
+	3.5 Access control and security
+	3.6 Global software control
+	3.7 Boundary conditions
+4. Subsystem services
+Glossary
