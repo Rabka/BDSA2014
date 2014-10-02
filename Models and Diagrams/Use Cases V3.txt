@@ -1,0 +1,41 @@
+Use case name: 
+	Edit personal information 
+Participating actors: 
+	User
+Flow of events: 
+	1.The user clicks on ManageAccountButton and the system brings up a new window with his personal information.
+	2.Then the user clicks in the ChangeNameTextField, deletes his old name and write a new, dose the same for ChangePasswordTextField and ChangeEmailTextField.
+	3.Then he write his password in the PasswordTextField and clicks on SaveButton.
+Entry condition: 
+	User is logged into the system.
+Exit condition: 
+	The user clicks on SaveButton.(and have writen his password in the PasswordTextField)
+
+----------------------------------------------------------
+
+Use case name: 
+	Enable alert
+Participating actors: 
+	User, Webservice
+Flow of events: 
+	1.User chooses to manage his calendar (login includehas been profiled by entry condition). User clicks EditEventButton to open a ManageEvent window.
+	2.User then clicks the EnableAlertCheckBox to enable an alert for his event (due to the Webservice participating in this, the Webservice will act as an observer to your choice of enabling the alert).
+	3.The user then clicks on SaveButton.
+Entry condition: 
+	User is logged into the system.
+Exit condition: 
+	The user clicks on SaveButton.
+
+----------------------------------------------------------
+
+Use case name: 
+	Send event alert
+Participating actors: 
+	Webservice
+Flow of events: 
+	1.Webservice checks the events for all users.
+	2.On the condition that it finds an upcoming event, we will end up sending a notification to the user about it (using extend, we say that we arrive there as a condition is met, in this case, an event is an upcoming event).
+Entry condition: 
+	A timed loop chooses to have the Webservice perform this task regularly.
+Exit condition: 
+	Event alerts have been sent for all upcoming events.
