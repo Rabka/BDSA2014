@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.24)  2 OCT 2014 23:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.8)  3 OCT 2014 01:24
 entering extended mode
-**AS39.tex
-(C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.39\AS39.tex
+**C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.39/AS39.tex
+(C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.39/AS39.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -52,7 +52,7 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@newzealand = a dialect from \language\l@british 
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
@@ -327,10 +327,10 @@ LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
@@ -366,13 +366,13 @@ Package: todonotes 2012/07/25
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
-Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+Package: xkeyval 2014/04/27 v2.6c package option processing (HA)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
 \XKV@toks=\toks22
 \XKV@tempa@toks=\toks23
 \XKV@depth=\count101
-File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+File: xkeyval.tex 2014/04/27 v2.6c key=value parser (HA)
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
@@ -680,14 +680,14 @@ Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bdimen=\dimen162
 \calc@Askip=\skip46
 \calc@Bskip=\skip47
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
 \calc@Ccount=\count123
 \calc@Cskip=\skip48
 )
 \c@@todonotes@numberoftodonotes=\count124
 )
-(C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.39\AS39.aux)
+(C:\Users\patr0805\Documents\GitHub\BDSA2014\LatexAS.39\AS39.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -748,17 +748,17 @@ Overfull \hbox (22.37534pt too wide) in paragraph at lines 61--62
 [][] 
  []
 
-[2] [3 <C:/Users/stin7054/Documents/GitHub/BDSA2014/LatexAS.39/Subsystems.png (
-PNG copy)>] (C:\Users\stin7054\Documents\GitHub\BDSA2014\LatexAS.39\AS39.aux) )
+[2] [3 <C:/Users/patr0805/Documents/GitHub/BDSA2014/LatexAS.39/Subsystems.png (
+PNG copy)>] (C:\Users\patr0805\Documents\GitHub\BDSA2014\LatexAS.39\AS39.aux) )
  
 Here is how much of TeX's memory you used:
- 12581 strings out of 493921
- 247202 string characters out of 3144867
- 281682 words of memory out of 3000000
- 15636 multiletter control sequences out of 15000+200000
+ 12580 strings out of 493921
+ 247162 string characters out of 3144868
+ 281663 words of memory out of 3000000
+ 15635 multiletter control sequences out of 15000+200000
  8915 words of font info for 32 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 62i,7n,56p,573b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,7n,56p,635b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
@@ -766,7 +766,7 @@ gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on AS39.pdf (3 pages, 113154 bytes).
+Output written on AS39.pdf (3 pages, 110935 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
