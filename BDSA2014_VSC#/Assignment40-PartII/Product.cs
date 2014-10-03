@@ -5,19 +5,19 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class Products
+    class Product
     {
         public string ProductName;
         public object SupplierID;
-        public Categories CategoryID;
+        public Category CategoryID;
         public string QuantityPerUnit;
-        public int UnitPrice;
+        public double UnitPrice;
         public int UnitsInStock;
         public int UnitsOnOrder;
         public int ReorderLevel;
         public int Discontinued;
 
-        public Products(string ProductName, object SupplierID, Categories CategoryID, string QuantityPerUnit, int UnitPrice, int UnitsInStock, int UnitsOnOrder, int ReorderLevel, int Discontinued)
+        public Product(string ProductName, object SupplierID, Category CategoryID, string QuantityPerUnit, double UnitPrice, int UnitsInStock, int UnitsOnOrder, int ReorderLevel, int Discontinued)
         {
             this.ProductName = ProductName;
             this.SupplierID = SupplierID;

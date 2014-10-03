@@ -48,6 +48,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Assignment36-ReversePolishCalculator\Assignment36-ReversePolishCalculator.csproj">
+      <Project>{8062343F-8BDD-4107-9E89-31F166C7F9B7}</Project>
+      <Name>Assignment36-ReversePolishCalculator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

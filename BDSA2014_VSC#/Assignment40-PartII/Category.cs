@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class Categories
+    class Category
     {
         public string CategoryName;
         public string Description;
 
-        public Categories(string categoryName, string description)
+        public Category(string categoryName, string description)
         {
             CategoryName = categoryName;
             Description = description;

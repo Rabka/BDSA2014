@@ -5,24 +5,26 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class Orders
+    class Order
     {
+        public int OrderID;
         public object CustomerID;
         public object EmployeeID;
         public DateTime OrderDate;
         public DateTime RequiredDate;
-        public DateTime ShippedDate;
+        public DateTime? ShippedDate;
         public int ShipVia;
         public double Freight;
         public string ShipName;
         public string ShipAddress;
         public string ShipCity;
         public string ShipRegion;
-        public int ShipPostalCode;
+        public string ShipPostalCode;
         public string ShipCountry;
 
-        public Orders(object CustomerID, object EmployeeID, DateTime OrderDate, DateTime RequiredDate, DateTime ShippedDate, int ShipVia, double Freight, string ShipName, string ShipAddress, string ShipCity, string ShipRegion, int ShipPostalCode, string ShipCountry)
+        public Order(int OrderID, object CustomerID, object EmployeeID, DateTime OrderDate, DateTime RequiredDate, DateTime? ShippedDate, int ShipVia, double Freight, string ShipName, string ShipAddress, string ShipCity, string ShipRegion, string ShipPostalCode, string ShipCountry)
         {
+            this.OrderID = OrderID;
             this.CustomerID = CustomerID;
             this.EmployeeID = EmployeeID;
             this.OrderDate = OrderDate;

@@ -7,13 +7,13 @@ namespace Assignment40_PartII
 {
     class OrderDetails
     {
-        public Orders OrderID;
-        public Products ProductID;
-        public int UnitPrice;
+        public Order OrderID;
+        public Product ProductID;
+        public double UnitPrice;
         public int Quantity;
-        public int Discount;
+        public double Discount;
 
-        public OrderDetails(Orders OrderID, Products ProductID, int UnitPrice, int Quantity, int Discount)
+        public OrderDetails(Order OrderID, Product ProductID, double UnitPrice, int Quantity, double Discount)
         {
             this.OrderID = OrderID;
             this.ProductID = ProductID;
