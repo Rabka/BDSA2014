@@ -5,15 +5,9 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class CSVinporter
+    static class CSVimporter
     {
-        static void Main(string[] args)
-        {
-            var inporter = new CSVinporter();
-            inporter.InportCSV();
-        }
-
-        public void InportCSV()
+        public static Respiratory ImportCSV()
         {
             var categories = new Dictionary<string, Category>();
             var products = new Dictionary<string, Product>();
@@ -56,6 +50,7 @@ namespace Assignment40_PartII
             Category[] categoriesArray = categories.Values.ToArray();
             Product[] productsArray = products.Values.ToArray();
             Order[] ordersArray = orders.Values.ToArray();
+            return new Respiratory(productsArray, categoriesArray, ordersArray);
         }
     }
 }

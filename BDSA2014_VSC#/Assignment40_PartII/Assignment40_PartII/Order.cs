@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class Order
+    public class Order
     {
         public int OrderID;
         public object CustomerID;
