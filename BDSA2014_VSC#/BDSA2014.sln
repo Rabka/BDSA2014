@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment37-ReversePolishC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment37_ReversePolishCalculator.test", "Assignment37_ReversePolishCalculator.test\Assignment37_ReversePolishCalculator.test.csproj", "{DA00338B-A9A2-4A9F-A7A5-9AC51AAA30B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40-PartII", "Assignment40-PartII\Assignment40-PartII.csproj", "{AB5BEC6C-25B0-4255-9AF8-29F225201E25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartII", "Assignment40_PartII\Assignment40_PartII\Assignment40_PartII.csproj", "{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -119,16 +119,16 @@ Global
 		{DA00338B-A9A2-4A9F-A7A5-9AC51AAA30B7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{DA00338B-A9A2-4A9F-A7A5-9AC51AAA30B7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{DA00338B-A9A2-4A9F-A7A5-9AC51AAA30B7}.Release|x86.ActiveCfg = Release|Any CPU
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Debug|x86.ActiveCfg = Debug|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Debug|x86.Build.0 = Debug|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Release|Any CPU.ActiveCfg = Release|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Release|Mixed Platforms.Build.0 = Release|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Release|x86.ActiveCfg = Release|x86
-		{AB5BEC6C-25B0-4255-9AF8-29F225201E25}.Release|x86.Build.0 = Release|x86
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
