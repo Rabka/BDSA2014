@@ -50,6 +50,7 @@ namespace Assignment40_PartII
             Category[] categoriesArray = categories.Values.ToArray();
             Product[] productsArray = products.Values.ToArray();
             Order[] ordersArray = orders.Values.ToArray();
+
             return new Respiratory(productsArray, categoriesArray, ordersArray);
         }
     }

@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment37_ReversePolishC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartII", "Assignment40_PartII\Assignment40_PartII\Assignment40_PartII.csproj", "{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartII.Tests", "Assignment40_PartII.Tests\Assignment40_PartII.Tests.csproj", "{F03202D8-8443-42D8-8F5D-58C68D814C8B}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = BDSA2013.vsmdi
@@ -129,6 +131,16 @@ Global
 		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
