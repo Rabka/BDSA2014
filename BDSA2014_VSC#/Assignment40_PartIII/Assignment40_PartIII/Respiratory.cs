@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assignment40_PartII
+namespace Assignment40_PartIII
 {
     public class Respiratory : IRespiratory
     {

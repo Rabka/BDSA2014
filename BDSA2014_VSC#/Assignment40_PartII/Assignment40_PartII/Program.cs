@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using Assignment40_PartII.Properties;
 
 namespace Assignment40_PartII
 {
