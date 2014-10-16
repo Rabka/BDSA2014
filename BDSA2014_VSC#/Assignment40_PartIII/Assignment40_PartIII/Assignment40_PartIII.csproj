@@ -7,10 +7,25 @@
     <ProjectGuid>{95C4DAC9-E638-42EF-8522-88334B05FBBB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Assignment40_PartII</RootNamespace>
-    <AssemblyName>Assignment40_PartII</AssemblyName>
+    <RootNamespace>Assignment40_PartIII</RootNamespace>
+    <AssemblyName>Assignment40_PartIII</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +50,9 @@
     <StartupObject>Assignment40_PartIII.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\..\..\..\documents\visual studio 2012\Projects\Assignment40.1_PartIII\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\..\..\..\..\documents\visual studio 2012\Projects\Assignment40.1_PartIII\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
@@ -44,6 +60,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,13 +70,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs" />
     <Compile Include="IRespiratory.cs" />
+    <Compile Include="Model\Categories.cs">
+      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NorthWindDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NorthWindDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NorthWindDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NorthWindDdContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindDdContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NorthWindDdContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Orders.cs">
+      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Order_Details.cs">
+      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Products.cs">
+      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="NorthWind.cs" />
     <Compile Include="NorthWindContext.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderDetails.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -69,6 +121,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Model\NorthWindDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthWindDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\NorthWindDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+      <LastGenOutput>NorthWindDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model\NorthWindDataModel.edmx.diagram">
+      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="Model\NorthWindDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+      <LastGenOutput>NorthWindDataModel.cs</LastGenOutput>
+    </None>
+    <None Include="Model\NorthWindDdContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NorthWindDdContext.Context.cs</LastGenOutput>
+      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="Model\NorthWindDdContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NorthWindDdContext.cs</LastGenOutput>
+      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Resources\products.txt" />
     <None Include="Resources\orders.txt" />
@@ -80,6 +159,40 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NORTHWND.MDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NORTHWND_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>NORTHWND.MDF</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
