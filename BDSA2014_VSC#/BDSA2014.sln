@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment35-HelloWorld", "Assignment35-HelloWorld\Assignment35-HelloWorld.csproj", "{DFB8002F-DD23-4392-A5D1-CF228F0F9E22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment35-IsPowerOf", "Assignment35-IsPowerOf\Assignment35-IsPowerOf.csproj", "{7F957BF9-387E-4CCF-8464-2CD03E1809E4}"
@@ -27,6 +27,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartII", "Assignment40_PartII\Assignment40_PartII\Assignment40_PartII.csproj", "{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartII.Tests", "Assignment40_PartII.Tests\Assignment40_PartII.Tests.csproj", "{F03202D8-8443-42D8-8F5D-58C68D814C8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartIII", "Assignment40_PartIII\Assignment40_PartII\Assignment40_PartIII.csproj", "{95C4DAC9-E638-42EF-8522-88334B05FBBB}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -141,6 +143,16 @@ Global
 		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F03202D8-8443-42D8-8F5D-58C68D814C8B}.Release|x86.ActiveCfg = Release|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{95C4DAC9-E638-42EF-8522-88334B05FBBB}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class Category
+    public class Category
     {
         public string CategoryName;
         public string Description;

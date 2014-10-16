@@ -5,16 +5,18 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class Respiratory : IRespiratory
+    public class Respiratory : IRespiratory
     {
         List<Product> products;
         List<Category> categories;
         List<Order> orders;
-        public Respiratory(Product[] products, Category[] categories, Order[] orders)
+        List<OrderDetails> ordersDetails;
+        public Respiratory(Product[] products, Category[] categories, Order[] orders, OrderDetails[] ordersDetails)
         {
             this.products = products.ToList();
             this.categories = categories.ToList();
             this.orders = orders.ToList();
+            this.ordersDetails = ordersDetails.ToList();
         }
         public Product[] Products()
         {
@@ -27,6 +29,10 @@ namespace Assignment40_PartII
         public Order[] Orders()
         {
             return orders.ToArray();
+        }
+        public OrderDetails[] OrderDetails()
+        {
+            return ordersDetails.ToArray();
         }
         public void CreateOrder(Order newOrder)
         {

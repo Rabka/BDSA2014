@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
-    class OrderDetails
+    public class OrderDetails
     {
         public Order OrderID;
         public Product ProductID;

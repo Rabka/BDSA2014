@@ -7,7 +7,7 @@ namespace Assignment40_PartII
 {
 
     public delegate void newOrderEventDelegate(Order addedOrder);
-    class NorthWind
+    public class NorthWind
     {
         Respiratory respiratory;
         public newOrderEventDelegate newOrderEvent;
