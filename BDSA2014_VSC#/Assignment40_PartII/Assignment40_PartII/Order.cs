@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
+    /// <summary>
+    /// A data class to contain information from order.txt
+    /// </summary>
     public class Order
     {
         public int OrderID;

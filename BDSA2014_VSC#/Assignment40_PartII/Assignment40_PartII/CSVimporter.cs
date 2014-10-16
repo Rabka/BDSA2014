@@ -9,6 +9,11 @@ namespace Assignment40_PartII
 {
     public static class CSVimporter
     {
+        /// <summary>
+        /// This class takes strings from Resources and makes data classes from them.
+        /// then it instantiate a Respiratory with the new data classes and returns it.
+        /// </summary>
+        /// <returns>A Respiratory contaning data classes</returns>
         public static Respiratory ImportCSV()
         {
             var categories = new Dictionary<string, Category>();

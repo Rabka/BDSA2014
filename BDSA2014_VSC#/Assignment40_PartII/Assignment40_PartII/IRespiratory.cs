@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
+    /// <summary>
+    /// A interface to a Respiratory
+    /// </summary>
     interface IRespiratory
     {
         Product[] Products();

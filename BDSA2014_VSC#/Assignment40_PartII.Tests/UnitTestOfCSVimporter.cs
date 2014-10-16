@@ -24,7 +24,7 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests if ther is the rigth number of Categorys.
         /// </summary>
         [TestMethod]
         public void TestForNumberOfCategorys()
@@ -33,7 +33,7 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests if ther is the rigth number of Orders.
         /// </summary>
         [TestMethod]
         public void TestForNumberOfOrders()
@@ -42,7 +42,7 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests if ther is the rigth number of OrderDetails.
         /// </summary>
         [TestMethod]
         public void TestForNumberOfOrderDetails()
@@ -51,7 +51,7 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests if ther is the rigth number of Products.
         /// </summary>
         [TestMethod]
         public void TestForNumberOfProducts()
@@ -60,10 +60,10 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests if alle the data classes, class referenceses is set right.
         /// </summary>
         [TestMethod]
-        public void TestClassreferenceses()
+        public void TestClassReferenceses()
         {
             foreach (OrderDetails item in respiratory.OrderDetails())
             {
@@ -74,7 +74,7 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests if a specific order have been inportet correct.
         /// </summary>
         [TestMethod]
         public void TestIfClassVariableAreCorrect()

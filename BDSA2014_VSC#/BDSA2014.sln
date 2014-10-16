@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartII", "Assi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartII.Tests", "Assignment40_PartII.Tests\Assignment40_PartII.Tests.csproj", "{F03202D8-8443-42D8-8F5D-58C68D814C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartIII", "Assignment40_PartIII\Assignment40_PartII\Assignment40_PartIII.csproj", "{95C4DAC9-E638-42EF-8522-88334B05FBBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment40_PartIII", "Assignment40_PartIII\Assignment40_PartIII\Assignment40_PartIII.csproj", "{95C4DAC9-E638-42EF-8522-88334B05FBBB}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution

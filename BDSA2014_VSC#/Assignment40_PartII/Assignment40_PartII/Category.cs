@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Assignment40_PartII
 {
+    /// <summary>
+    /// A data class to contain information from categories.txt
+    /// </summary>
     public class Category
     {
         public string CategoryName;

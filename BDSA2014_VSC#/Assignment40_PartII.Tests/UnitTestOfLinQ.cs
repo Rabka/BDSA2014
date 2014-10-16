@@ -4,11 +4,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Assignment40_PartII.Tests
 {
+
+    /// <summary>
+    /// This UnitTest is resposible for chekking if the linq in this project is working correct.
+    /// </summary>
     [TestClass]
     public class UnitTestOfLinQ
     {
         /// <summary>
-        /// 
+        /// Tests the linq for making new order IDs, by adding and testing 5 new orders.
         /// </summary>
         [TestMethod]
         public void TestOrderIdPlus1()
@@ -32,7 +36,7 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests the linq for finding the first 5 products, by hvaing 6 test products and only finding the first 5.
         /// </summary>
         [TestMethod]
         public void TestFirst5Products()
@@ -57,7 +61,8 @@ namespace Assignment40_PartII.Tests
         }
 
         /// <summary>
-        /// 
+        /// Tests the linq for "Write the counting of orders by shipping country. Order the output by descending count",
+        /// by having 5 orders divided to 2 countrys, and tests if thay com out ind the right order.
         /// </summary>
         [TestMethod]
         public void TestOrdersByShippingCountry()
