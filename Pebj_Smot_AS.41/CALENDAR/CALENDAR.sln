@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CALENDAR", "CALENDAR\CALENDAR.csproj", "{D236850B-4069-4191-A1D3-2BD712C622BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CALENDARServer", "Server\CALENDARServer.csproj", "{8F5848C6-FEFE-492D-848E-3374CA1734CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Debug|x86.ActiveCfg = Debug|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Debug|x86.Build.0 = Debug|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Release|Any CPU.ActiveCfg = Release|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Release|Mixed Platforms.Build.0 = Release|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Release|x86.ActiveCfg = Release|x86
+		{D236850B-4069-4191-A1D3-2BD712C622BA}.Release|x86.Build.0 = Release|x86
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8F5848C6-FEFE-492D-848E-3374CA1734CF}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
