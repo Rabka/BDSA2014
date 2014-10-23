@@ -25,5 +25,4 @@
 		3.4.4 Dynamic model
 		3.4.5 User interface—navigational paths and screen mock-ups
 4. Glossary
-?5. The revision history section
-24-09-2014 Use Cases have been updated to enclude names of button ther is presd. by Stinus
+5. The revision history section
