@@ -8,8 +8,7 @@ namespace CALENDAR.EventManagement
 {
     class EventsComposite : DBObject,EventComponent
     {
-        private string tableID;
-        public string TableID { get { return tableID; } set { tableID = value; } } 
+        public string TableID { get; set; } 
 
         private EventComponent[] _eventComponents;
 
