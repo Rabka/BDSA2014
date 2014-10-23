@@ -7,6 +7,5 @@ namespace CALENDAR.GoogleCalendarAdapter
 {
     class GoogleRestAPIEvent
     {
-        
     }
 }

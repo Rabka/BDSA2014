@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CALENDAR.Entities
+namespace CALENDAR.AccountManagement
 {
     public class Account : IAccount
     {

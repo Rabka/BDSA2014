@@ -2,10 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CALENDAR.GoogleCalendarAdapter;
 namespace CALENDAR.EventManagement
 {
-    public static class EventLogic
+    class EventLogic
     {
+        Storage.Storage storage;
+        public IEventClient eventAdapter;
+
+        public EventLogic(Storage.Storage storage)
+        {
+            this.storage = storage;
+            eventAdapter = new EventAdapter(storage);
+        }
         /// <summary>
         /// Adds a new event to the database
         /// </summary>
@@ -14,7 +23,7 @@ namespace CALENDAR.EventManagement
         /// <param name="dateTo"></param>
         /// <param name="notifications"></param>
         /// <returns>the event</returns>
-        public static EventComponent AddEvent(string description, DateTime dateFrom, DateTime dateTo, Entities.Notification[] notifications)
+        public EventLeaf AddEvent(string description, DateTime dateFrom, DateTime dateTo, Notification[] notifications)
         {
             try
             {
@@ -31,7 +40,7 @@ namespace CALENDAR.EventManagement
         /// </summary>
         /// <param name="name"></param>
         /// <returns>Event</returns>
-        public static EventComponent GetEventById(string name)
+        public EventComponent GetEventById(string name)
         {
             return null;
         }
@@ -40,7 +49,7 @@ namespace CALENDAR.EventManagement
         /// </summary>
         /// <param name="name"></param>
         /// <returns>Event</returns>
-        public static EventComponent[] GetEvents(DateTime from, DateTime to)
+        public EventComponent[] GetEvents(DateTime from, DateTime to)
         {
             return null;
         }
@@ -48,7 +57,7 @@ namespace CALENDAR.EventManagement
         /// Removes an existing event from the database
         /// </summary>
         /// <param name="anEvent"></param>
-        public static void RemoveEvent(EventComponent anEvent)
+        public void RemoveEvent(EventComponent anEvent)
         {
 
         }
@@ -56,9 +65,25 @@ namespace CALENDAR.EventManagement
         /// updates a given event in the database
         /// </summary>
         /// <returns>true if success</returns>
-        public static bool UpdateEvent(EventComponent anEvent)
+        public bool UpdateEvent(EventComponent anEvent)
         {
             return true;
+        }
+        /// <summary>
+        /// Joins multiple components together to a composite.
+        /// </summary>
+        /// <returns>true if success</returns>
+        public bool JoinComponentsToComposite(params EventComponent[] components)
+        {
+            return false;
+        }
+        /// <summary>
+        /// Add components to a given composite.
+        /// </summary>
+        /// <returns>true if success</returns>
+        public bool AddComponentsToComposite(EventsComposite composite,params EventComponent[] components)
+        {
+            return false;
         }
     }
 }

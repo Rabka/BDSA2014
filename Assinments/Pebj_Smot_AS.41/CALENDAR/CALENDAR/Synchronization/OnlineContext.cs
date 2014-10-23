@@ -5,8 +5,8 @@ using System.Text;
 
 namespace CALENDAR.Synchronization
 {
-    class OnlineContext : ISynchronization
-    {
+    class OnlineContext
+    {   
         ISyncStrategy _syncStrategy;
         DateTime _lastSyncDateTime = DateTime.Now;
         /// <summary>

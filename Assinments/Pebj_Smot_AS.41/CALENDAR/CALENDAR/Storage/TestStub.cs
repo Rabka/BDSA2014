@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using CALENDAR.AccountManagement;
+using CALENDAR.EventManagement;
 namespace CALENDAR.Storage
 {
     class TestStub : DBTypeImplementor
@@ -11,22 +12,37 @@ namespace CALENDAR.Storage
         {
 
         }
-        public void Add(DBRow row)
-        {
-
-        }
-        public void Remove(DBRow row)
+        public void AddAccount(DBObject newAccount)
         {
         }
-        public void Update(DBRow row)
+        public void RemoveAccount(DBObject account)
         {
-
         }
-        public void Get(int itemIndex)
+        public void UpdateAccount(DBObject account)
         {
-
         }
-        public int ItemCount()
+        public Account GetAccount(int itemIndex)
+        {
+            return null;
+        }
+        public int GetAccountsCount()
+        {
+            return 0;
+        }
+        public void AddEvent(DBObject newAccount)
+        {
+        }
+        public void RemoveEvent(DBObject account)
+        {
+        }
+        public void UpdateEvent(DBObject account)
+        {
+        }
+        public EventLeaf GetEvent(int itemIndex)
+        {
+            return null;
+        }
+        public int GetEventsCount()
         {
             return 0;
         }

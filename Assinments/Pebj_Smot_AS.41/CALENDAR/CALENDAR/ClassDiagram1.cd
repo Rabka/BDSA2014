@@ -27,7 +27,7 @@
   <Class Name="CALENDAR.Commands.DeleteEvent" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="10.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Commands\DeleteEvent.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -35,41 +35,33 @@
   <Class Name="CALENDAR.Commands.UpdateAccount" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="10.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAYAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Commands\UpdateAccount.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CALENDAR.Commands.UpdateEvent" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="12.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAQAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Commands\UpdateEvent.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="CALENDAR.Entities.Account" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="CALENDAR.AccountManagement.Account" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAACAAAAAAAQAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\Account.cs</FileName>
+      <FileName>AccountManagement\Account.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="CALENDAR.Entities.Notification" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="CALENDAR.EventManagement.Notification" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="14" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\Notification.cs</FileName>
+      <FileName>EventManagement\Notification.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="CALENDAR.EventManagement.EventComponent" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EventManagement\EventComponent.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="CALENDAR.EventManagement.EventLeaf" Collapsed="true">
     <Position X="2.75" Y="1.75" Width="1.5" />
@@ -82,7 +74,7 @@
   <Class Name="CALENDAR.EventManagement.EventLogic" Collapsed="true">
     <Position X="14" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgBAAAAAAIACAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgFAAAAAAIACAAAAAAgAAAACAAAACAA=</HashCode>
       <FileName>EventManagement\EventLogic.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -92,21 +84,15 @@
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EventManagement\EventsComposite.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CALENDAR.GoogleCalendarAdapter.EventAdapter" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="12.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAII=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACAAAAAII=</HashCode>
       <FileName>GoogleCalendarAdapter\EventAdapter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="CALENDAR.GoogleCalendarAdapter.GoogleRestAPIEvent" Collapsed="true">
-    <Position X="8.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GoogleCalendarAdapter\GoogleRestAPIEvent.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="CALENDAR.GoogleCalendarAdapter.GoogleRestAPILegacyClass" Collapsed="true">
     <Position X="10.5" Y="2.5" Width="1.5" />
@@ -135,17 +121,10 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CALENDAR.Storage.Abstraction" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Storage\Abstraction.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CALENDAR.Storage.DBRow" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Storage\DBRow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CALENDAR.Storage.DBTypeFactory" Collapsed="true">
@@ -171,7 +150,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="CALENDAR.Storage.RefinedAbstraction" Collapsed="true">
+  <Class Name="CALENDAR.Storage.RefinedAbstraction">
     <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -181,7 +160,7 @@
   <Class Name="CALENDAR.Storage.Storage" Collapsed="true">
     <Position X="7" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAQAAAAAAAAAAAAAAAAEAAIAA=</HashCode>
       <FileName>Storage\Storage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -215,7 +194,6 @@
       <HashCode>AACAAAAAAAAAAACAAAAAAAAAAAAAAABAAAgAAAAAAAA=</HashCode>
       <FileName>Synchronization\OnlineContext.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CALENDAR.UserInterface.AccountPage" Collapsed="true">
     <Position X="7" Y="0.5" Width="1.5" />
@@ -252,6 +230,13 @@
       <FileName>UserInterface\LoginPage.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="CALENDAR.GoogleCalendarAdapter.GoogleRestAPIEvent" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GoogleCalendarAdapter\GoogleRestAPIEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="CALENDAR.Commands.IChangeCommand" Collapsed="true">
     <Position X="8.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
@@ -259,18 +244,18 @@
       <FileName>Commands\IChangeCommand.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CALENDAR.Entities.IAccount" Collapsed="true">
+  <Interface Name="CALENDAR.AccountManagement.IAccount" Collapsed="true">
     <Position X="7" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAACAAAAAAAQAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\IAccount.cs</FileName>
+      <FileName>AccountManagement\IAccount.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="CALENDAR.Entities.INotification" Collapsed="true">
+  <Interface Name="CALENDAR.EventManagement.INotification" Collapsed="true">
     <Position X="14" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\INotification.cs</FileName>
+      <FileName>EventManagement\INotification.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CALENDAR.EventManagement.IEvent" Collapsed="true">
@@ -290,15 +275,8 @@
   <Interface Name="CALENDAR.Storage.DBTypeImplementor" Collapsed="true">
     <Position X="5.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAAEAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAgBAAAAAQAACAAAAAAAAACACAEAACEA=</HashCode>
       <FileName>Storage\DBTypeImplementor.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="CALENDAR.Synchronization.ISynchronization" Collapsed="true">
-    <Position X="5.25" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>Synchronization\ISynchronization.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CALENDAR.Synchronization.ISyncStrategy" Collapsed="true">

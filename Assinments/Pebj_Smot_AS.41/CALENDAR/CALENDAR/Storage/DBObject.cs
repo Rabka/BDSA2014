@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CALENDAR.EventManagement
+namespace CALENDAR.Storage
 {
-    interface EventComponent
+    interface DBObject
     {
+       string TableID { get; set; }
     }
 }
