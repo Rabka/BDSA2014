@@ -1,0 +1,28 @@
+\begin{itemize}
+%---------------------------------------------------------
+\item \textit{Usability}
+%---------------------------------------------------------
+To integrate CALENDAR in the users daily activities, the interface and functionality have to be kept simple and intuitive. This design goal is a refinement of the nonfunctional requirement “Usability”.
+%---------------------------------------------------------
+\item \textit{High availability}
+%---------------------------------------------------------
+For better user interaction it should be possible for the clients to access our system form as many places and as often as possible.
+%---------------------------------------------------------
+\item \textit{High Reliability}
+%---------------------------------------------------------
+No potential issues may accur during dayly usage that would make it impossible to do a use case. This design goal is a refinement of the nonfunctional requirement “Reliability”.
+%---------------------------------------------------------
+\item \textit{Stable response time}
+%---------------------------------------------------------
+The system' "response time" may not increase with increasing numbers of users or events, Therefsore the CALENDAR should support a growing user base. Performance should be as close to constant  as possible. This design goal is a refinement of the nonfunctional requirement “Performance”.
+%---------------------------------------------------------
+\item \textit{High extensibility}
+%---------------------------------------------------------
+It should be possible to extend key sectors of the system. Thus a feature in addition to notifications should be addable without having
+to alter the code nessesary for the notification task etc. to work. This design goal is a refinement of the nonfunctional requirement “Supportability”.
+%---------------------------------------------------------
+\item \textit{High portability}
+%---------------------------------------------------------
+To maximize the availability of CALENDAR it has to be availablee on as many of the users platforms as possible. This design goal is a refinement of the nonfunctional requirement “Implementation”.
+%---------------------------------------------------------
+\end{itemize}

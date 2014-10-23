@@ -33,11 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.Entity" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -50,10 +55,18 @@
     <Compile Include="UnitTestOfLinQ.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Assignment40_PartIII\Assignment40_PartIII\Assignment40_PartIII.csproj">
+      <Project>{95C4DAC9-E638-42EF-8522-88334B05FBBB}</Project>
+      <Name>Assignment40_PartIII</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Assignment40_PartII\Assignment40_PartII\Assignment40_PartII.csproj">
       <Project>{BD9B0B8F-CF98-401A-A06F-3E8787EA2A5E}</Project>
       <Name>Assignment40_PartII</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

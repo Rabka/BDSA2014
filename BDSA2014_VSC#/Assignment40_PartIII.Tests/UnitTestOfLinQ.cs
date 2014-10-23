@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Assignment40_PartIII.Model;
 
 namespace Assignment40_PartIII.Tests
 {
@@ -11,30 +11,48 @@ namespace Assignment40_PartIII.Tests
     [TestClass]
     public class UnitTestOfLinQ
     {
+
+        Respiratory respiratory;
+        private NORTHWNDEntities1 db;
+
+        /// <summary>
+        /// Sets up the Database
+        /// </summary>
+        [TestInitialize]
+        public void SetUp()
+        {
+            db = new NORTHWNDEntities1();
+            respiratory = new Respiratory(db);
+        }
+
+        /// <summary>
+        /// Closing connetion to the Database
+        /// </summary>
+        [TestCleanup]
+        public void Cleanup()
+        {
+            db.Dispose();
+        }
+
 //        /// <summary>
 //        /// Tests the linq for making new order IDs, by adding and testing 5 new orders.
 //        /// </summary>
 //        [TestMethod]
 //        public void TestOrderIdPlus1()
 //        {
-//            Respiratory respiratory = new Respiratory(new Product[0], new Category[0], new Order[0], new OrderDetails[0]);
+//            int nOrder = respiratory.Orders().Length;
 //
 //            for (int i = 0; i < 10; i++)
 //            {
-//                Order order = new Order(0,
-//                                    null, null,
-//                                    DateTime.Parse("1996-07-08 00:00:00"),
-//                                    DateTime.Parse("1996-07-08 00:00:00"),
-//                                    DateTime.Parse("1996-07-08 00:00:00"),
-//                                    1, 2d,
-//                                    "name", "address", "city", "region", "pcode", "country");
+//                Orders order = new Orders();
+//                order.OrderID = 0;
 //
 //                respiratory.CreateOrder(order);
 //
-//                Assert.AreEqual(i+1, order.OrderID);
+//                Assert.AreEqual(i + nOrder, order.OrderID);
 //            }
 //        }
-//
+
 //        /// <summary>
 //        /// Tests the linq for finding the first 5 products, by hvaing 6 test products and only finding the first 5.
 //        /// </summary>

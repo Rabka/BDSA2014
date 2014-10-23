@@ -1,0 +1,8 @@
+Date	Version Author		Item		Description
+17-09	0.2	Pebj, Smot	Use Cases model	Added more Use Cases
+24-09   0.2	Pebj		Use Cases	To be more descriptive
+24-09	0.2	Smot		Scenarios	Chanse name of server to websevis
+25-09	0.2	Smot		Object Model	Chanse name of server to websevis
+26-09	0.3	Smot		Use Cases	To use more corect terms
+02-10	0.2	Smot		Initial	A.O.	Chanse name of server to websevis
+02-10	0.3	Pebj		Use Cases model	Added Synchronization and validation

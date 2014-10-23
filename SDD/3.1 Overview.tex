@@ -1,0 +1,23 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\textbf{Architectual style}
+
+\textbf{Why have we chosen the client/server architecture?}\\
+We have chosen the client/server architecture style because we need to have constantly running services to notify a user when an event comes up etc. This architecture fits this scenario because it is possible to have that running on a server constantly, but not on a client which can't be expected to have the program open constantly.\\
+Another reason is that we can have a database and have code that a client won't be able to see or manipulate, thus allowing us to prevent a user to harm the system and its other users. \\
+Additional explanations is given by the benefits below that we have deemed more interesting than the drawbacks.\\
+
+\textbf{Benefits:}
+A server will be able to handle security manners in a way, so that the client won't be able to harm the system and its other clients. For example, accesing a
+database won't need the client to hold a database connectionstring that could be sniffed/hacked out of the program. Also, because of
+this architure, code execution like database manipulation can be more centrallized rather than being executed from each client or different services etc. and in that sense, a server can also function as a respiratory architure.\\
+Another benefit is that by having a server handling the database etc. it can be minimized what the client needs to send and receive, thereby possibly increasing performance for a client with bad network connection.\\
+
+\textbf{Drawbacks:}
+Each service in the system runs on its own and is therefore susceptible to either being attacked individually or breaking down.
+If the services is dependent on some state of another service and that one break down, it could possibly corrupt the system.\\
+Another drawback is with performance which will strongly rely on the client-server connection speed. If a massive amount of data was
+to be transmitted regurally with a bad connection, it could harm the performance potentially.\\
+
+\end{document}
