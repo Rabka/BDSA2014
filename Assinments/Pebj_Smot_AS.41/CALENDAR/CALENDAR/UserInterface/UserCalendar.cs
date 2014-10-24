@@ -15,5 +15,21 @@ namespace CALENDAR.UserInterface
         {
             InitializeComponent();
         }
+        public void LogOff()
+        {
+            throw new NotImplementedException();
+        }
+        public void GoBackToUserAccounts()
+        {
+            throw new NotImplementedException();
+        }
+        public void GoToEventPage()
+        {
+            throw new NotImplementedException();
+        }
+        public void UpdateEventAtEventPage()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

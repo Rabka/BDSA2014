@@ -6,14 +6,30 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using CALENDAR.EventManagement;
 namespace CALENDAR.UserInterface
 {
-    public partial class EventPage : Form
+    partial class EventPage : Form
     {
         public EventPage()
         {
             InitializeComponent();
+        }
+        public void UpdateEvent(IEvent @event)
+        {
+            throw new NotImplementedException();
+        }
+        public void CreateEvent(IEvent @event)
+        {
+            throw new NotImplementedException();
+        }
+        public void GoBackToCalendar()
+        {
+            throw new NotImplementedException();
+        }
+        public void GoBackToCalendars()
+        {
+            throw new NotImplementedException();
         }
     }
 }

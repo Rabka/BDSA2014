@@ -15,5 +15,13 @@ namespace CALENDAR.UserInterface
         {
             InitializeComponent();
         }
+        public void updateInfo(string password, string email)
+        {
+            throw new NotImplementedException();
+        }
+        public void deleteMyAccount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
