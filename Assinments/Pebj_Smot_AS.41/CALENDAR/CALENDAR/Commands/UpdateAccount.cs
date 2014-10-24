@@ -10,9 +10,11 @@ namespace CALENDAR.Commands
         public Account accountSnapshot;
         public void Execute()
         {
+            throw new NotImplementedException();
         }
         public void Undo()
         {
+            throw new NotImplementedException();
         }
     }
 }

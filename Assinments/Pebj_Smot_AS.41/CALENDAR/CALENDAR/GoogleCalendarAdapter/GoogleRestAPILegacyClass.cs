@@ -9,7 +9,7 @@ namespace CALENDAR.GoogleCalendarAdapter
     {
         public GoogleRestAPIEvent[] list(string syncToken)
         {
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace CALENDAR.EventManagement
         DateTime DateFrom { get; }
         DateTime DateTo { get; }
         string Description { get; }
-        Account[] OwnedByAccounts { get; }
+        Account OwnedByAccount { get; }
         Account[] SharedWithAccounts { get; }
         INotification[] Notifications { get; }
 

@@ -15,15 +15,16 @@ namespace CALENDAR.AccountManagement
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <param name="email"></param>
-        public Account(string id, string name, string username, string password, string email)
+        public Account(string name, string username, string password, string email, bool isModerator)
         {
-            Id = id;
             Name = name;
             Username = username;
             Password = password;
             Email = email;
+            IsModerator = isModerator;
         }
-        public string Id { get; private set; }
+        public readonly bool IsModerator;
+        public string TableID { get; set; }
         public string Name { get; private set; }
         public string Username { get; private set; }
         public string Password { get; private set; }

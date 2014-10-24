@@ -9,15 +9,10 @@ namespace CALENDAR.GoogleCalendarAdapter
     {
         private GoogleRestAPILegacyClass adaptee;
         private string syncToken = "";
-        private Storage.Storage storage;
-        public EventAdapter(Storage.Storage storage)
-        {
-            this.storage = storage;
-        }
-        public EventManagement.EventComponent[] List()
+        public EventManagement.EventComponent[] List(Season season)
         {
             //adaptee.list(syncToken);
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,39 +12,53 @@ namespace CALENDAR.Storage
         {
 
         }
-        public void AddAccount(DBObject newAccount)
+        public void AddAccount(Account newAccount)
         {
+            throw new NotImplementedException();
         }
-        public void RemoveAccount(DBObject account)
+        public void RemoveAccount(Account account)
         {
+            throw new NotImplementedException();
         }
-        public void UpdateAccount(DBObject account)
+        public void UpdateAccount(Account account)
         {
+            throw new NotImplementedException();
         }
-        public Account GetAccount(int itemIndex)
+        public Account[] GetAccounts(int from, int to)
         {
-            return null;
+            throw new NotImplementedException();
+        }
+        public Account GetAccount(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+        public Account GetAccount(string tableID)
+        {
+            throw new NotImplementedException();
         }
         public int GetAccountsCount()
         {
-            return 0;
+            throw new NotImplementedException();
         }
-        public void AddEvent(DBObject newAccount)
+        public void AddEvent(EventLeaf newEvent)
         {
+            throw new NotImplementedException();
         }
-        public void RemoveEvent(DBObject account)
+        public void RemoveEvent(EventLeaf @event)
         {
+            throw new NotImplementedException();
         }
-        public void UpdateEvent(DBObject account)
+        public void UpdateEvent(EventLeaf @event)
         {
+            throw new NotImplementedException();
         }
-        public EventLeaf GetEvent(int itemIndex)
+        public EventComponent GetEvent(string tableID)
         {
-            return null;
+            throw new NotImplementedException();
         }
-        public int GetEventsCount()
+        public EventComponent[] GetEvents(DateTime from, DateTime to)
         {
-            return 0;
+            throw new NotImplementedException();
         }
     }
 }

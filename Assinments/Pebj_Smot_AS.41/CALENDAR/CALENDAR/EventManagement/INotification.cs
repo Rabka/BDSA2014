@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CALENDAR.EventManagement
 {
-    public interface INotification
+    public interface INotification 
     {
         DateTime Date { get; }
         bool HasBeenProccesed { get; set; }

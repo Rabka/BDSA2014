@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CALENDAR.Storage;
 
 namespace CALENDAR.AccountManagement
 {
-    interface IAccount
+    interface IAccount : DBObject
     {
-        string Id { get; }
         string Name { get; }
         string Username { get; }
         string Password { get; }

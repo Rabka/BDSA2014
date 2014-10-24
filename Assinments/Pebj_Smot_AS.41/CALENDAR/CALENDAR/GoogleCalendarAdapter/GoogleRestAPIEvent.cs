@@ -5,6 +5,9 @@ using System.Text;
 
 namespace CALENDAR.GoogleCalendarAdapter
 {
+    /**
+     * This class reflects the event structure of an event from GoogleRestAPILegacy
+     **/
     class GoogleRestAPIEvent
     {
     }

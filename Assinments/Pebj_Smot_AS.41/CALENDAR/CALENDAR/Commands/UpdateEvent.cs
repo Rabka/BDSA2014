@@ -11,9 +11,11 @@ namespace CALENDAR.Commands
         public EventLeaf eventLeafSnapshot;
         public void Execute()
         {
+            throw new NotImplementedException();
         }
         public void Undo()
         {
+            throw new NotImplementedException();
         }
     }
 }
