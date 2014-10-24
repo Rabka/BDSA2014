@@ -13,8 +13,8 @@ namespace CALENDAR.Storage
          void RemoveAccount(Account account);
          void UpdateAccount(Account account);
          Account[] GetAccounts(int from,int to);
-         Account GetAccount(string username,string password);
-         Account GetAccount(string tableID);
+         Account GetAccountByUsername(string username);
+         Account GetAccountByTableID(string tableID);
          int GetAccountsCount();
          void AddEvent(EventLeaf newEvent);
          void RemoveEvent(EventLeaf @event);

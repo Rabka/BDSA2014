@@ -14,23 +14,27 @@ namespace CALENDAR.Synchronization
         {
             throw new NotImplementedException();
         }
-        public void AddAccount(DBObject newAccount)
+        public void AddAccount(Account newAccount)
         {
             throw new NotImplementedException();
         }
-        public void RemoveAccount(DBObject account)
+        public void RemoveAccount(Account account)
         {
             throw new NotImplementedException();
         }
-        public void UpdateAccount(DBObject account)
+        public void UpdateAccount(Account account)
         {
             throw new NotImplementedException();
         }
-        public Account GetAccount(int itemIndex)
+        public Account[] GetAccounts(int from, int to)
         {
             throw new NotImplementedException();
         }
-        public Account GetAccount(string username)
+        public Account GetAccountByUsername(string username)
+        {
+            throw new NotImplementedException();
+        }
+        public Account GetAccountByTableID(string tableID)
         {
             throw new NotImplementedException();
         }
@@ -38,23 +42,19 @@ namespace CALENDAR.Synchronization
         {
             throw new NotImplementedException();
         }
-        public void AddEvent(DBObject newAccount)
+        public void AddEvent(EventLeaf newEvent)
         {
             throw new NotImplementedException();
         }
-        public void RemoveEvent(DBObject account)
+        public void RemoveEvent(EventLeaf @event)
         {
             throw new NotImplementedException();
         }
-        public void UpdateEvent(DBObject account)
+        public void UpdateEvent(EventLeaf @event)
         {
             throw new NotImplementedException();
         }
-        public EventComponent GetEvent(int itemIndex)
-        {
-            throw new NotImplementedException();
-        }
-        public int GetEventsCount()
+        public EventComponent GetEvent(string tableID)
         {
             throw new NotImplementedException();
         }

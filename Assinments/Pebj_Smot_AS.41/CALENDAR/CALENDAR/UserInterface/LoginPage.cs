@@ -15,5 +15,16 @@ namespace CALENDAR.UserInterface
         {
             InitializeComponent();
         }
+       void GoToCreateAccount()
+        {
+            throw new NotImplementedException();
+       }
+       bool LoginAttempt(){
+           throw new NotImplementedException();
+       }
+       void GoToCalendarPage()
+       {
+           throw new NotImplementedException();
+       }
     }
 }

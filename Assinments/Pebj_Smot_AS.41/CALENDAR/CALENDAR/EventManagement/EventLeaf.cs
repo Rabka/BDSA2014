@@ -10,9 +10,8 @@ namespace CALENDAR.EventManagement
 {
     class EventLeaf : EventComponent, IEvent
     {
-        public EventLeaf(INotification[] notifications, Account[] sharedWithAccounts, Account ownedByAccount, string description, DateTime dateTo, DateTime dateFrom, string id)
+        public EventLeaf(INotification[] notifications, Account[] sharedWithAccounts, Account ownedByAccount, string description, DateTime dateTo, DateTime dateFrom)
         {
-            Id = id;
             DateFrom = dateFrom;
             DateTo = dateTo;
             Description = description;
@@ -36,9 +35,15 @@ namespace CALENDAR.EventManagement
         {
             throw new NotImplementedException();
         }
-        private string tableID;
-        public string TableID { get { return tableID; } set { tableID = value; } } 
-        public string Id { get; private set; }
+        public void AddNotification(Notification notification)
+        {
+            throw new NotImplementedException();
+        }
+        public void DeleteNotification(Notification notification)
+        {
+            throw new NotImplementedException();
+        }
+        public int TableID { get; set;} 
         public DateTime DateFrom { get; private set; }
         public DateTime DateTo { get; private set; }
         public string Description { get; private set; }

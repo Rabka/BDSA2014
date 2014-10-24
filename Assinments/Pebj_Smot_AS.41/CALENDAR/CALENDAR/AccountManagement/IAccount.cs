@@ -10,7 +10,6 @@ namespace CALENDAR.AccountManagement
     {
         string Name { get; }
         string Username { get; }
-        string Password { get; }
         string Email { get; }
     }
 }

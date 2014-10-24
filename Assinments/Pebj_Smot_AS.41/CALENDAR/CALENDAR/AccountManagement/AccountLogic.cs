@@ -24,8 +24,8 @@ namespace CALENDAR.AccountManagement
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
-        /// <returns>SeasonID string</returns>
-        public string TryLogin(Season season, string username, string password)
+        /// <returns>return true if success</returns>
+        public bool TryLogin(Season season, string username, string password)
         {
             throw new NotImplementedException();
         }

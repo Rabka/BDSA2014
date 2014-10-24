@@ -63,8 +63,8 @@
 + DateFrom { get; private set; } : DateTime
 + DateTo { get; private set; } : DateTime
 + Description { get; private set; } : string
-+ OwnedByAccounts { get; private set; } : Account[]
-+ SharedWithAccounts { get; private set; } : Account[]
++ OwnedByAccounts { get; private set; } : IAccount[]
++ SharedWithAccounts { get; private set; } : IAccount[]
 + Notifications { get; private set; } : INotification[]</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
@@ -74,7 +74,7 @@
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="100.0" width="222.91666666666697" x="1054.5212020730537" y="-227.66165527826314"/>
+              <y:Geometry height="100.0" width="222.91666666666697" x="1054.5212020730537" y="-214.77752777272167"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="79.10546875" x="71.90559895833348" y="26.701171875">INotification<y:LabelModel>
@@ -111,8 +111,8 @@
                 <y:MethodLabel>+ DateFrom { get; private set; } : DateTime
 + DateTo { get; private set; } : DateTime
 + Description { get; private set; } : string
-+ OwnedByAccount { get; private set; } : Account
-+ SharedWithAccounts { get; private set; } : Account[]
++ OwnedByAccount { get; private set; } : IAccount
++ SharedWithAccounts { get; private set; } : IAccount[]
 + Notifications { get; private set; } : INotification[]
 + Add(EventLogic eventLogic);
 + Update(EventLogic eventLogic);
@@ -149,7 +149,7 @@
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="133.75450881273326" width="319.99999999999966" x="336.212868739721" y="-276.54577469446076"/>
+              <y:Geometry height="139.41359990045265" width="319.99999999999966" x="336.212868739721" y="-276.54577469446076"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="113.8017578125" x="103.09912109374983" y="3.0">EventsComposite<y:LabelModel>
@@ -160,9 +160,9 @@
                 </y:ModelParameter>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-                <y:AttributeLabel>+ TableID { get; set; } : string</y:AttributeLabel>
-                <y:MethodLabel>+ EventsComposite(EventComponent[] eventComponents)
-+ Add(EventLogic eventLogic);
+                <y:AttributeLabel>+ TableID { get; set; } : string
++ EventComponent[] eventComponents</y:AttributeLabel>
+                <y:MethodLabel>+ Add(EventLogic eventLogic);
 + Update(EventLogic eventLogic);
 + Delete(EventLogic eventLogic);
 + Draw();</y:MethodLabel>
@@ -209,7 +209,7 @@
               <y:Shape type="roundrectangle"/>
               <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
               <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
-              <y:BorderInsets bottom="18" bottomF="18.126353018844384" left="0" leftF="0.0" right="80" rightF="80.3496293111209" top="0" topF="0.0"/>
+              <y:BorderInsets bottom="25" bottomF="24.863568212174073" left="0" leftF="0.0" right="80" rightF="80.3496293111209" top="0" topF="0.0"/>
             </y:GroupNode>
             <y:GroupNode>
               <y:Geometry height="50.0" width="50.0" x="0.0" y="60.0"/>
@@ -264,13 +264,11 @@
                 </y:ModelParameter>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-                <y:AttributeLabel/>
-                <y:MethodLabel>+ Account(string id, string name, string username, string password, string email)
-+ Id { get; private set; } : String
+                <y:AttributeLabel>+ TableID { get; private set; } : String
 + Name { get; private set; } : String
 + Username { get; private set; } : String
-+ Password { get; private set; } : String
-+ Email { get; private set; } : String</y:MethodLabel>
++ Email { get; private set; } : String</y:AttributeLabel>
+                <y:MethodLabel>+ Account(string id, string name, string username, string password, string email)</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -279,10 +277,10 @@
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="133.3934651933297" width="403.46421061801243" x="589.8999594885942" y="-762.4740401722596"/>
+              <y:Geometry height="126.65625" width="434.3000000000002" x="589.8999594885942" y="-762.4740401722596"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="90.66455078125" x="156.39982991838122" y="3.0">AccountLogic<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="90.66455078125" x="171.8177246093751" y="3.0">AccountLogic<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -291,12 +289,11 @@
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel>+ AccountLogic(Storage.Storage storage)
-+ TryCreateAccount(string username, string password, string email) :  bool
+                <y:MethodLabel>+ TryCreateAccount(string username, string password, string email) :  bool
 + TryLogin(string username, string password) :  string
-+ RemoveAccount(Account account)
-+ GetCurrentAccount() :  Account
-+ ListAccounts(int from,int maxAmount) :  Account[]</y:MethodLabel>
++ RemoveAccount(IAccount account)
++ GetCurrentAccount() :  IAccount
++ ListAccounts(int from,int maxAmount) :  IAccount[]</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -309,14 +306,14 @@
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="392.7338030427642" width="1112.8156994865599" x="-877.7790242257104" y="-1110.3660686532253"/>
+              <y:Geometry height="697.0623047988789" width="1221.7585998646327" x="-1027.7338157588354" y="-1371.1457177760321"/>
               <y:Fill color="#F5F5F5" transparent="false"/>
               <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
-              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="1112.8156994865599" x="0.0" y="0.0">UserInterface (MVC)</y:NodeLabel>
+              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="1221.7585998646327" x="0.0" y="0.0">UserInterface (MVC)</y:NodeLabel>
               <y:Shape type="roundrectangle"/>
               <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
               <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
-              <y:BorderInsets bottom="13" bottomF="13.18161646792828" left="1" leftF="1.1893626272358233" right="14" rightF="14.30385420359994" top="5" topF="4.807638594761556"/>
+              <y:BorderInsets bottom="0" bottomF="0.0" left="1" leftF="0.5864505720282978" right="4" rightF="4.354342105262958" top="0" topF="0.1488056554474042"/>
             </y:GroupNode>
             <y:GroupNode>
               <y:Geometry height="50.0" width="50.0" x="0.0" y="60.0"/>
@@ -336,7 +333,7 @@
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="50.10582456140355" width="206.38428070175434" x="-861.5896615984745" y="-1068.1819652147133"/>
+              <y:Geometry height="50.10582456140355" width="206.38428070175434" x="-1011.5444531315995" y="-1068.1819652147133"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="128.24267578125" x="39.07080246025217" y="3.0">&lt;&lt;View&gt;&gt;
@@ -358,10 +355,10 @@ LoginPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="92.9358596491229" width="181.70964912280692" x="-182.0908591204978" y="-946.5156364643544"/>
+              <y:Geometry height="100.0" width="247.76420285217404" x="-365.0729275183064" y="-965.047706639793"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="42.61532260827846" y="3.0">&lt;&lt;Controller&gt;&gt;
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="75.64259947296202" y="3.0">&lt;&lt;Controller&gt;&gt;
 AccountPage<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
@@ -371,7 +368,8 @@ AccountPage<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel/>
+                <y:MethodLabel>-updateInfo(string password, string email)
+-deleteMyAccount()</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -380,10 +378,10 @@ AccountPage<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="92.9358596491229" width="181.70964912280692" x="24.023171934442615" y="-946.5156364643544"/>
+              <y:Geometry height="131.89602661132858" width="261.97916666666674" x="-87.30872466613235" y="-967.9965316273381"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="42.61532260827846" y="3.0">&lt;&lt;Controller&gt;&gt;
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="82.75008138020837" y="3.0">&lt;&lt;Controller&gt;&gt;
 EventPage<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
@@ -393,7 +391,10 @@ EventPage<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel/>
+                <y:MethodLabel>-UpdateEvent(IEvent @event)
+-CreateEvent(IEvent @event)
+-GoBackToCalendar()
+-GoBackToCalendars()</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -402,7 +403,7 @@ EventPage<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="28.0" width="100.0" x="-808.3975212475973" y="-782.019272626276"/>
+              <y:Geometry height="28.0" width="100.0" x="-958.3523127807223" y="-782.019272626276"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="57.4599609375" x="21.27001953125" y="3.0">Program<y:LabelModel>
@@ -424,10 +425,10 @@ EventPage<y:LabelModel>
           <data key="d5"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="92.93585964912279" width="154.8777408748843" x="-835.8363916850394" y="-946.5156364643542"/>
+              <y:Geometry height="113.66007017543859" width="156.083564985299" x="-985.7911832181644" y="-967.23984699067"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="29.199368484317148" y="3.0">&lt;&lt;Controller&gt;&gt;
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="29.802280539524503" y="3.0">&lt;&lt;Controller&gt;&gt;
 LoginPage<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
@@ -437,7 +438,9 @@ LoginPage<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel/>
+                <y:MethodLabel>-GoToCreateAccount()
+-LoginAttempt() : bool
+-GoToCalendarPage()</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -447,10 +450,10 @@ LoginPage<y:LabelModel>
           <data key="d5"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="92.93585964912279" width="154.8777408748843" x="-605.5775986853646" y="-838.7497417275122"/>
+              <y:Geometry height="92.93585964912279" width="401.34599406782104" x="-592.6588903152099" y="-782.019272626276"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="127.5380859375" x="13.669827468692148" y="3.0">&lt;&lt;Controller&gt;&gt;
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="127.5380859375" x="136.90395406516052" y="3.0">&lt;&lt;Controller&gt;&gt;
 CreateAccountPage<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
@@ -460,7 +463,8 @@ CreateAccountPage<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel/>
+                <y:MethodLabel>-TryCreateAccount(string username,string password, string email) : bool
+-GoToLogin()</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -469,7 +473,7 @@ CreateAccountPage<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="50.10582456140355" width="206.38428070175434" x="-631.3308685987996" y="-1068.1819652147133"/>
+              <y:Geometry height="50.10582456140355" width="206.38428070175434" x="-781.2856601319246" y="-1068.1819652147133"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="185.33349609375" x="10.525392304002168" y="3.0">&lt;&lt;View&gt;&gt;
@@ -492,10 +496,10 @@ CreateAccountPage.designer<y:LabelModel>
           <data key="d5"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="92.93585964912302" width="156.08356498529906" x="-387.72916389615796" y="-946.5156364643544"/>
+              <y:Geometry height="122.9358596491229" width="181.23392284352673" x="-583.0650075540735" y="-976.5156364643544"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="29.80228053952453" y="3.0">&lt;&lt;Controller&gt;&gt;
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="42.377459468638364" y="3.0">&lt;&lt;Controller&gt;&gt;
 CalendarPage<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
@@ -505,7 +509,10 @@ CalendarPage<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel/>
+                <y:MethodLabel>-GoToAccountPage()
+-LogOff()
+-GoToEventPage()
+-UpdateEventAtEventPage()</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -515,7 +522,7 @@ CalendarPage<y:LabelModel>
           <data key="d5"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="50.10582456140378" width="206.38428070175434" x="-412.87952175438556" y="-1068.1819652147137"/>
+              <y:Geometry height="50.10582456140378" width="206.38428070175434" x="-562.8343132875106" y="-1068.1819652147137"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="148.498046875" x="28.943116913377168" y="3.0">&lt;&lt;View&gt;&gt;
@@ -538,7 +545,7 @@ CalendarPage.designer<y:LabelModel>
           <data key="d5"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="50.10582456140378" width="206.38428070175434" x="-194.42817490997152" y="-1068.1819652147137"/>
+              <y:Geometry height="50.10582456140378" width="206.38428070175434" x="-344.3829664430965" y="-1068.1819652147137"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="144.8671875" x="30.758546600877168" y="3.0">AccountPage.designer<y:LabelModel>
@@ -560,7 +567,7 @@ CalendarPage.designer<y:LabelModel>
           <data key="d5"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="50.10582456140423" width="181.70964912280692" x="24.023171934442644" y="-1068.1819652147137"/>
+              <y:Geometry height="50.10582456140423" width="181.70964912280692" x="-125.93161959868237" y="-1068.1819652147137"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="128.26806640625" x="26.72079135827846" y="3.0">&lt;&lt;View&gt;&gt;
@@ -578,6 +585,100 @@ EventPage.designer<y:LabelModel>
             </y:UMLClassNode>
           </data>
         </node>
+        <node id="n2::n11">
+          <data key="d4"/>
+          <data key="d6">
+            <y:UMLClassNode>
+              <y:Geometry height="50.10582456140355" width="206.38428070175434" x="-1012.1473651868071" y="-1333.6204472768347"/>
+              <y:Fill color="#FFCC00" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="153.5634765625" x="26.410402069627168" y="3.0">&lt;&lt;View&gt;&gt;
+UserCalendars.designer<y:LabelModel>
+                  <y:SmartNodeLabelModel distance="4.0"/>
+                </y:LabelModel>
+                <y:ModelParameter>
+                  <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.03703090122767855" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+                </y:ModelParameter>
+              </y:NodeLabel>
+              <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+                <y:AttributeLabel/>
+                <y:MethodLabel/>
+              </y:UML>
+            </y:UMLClassNode>
+          </data>
+        </node>
+        <node id="n2::n12">
+          <data key="d4"/>
+          <data key="d5"/>
+          <data key="d6">
+            <y:UMLClassNode>
+              <y:Geometry height="138.14602661132847" width="168.17268779231648" x="-986.3940952733719" y="-1232.6783290527915"/>
+              <y:Fill color="#FFCC00" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="35.84684194303324" y="3.0">&lt;&lt;Controller&gt;&gt;
+UserCalenars<y:LabelModel>
+                  <y:SmartNodeLabelModel distance="4.0"/>
+                </y:LabelModel>
+                <y:ModelParameter>
+                  <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.03703090122767855" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+                </y:ModelParameter>
+              </y:NodeLabel>
+              <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+                <y:AttributeLabel/>
+                <y:MethodLabel>-LogOff()
+-GoBackToUserAccounts()
+-GoToEventPage()
+-UpdateEventAtEventPage()</y:MethodLabel>
+              </y:UML>
+            </y:UMLClassNode>
+          </data>
+        </node>
+        <node id="n2::n13">
+          <data key="d4"/>
+          <data key="d6">
+            <y:UMLClassNode>
+              <y:Geometry height="50.10582456140355" width="206.38428070175434" x="-775.7630844850528" y="-1333.6204472768347"/>
+              <y:Fill color="#FFCC00" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="149.9326171875" x="28.225831757127168" y="3.0">&lt;&lt;View&gt;&gt;
+UserAccounts.designer<y:LabelModel>
+                  <y:SmartNodeLabelModel distance="4.0"/>
+                </y:LabelModel>
+                <y:ModelParameter>
+                  <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.03703090122767855" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+                </y:ModelParameter>
+              </y:NodeLabel>
+              <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+                <y:AttributeLabel/>
+                <y:MethodLabel/>
+              </y:UML>
+            </y:UMLClassNode>
+          </data>
+        </node>
+        <node id="n2::n14">
+          <data key="d4"/>
+          <data key="d5"/>
+          <data key="d6">
+            <y:UMLClassNode>
+              <y:Geometry height="99.99999999999989" width="215.84356687161466" x="-750.0098145716177" y="-1213.605315747127"/>
+              <y:Fill color="#FFCC00" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="96.47900390625" x="59.68228148268233" y="3.0">&lt;&lt;Controller&gt;&gt;
+UserAccounts<y:LabelModel>
+                  <y:SmartNodeLabelModel distance="4.0"/>
+                </y:LabelModel>
+                <y:ModelParameter>
+                  <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.03703090122767855" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+                </y:ModelParameter>
+              </y:NodeLabel>
+              <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
+                <y:AttributeLabel/>
+                <y:MethodLabel>-OpenUserCalendar(IAccount account)
+-LogOff()</y:MethodLabel>
+              </y:UML>
+            </y:UMLClassNode>
+          </data>
+        </node>
       </graph>
     </node>
     <node id="n3" yfiles.foldertype="group">
@@ -586,7 +687,7 @@ EventPage.designer<y:LabelModel>
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="419.39126458461965" width="822.8623826423191" x="888.6204310906335" y="-1.852298429107691"/>
+              <y:Geometry height="419.39126458461965" width="822.8623826423191" x="1357.9781609662796" y="-459.5037269711686"/>
               <y:Fill color="#F5F5F5" transparent="false"/>
               <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
               <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="822.8623826423191" x="0.0" y="0.0">EventManagement</y:NodeLabel>
@@ -613,7 +714,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="126.65625" width="270.953125" x="1107.3860560906335" y="35.52416641464231"/>
+              <y:Geometry height="126.65625" width="270.953125" x="1576.7437859662796" y="-422.1272621274186"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="88.51904296875" x="91.217041015625" y="3.0">EventAdapter<y:LabelModel>
@@ -636,7 +737,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="85.3125" width="162.5" x="903.6204310906335" y="76.86791641464231"/>
+              <y:Geometry height="85.3125" width="162.5" x="1372.9781609662796" y="-380.7835121274186"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="79.12451171875" x="41.687744140625" y="26.701171875">IEventClient<y:LabelModel>
@@ -657,7 +758,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="56.65625" width="261.97916666666674" x="1434.5036470662858" y="105.52416641464231"/>
+              <y:Geometry height="56.65625" width="261.97916666666674" x="1903.8613769419321" y="-352.1272621274186"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="178.1162109375" x="41.93147786458337" y="3.0">GoogleRestAPILegacyClass<y:LabelModel>
@@ -678,7 +779,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="28.0" width="160.625" x="1485.1807303996193" y="47.52416641464231"/>
+              <y:Geometry height="28.0" width="160.625" x="1954.5384602752656" y="-410.1272621274186"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="134.025390625" x="13.2998046875" y="3.0">GoogleRestAPIEvent<y:LabelModel>
@@ -699,7 +800,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="168.75" width="723.5398801043474" x="903.6204310906335" y="212.85229141464237"/>
+              <y:Geometry height="168.75" width="723.5398801043474" x="1372.9781609662796" y="-244.79913712741853"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="74.0654296875" x="324.7372252084237" y="3.0">EventLogic<y:LabelModel>
@@ -734,14 +835,14 @@ EventPage.designer<y:LabelModel>
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="1488.357681941171" width="714.395062350913" x="133.80530638880805" y="-1.852298429107691"/>
+              <y:Geometry height="1367.8414538709958" width="1569.8904728772288" x="133.80530638880805" y="-2.227298429107691"/>
               <y:Fill color="#F5F5F5" transparent="false"/>
               <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
-              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="714.395062350913" x="0.0" y="0.0">Storage</y:NodeLabel>
+              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="1569.8904728772288" x="0.0" y="0.0">Storage</y:NodeLabel>
               <y:Shape type="roundrectangle"/>
               <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
               <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
-              <y:BorderInsets bottom="2" bottomF="2.142467959694841" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+              <y:BorderInsets bottom="7" bottomF="7.2793776148582765" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
             </y:GroupNode>
             <y:GroupNode>
               <y:Geometry height="50.0" width="83.0" x="316.43876347656254" y="239.78353150654016"/>
@@ -761,10 +862,10 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="222.61162540521764" width="213.5999999999998" x="389.4128687397208" y="721.1501512270746"/>
+              <y:Geometry height="222.61162540521764" width="513.1339228070173" x="661.3145108449839" y="601.6012384712044"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="55.2763671875" x="79.1618164062499" y="3.0">FileStub<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="55.2763671875" x="228.92877780975863" y="3.0">FileStub<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -773,18 +874,18 @@ EventPage.designer<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel>+ AddAccount(DBObject newAccount);
-+ RemoveAccount(DBObject account);
-+ UpdateAccount(DBObject account);
-+ Account GetAccount(int itemIndex);
-+ Account GetAccount(string username);
-+ int GetAccountsCount();
-+ AddEvent(DBObject newAccount);
-+ RemoveEvent(DBObject account);
-+ UpdateEvent(DBObject account);
-+ EventComponent GetEvent(int itemIndex);
-+ EventComponent[] GetEvents(DateTime from, DateTime to);
-+ int GetEventsCount();</y:MethodLabel>
+                <y:MethodLabel>+ AddAccount(OnlineSeason season, Account newAccount)
++ RemoveAccount(OnlineSeason season, Account account)
++ UpdateAccount(OnlineSeason season, Account account)
++ GetAccounts(OnlineSeason season, int from,int to) : Account[]
++ GetAccountByUsername(OnlineSeason season, string username) : Account
++ GetAccountByTableID(OnlineSeason season, string tableID) : Account
++ GetAccountsCount(OnlineSeason season) : int
++ AddEvent(OnlineSeason season, EventLeaf newEvent)
++ RemoveEvent(OnlineSeason season, EventLeaf @event)
++ UpdateEvent(OnlineSeason season, EventLeaf @event)
++ GetEvent(OnlineSeason season, string tableID) : EventComponent
++ EventComponent[] GetEvents(OnlineSeason season, DateTime from, DateTime to)</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -793,7 +894,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="63.9375" width="325.0" x="340.117599783199" y="1405.4254155523686"/>
+              <y:Geometry height="63.9375" width="325.0" x="340.117599783199" y="1279.39727782703"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="123.90087890625" x="100.549560546875" y="3.0">RefinedAbstraction<y:LabelModel>
@@ -814,7 +915,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="89.66071672069552" width="256.25" x="351.5066187397207" y="612.1643981873611"/>
+              <y:Geometry height="89.66071672069552" width="256.25" x="351.5066187397207" y="470.5489595908699"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="100.078125" x="78.0859375" y="3.0">DBTypeFactory<y:LabelModel>
@@ -837,10 +938,10 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="284.8992764104348" width="368.4375" x="295.4128687397207" y="309.6793154988642"/>
+              <y:Geometry height="186.28640673614694" width="369.7047310434783" x="295.4128687397207" y="233.8991664146423"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="50.24267578125" x="159.097412109375" y="3.0">Season<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="50.24267578125" x="159.73102763111416" y="3.0">Season<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -848,21 +949,14 @@ EventPage.designer<y:LabelModel>
                 </y:ModelParameter>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-                <y:AttributeLabel>+ changeCommands : List&lt;IChangeCommand&gt;
+                <y:AttributeLabel>- changeCommands : List&lt;IChangeCommand&gt;
 + onlineContext : OnlineContext</y:AttributeLabel>
-                <y:MethodLabel>+ AddAccount(Account newAccount);
-+ RemoveAccount(Account account);
-+ UpdateAccount(Account account);
-+ GetAccounts(int from,int to) : Account[]
-+ GetAccount(string username,string password) : Account
-+ GetAccount(string tableID) : Account
-+ GetAccountsCount() : int
-+ AddEvent(EventLeaf newEvent)
-+ RemoveEvent(EventLeaf @event)
-+ UpdateEvent(EventLeaf @event)
-+ GetAccount(string tableID) : Account
-+ GetEvent(string tableID) : EventComponent
-+ GetEvents(DateTime from, DateTime to): EventComponent[]</y:MethodLabel>
+                <y:MethodLabel>+ AddChangeCommand(IChangeCommand command)
++ UndoLastChangeCommand()
++ UndoAllChangeCommands()
++ SyncChangeCommands()
++ currentAccount {get;set;} : IAccount
++ OnlineContext OnlineContext { get;   }</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -871,10 +965,10 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="221.4942832828217" width="213.59999999999985" x="159.2253687397207" y="722.2674933494703"/>
+              <y:Geometry height="221.49428328282193" width="489.9228070175435" x="159.2253687397207" y="602.7185805936001"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="59.61181640625" x="76.99409179687493" y="3.0">TestStub<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="59.61181640625" x="215.15549530564675" y="3.0">TestStub<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -883,18 +977,18 @@ EventPage.designer<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel>+ AddAccount(DBObject newAccount);
-+ RemoveAccount(DBObject account);
-+ UpdateAccount(DBObject account);
-+ Account GetAccount(int itemIndex);
-+ Account GetAccount(string username);
-+ int GetAccountsCount();
-+ AddEvent(DBObject newAccount);
-+ RemoveEvent(DBObject account);
-+ UpdateEvent(DBObject account);
-+ EventComponent GetEvent(int itemIndex);
-+ EventComponent[] GetEvents(DateTime from, DateTime to);
-+ int GetEventsCount();</y:MethodLabel>
+                <y:MethodLabel>+ AddAccount(OnlineSeason season, Account newAccount)
++ RemoveAccount(OnlineSeason season, Account account)
++ UpdateAccount(OnlineSeason season, Account account)
++ GetAccounts(OnlineSeason season, int from,int to) : Account[]
++ GetAccountByUsername(OnlineSeason season, string username) : Account
++ GetAccountByTableID(OnlineSeason season, string tableID) : Account
++ GetAccountsCount(OnlineSeason season) : int
++ AddEvent(OnlineSeason season, EventLeaf newEvent)
++ RemoveEvent(OnlineSeason season, EventLeaf @event)
++ UpdateEvent(OnlineSeason season, EventLeaf @event)
++ GetEvent(OnlineSeason season, string tableID) : EventComponent
++ EventComponent[] GetEvents(OnlineSeason season, DateTime from, DateTime to)</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -903,7 +997,7 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="79.91249999999991" width="223.4375" x="384.4941187397209" y="1282.6041471628037"/>
+              <y:Geometry height="79.91249999999991" width="223.4375" x="384.4941187397209" y="1156.576009437465"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="76.22998046875" x="73.603759765625" y="3.0">Abstraction<y:LabelModel>
@@ -924,10 +1018,10 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="221.4942832828217" width="213.5999999999999" x="619.6003687397211" y="722.2674933494703"/>
+              <y:Geometry height="221.4942832828217" width="497.659845614035" x="1191.0359336520019" y="602.7185805936001"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="51.66455078125" x="80.96772460937495" y="3.0">RDBMS<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="51.66455078125" x="222.9976474163925" y="3.0">RDBMS<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -936,18 +1030,18 @@ EventPage.designer<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel>+ AddAccount(DBObject newAccount);
-+ RemoveAccount(DBObject account);
-+ UpdateAccount(DBObject account);
-+ Account GetAccount(int itemIndex);
-+ Account GetAccount(string username);
-+ int GetAccountsCount();
-+ AddEvent(DBObject newAccount);
-+ RemoveEvent(DBObject account);
-+ UpdateEvent(DBObject account);
-+ EventComponent GetEvent(int itemIndex);
-+ EventComponent[] GetEvents(DateTime from, DateTime to);
-+ int GetEventsCount();</y:MethodLabel>
+                <y:MethodLabel>+ AddAccount(OnlineSeason season, Account newAccount)
++ RemoveAccount(OnlineSeason season, Account account)
++ UpdateAccount(OnlineSeason season, Account account)
++ GetAccounts(OnlineSeason season, int from,int to) : Account[]
++ GetAccountByUsername(OnlineSeason season, string username) : Account
++ GetAccountByTableID(OnlineSeason season, string tableID) : Account
++ GetAccountsCount(OnlineSeason season) : int
++ AddEvent(OnlineSeason season, EventLeaf newEvent)
++ RemoveEvent(OnlineSeason season, EventLeaf @event)
++ UpdateEvent(OnlineSeason season, EventLeaf @event)
++ GetEvent(OnlineSeason season, string tableID) : EventComponent
++ EventComponent[] GetEvents(OnlineSeason season, DateTime from, DateTime to)</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -956,10 +1050,10 @@ EventPage.designer<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="252.35865327304327" width="213.5999999999999" x="389.4128687397209" y="980.2410016017603"/>
+              <y:Geometry height="250.32020377430467" width="213.59999999999968" x="389.4128687397209" y="854.2128638764218"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="131.130859375" x="41.234570312499955" y="26.701171875">DBTypeImplementor<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="131.130859375" x="41.23457031249984" y="26.701171875">DBTypeImplementor<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -968,18 +1062,18 @@ EventPage.designer<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="Interface" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel>+ AddAccount(DBObject newAccount);
-+ RemoveAccount(DBObject account);
-+ UpdateAccount(DBObject account);
-+ Account GetAccount(int itemIndex);
-+ Account GetAccount(string username);
-+ int GetAccountsCount();
-+ AddEvent(DBObject newAccount);
-+ RemoveEvent(DBObject account);
-+ UpdateEvent(DBObject account);
-+ EventComponent GetEvent(int itemIndex);
-+ EventComponent[] GetEvents(DateTime from, DateTime to);
-+ int GetEventsCount();</y:MethodLabel>
+                <y:MethodLabel>+ AddAccount(Account newAccount)
++ RemoveAccount(Account account)
++ UpdateAccount(Account account)
++ GetAccounts(int from,int to) : Account[]
++ GetAccountByUsername(string username) : Account
++ GetAccountByTableID(string tableID) : Account
++ GetAccountsCount() : int
++ AddEvent(EventLeaf newEvent)
++ RemoveEvent(EventLeaf @event)
++ UpdateEvent(EventLeaf @event)
++ GetEvent(string tableID) : EventComponent
++ EventComponent[] GetEvents(DateTime from, DateTime to)</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -1010,10 +1104,10 @@ DBObject<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="250.32020377430456" width="334.62252722086976" x="364.9560065309285" y="39.70386508384058"/>
+              <y:Geometry height="168.75" width="325.0" x="427.12863810987585" y="35.14916641464231"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="88.55712890625" x="123.03269915730988" y="3.0">&lt;&lt;interface&gt;&gt;
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="35.8525390625" modelName="custom" textColor="#000000" visible="true" width="88.55712890625" x="118.221435546875" y="3.0">&lt;&lt;interface&gt;&gt;
 ISeason<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
@@ -1023,19 +1117,12 @@ ISeason<y:LabelModel>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel/>
-                <y:MethodLabel>+ AddAccount(Account newAccount);
-+ RemoveAccount(Account account);
-+ UpdateAccount(Account account);
-+ GetAccounts(int from,int to) : Account[]
-+ GetAccount(string username,string password) : Account
-+ GetAccount(string tableID) : Account
-+ GetAccountsCount() : int
-+ AddEvent(EventLeaf newEvent)
-+ RemoveEvent(EventLeaf @event)
-+ UpdateEvent(EventLeaf @event)
-+ GetAccount(string tableID) : Account
-+ GetEvent(string tableID) : EventComponent
-+ GetEvents(DateTime from, DateTime to): EventComponent[]</y:MethodLabel>
+                <y:MethodLabel>+ AddChangeCommand(IChangeCommand command)
++ UndoLastChangeCommand()
++ UndoAllChangeCommands()
++ SyncChangeCommands()
++ currentAccount {get;set;} : IAccount
++ OnlineContext OnlineContext { get;   }</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -1047,7 +1134,7 @@ ISeason<y:LabelModel>
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="380.6264648437499" width="368.4375" x="-264.63219361119195" y="309.6793154988642"/>
+              <y:Geometry height="380.62646484374994" width="368.4375" x="-264.63219361119195" y="385.5892573912611"/>
               <y:Fill color="#F5F5F5" transparent="false"/>
               <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
               <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="368.4375" x="0.0" y="0.0">Commands</y:NodeLabel>
@@ -1074,7 +1161,7 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="429.5557803426142"/>
+              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="505.4657222350111"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="78.419921875" x="10.7900390625" y="3.0">DeleteEvent<y:LabelModel>
@@ -1096,7 +1183,7 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="512.0557803426143"/>
+              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="587.9657222350113"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="96.46630859375" x="1.766845703125" y="3.0">CreateAccount<y:LabelModel>
@@ -1118,7 +1205,7 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="73.0" width="100.0" x="-21.19469361119195" y="601.0557803426141"/>
+              <y:Geometry height="73.0" width="100.0" x="-21.19469361119195" y="676.9657222350111"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="83.4599609375" x="8.27001953125" y="3.0">UpdateEvent<y:LabelModel>
@@ -1140,7 +1227,7 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="73.0" width="100.0" x="-134.94469361119195" y="601.0557803426141"/>
+              <y:Geometry height="73.0" width="100.0" x="-134.94469361119195" y="676.9657222350111"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="100.05908203125" x="-0.029541015625" y="3.0">UpdateAccount<y:LabelModel>
@@ -1162,7 +1249,7 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="347.0557803426142"/>
+              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="422.9657222350111"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="64.6708984375" x="17.66455078125" y="3.0">AddEvent<y:LabelModel>
@@ -1184,7 +1271,7 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="601.0557803426141"/>
+              <y:Geometry height="73.0" width="100.0" x="-248.69469361119195" y="676.9657222350111"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="95.01904296875" x="2.490478515625" y="3.0">DeleteAccount<y:LabelModel>
@@ -1206,7 +1293,7 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="100.5" width="154.68749999999997" x="-93.80618657994182" y="367.0557803426142"/>
+              <y:Geometry height="100.5" width="154.68749999999997" x="-93.80618657994182" y="442.9657222350111"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="118.841796875" x="17.922851562499986" y="26.701171875">IChangeCommand<y:LabelModel>
@@ -1233,7 +1320,7 @@ ISeason<y:LabelModel>
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="977.6563344686064" width="606.3997534839875" x="-502.5944470951795" y="-628.6530030106916"/>
+              <y:Geometry height="988.0184397317643" width="606.3997534839875" x="-502.5944470951795" y="-628.6530030106916"/>
               <y:Fill color="#F5F5F5" transparent="false"/>
               <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
               <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="606.3997534839875" x="0.0" y="0.0">Synchronization</y:NodeLabel>
@@ -1324,10 +1411,10 @@ ISeason<y:LabelModel>
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="284.8992764104348" width="231.25" x="-282.1557876922809" y="49.10405504747996"/>
+              <y:Geometry height="295.2613816735927" width="247.21109408108896" x="-282.1557876922809" y="49.10405504747996"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="92.83544921875" x="69.207275390625" y="3.0">OnlineContext<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="92.83544921875" x="77.18782243116948" y="3.0">OnlineContext<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -1350,7 +1437,8 @@ ISeason<y:LabelModel>
 + RemoveEvent(DBObject account)
 + UpdateEvent(DBObject account)
 + EventComponent GetEvent(int itemIndex)
-+ GetEventsCount() : int</y:MethodLabel>
++ GetEventsCount() : int
++ isOnline() : bool</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -1388,6 +1476,24 @@ ISeason<y:LabelModel>
           </data>
         </node>
       </graph>
+    </node>
+    <node id="n7">
+      <data key="d5"/>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="30.0" width="30.0" x="1439.2281609662796" y="-256.8226091962483"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="17.34765625" x="6.326171875" y="5.6494140625">58<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
     </node>
     <edge id="e0" source="n3" target="n3::n2">
       <data key="d10">
@@ -1448,11 +1554,28 @@ ISeason<y:LabelModel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="545.052234850388" y="84.0607333947139">1<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="648.6037790398411" y="95.5460849572139">1<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
               <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="7.37815121628593" distanceToCenter="true" position="right" ratio="0.2706777647571626" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="18.115266039518104" y="-4.6873591192771755">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="14.016616708890359" distanceToCenter="true" position="left" ratio="-13.225176920792578" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="27.790362120263808" y="74.19413816699489">
+            <y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="0.5" segment="0"/>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
@@ -1470,7 +1593,7 @@ ISeason<y:LabelModel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="39.75074797740399" y="193.53741757856437">
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="89.36799651256024" y="176.03174130903312">
             <y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
@@ -1479,11 +1602,19 @@ ISeason<y:LabelModel>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="230.3438072339908" y="445.14099565357697">0...*<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="292.63152436478316" y="427.6353193840457">1<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
               <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="12.607058433975128" distanceToCenter="true" position="right" ratio="0.7271778277331415" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="9.886210286714743" y="9.953919545089207">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="8.466486832456358" distanceToCenter="true" position="left" ratio="0.03691518594987103" segment="0"/>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
@@ -1520,7 +1651,7 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="white_diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-36.30339605967765" y="-52.110395724122895">
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-43.80991475505198" y="-54.09761885935927">
             <y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
@@ -1529,7 +1660,7 @@ ISeason<y:LabelModel>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-86.60591827210521" y="-68.4900266994199">1<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-99.76319774792739" y="-71.78413748775552">1<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -1557,7 +1688,7 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="62.6164169168037" y="3.0644461605907622">0...*<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="62.6164169168037" y="5.8258432205152815">0...*<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -1628,10 +1759,10 @@ ISeason<y:LabelModel>
     <edge id="n0::e4" source="n0::n4" target="n0::n5">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-17.749999999999773" sy="-42.075093831820055" tx="0.0" ty="0.0"/>
+          <y:Path sx="-17.749999999999773" sy="-43.855271491864244" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="-17.76283002834947" y="-74.94336108438466">2...*<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="-17.806815503402333" y="-74.96579856910421">2...*<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -1741,7 +1872,7 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="white_diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="6.526745047550236" y="-112.46239908176568">1<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="4.376850332033115" y="-112.51056692589071">1<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -1756,7 +1887,9 @@ ISeason<y:LabelModel>
     <edge id="n4::e0" source="n4::n0" target="n4::n7">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="883.455831578947" y="886.2297824561413"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
@@ -1776,7 +1909,7 @@ ISeason<y:LabelModel>
     <edge id="n4::e2" source="n4::n2" target="n4::n4">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-46.029590878414204"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="-46.02959087841425"/>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
           <y:BendStyle smoothed="false"/>
@@ -1786,7 +1919,9 @@ ISeason<y:LabelModel>
     <edge id="n4::e3" source="n4::n2" target="n4::n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1323.361740350877" y="557.9582877192993"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
           <y:BendStyle smoothed="false"/>
@@ -1806,10 +1941,10 @@ ISeason<y:LabelModel>
     <edge id="e6" source="n4::n3" target="n5::n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="2.0943247136528924E-13" sy="-1.1567606358671045E-12" tx="0.0" ty="0.0"/>
+          <y:Path sx="2.101528088152678E-13" sy="-7.563683032984031E-13" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="white_diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="-230.49904459886483" y="-34.96138162858131">0...*<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="-230.4843245825249" y="49.840560920065684">0...*<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -1837,6 +1972,7 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="143.70530638880814" y="505.46456071910893"/>
             <y:Point x="143.70530638880814" y="794.6401732974691"/>
+            <y:Point x="170.54298947368434" y="934.8625964912293"/>
           </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
@@ -1850,7 +1986,7 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="white_diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-173.050273124498" y="-103.32622741832165">
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-167.17860164472" y="-66.31142029281801">
             <y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
@@ -1859,7 +1995,7 @@ ISeason<y:LabelModel>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-336.7195873299693" y="-158.34070866100197">1<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-320.9828285468991" y="-88.2707721425565">1<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -1897,7 +2033,7 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="8.327774678239905" y="-44.76870046363479">1<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="8.327774678239848" y="-46.8096073148879">1<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -1912,7 +2048,9 @@ ISeason<y:LabelModel>
     <edge id="n4::e10" source="n4::n6" target="n4::n7">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1219.4643649122804" y="941.4943438596501"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
@@ -1936,6 +2074,22 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="24.90552888710181" y="-66.55090718632516">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="1.0" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="24.724053290046754" y="-23.691574872369756">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="0.0" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -1955,7 +2109,9 @@ ISeason<y:LabelModel>
       <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-624.6208896487456" y="-846.3724561374709"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
@@ -1980,6 +2136,22 @@ ISeason<y:LabelModel>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="6.30202868510321" y="-21.91153464592628">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="15.6328843902237" distanceToCenter="true" position="left" ratio="0.00439647848741101" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="298.0647050721683" y="79.8719119215989">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="2.3480357253605995" distanceToCenter="false" position="left" ratio="5.106923479672324" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -2033,11 +2205,27 @@ ISeason<y:LabelModel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="-216.4284340350872" y="-802.7270850133698"/>
-            <y:Point x="-28.52892526315736" y="-802.7270850133698"/>
+            <y:Point x="-366.3832255682122" y="-802.7270850133698"/>
+            <y:Point x="-178.48371679628238" y="-802.7270850133698"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="23.938179317337926" y="-2.291814778305479">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="14.204474871343514" distanceToCenter="true" position="left" ratio="-3.6246494364964454" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="325.14985057132003" y="-9.499078143786505">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="11.680667308509106" distanceToCenter="true" position="left" ratio="5.1010339679599035" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
@@ -2052,7 +2240,7 @@ ISeason<y:LabelModel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="diamond" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="739.1207846839068" y="-7.822459361713072">0...*<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="25.345703125" x="870.9396628577349" y="-12.814952037494322">0...*<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -2068,8 +2256,7 @@ ISeason<y:LabelModel>
       <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="351.13399649584665" y="289.64449122807014"/>
+          <y:Path sx="-129.1312377656132" sy="-37.39787855464567" tx="0.0" ty="0.0">
             <y:Point x="351.13399649584665" y="-10.165754385964874"/>
             <y:Point x="316.59364561865357" y="-10.165754385964874"/>
             <y:Point x="290.3429789519869" y="-75.10161403508789"/>
@@ -2086,6 +2273,8 @@ ISeason<y:LabelModel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="385.20430131715705" y="6.867917119541062"/>
+            <y:Point x="219.41061710663075" y="6.867917119541062"/>
             <y:Point x="161.85287368882973" y="-46.82849122807056"/>
             <y:Point x="161.85287368882973" y="-661.6467368421054"/>
             <y:Point x="-661.5890912234507" y="-661.6467368421054"/>
@@ -2093,14 +2282,156 @@ ISeason<y:LabelModel>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="26.001953125" x="-1063.0317768983246" y="-889.1267592861366">impl<y:LabelModel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="26.001953125" x="-1186.1838161539392" y="-865.5545920817319">impl<y:LabelModel>
               <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
             </y:LabelModel>
             <y:ModelParameter>
-              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="center" ratio="0.5" segment="-1"/>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="30.0" distanceToCenter="false" position="center" ratio="0.49999999999999944" segment="-1"/>
             </y:ModelParameter>
             <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::e10" source="n2::n12" target="n2::n11">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::e11" source="n2::n14" target="n2::n13">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::e12" source="n2::n14" target="n2::n12">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="none"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-64.35844628495772" y="-22.146918098272863">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="12.796363093333392" distanceToCenter="true" position="right" ratio="1.1311183937460783" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-15.689563106773903" y="-21.694190811255112">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="12.34363580631566" distanceToCenter="true" position="right" ratio="0.0" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::e13" source="n2::n4" target="n2::n14">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-918.0304722760818" y="-992.8385964912259"/>
+            <y:Point x="-1021.6515249076608" y="-992.8385964912259"/>
+            <y:Point x="-1021.6515249076608" y="-1079.1894736842082"/>
+            <y:Point x="-671.9680320789681" y="-1079.1894736842082"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="none"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-36.70759624731363" y="-18.476458734313724">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="left" ratio="0.0" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="259.695136248302" y="-140.18932808740942">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="14.607272241403505" distanceToCenter="true" position="right" ratio="0.9512549296034342" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e11" source="n1::n0" target="n2::n14">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="-52.794682802398256" y="-1163.605315747127"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="none"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="22.01171875" x="-27.010257796561973" y="-18.93157102050293">0..*<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="center" ratio="0.0" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-184.8116343907321" y="-146.40417829590706">
+            <y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="0.5" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="4.0" x="-184.8116343907321" y="-146.40417829590706">
+            <y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="0.0" distance="30.0" distanceToCenter="true" position="right" ratio="0.5" segment="0"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="10.673828125" x="-871.1033275239002" y="-266.1466463658669">1<y:LabelModel>
+              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="19.467172903896248" distanceToCenter="true" position="right" ratio="0.9963666819240904" segment="-1"/>
+            </y:ModelParameter>
+            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          </y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e12" source="n0::n1" target="n4::n8">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
+            <y:Point x="1165.9795354063872" y="-19.037346038353576"/>
+            <y:Point x="246.18007816336103" y="-19.037346038353576"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
+          <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>

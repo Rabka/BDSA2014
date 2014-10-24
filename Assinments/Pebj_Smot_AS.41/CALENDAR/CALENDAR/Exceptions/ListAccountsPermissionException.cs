@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CALENDAR.Storage
+namespace CALENDAR.Exceptions
 {
-    interface DBObject
+    class ListAccountsPermissionException: Exception
     {
-       int TableID { get; set; }
     }
 }

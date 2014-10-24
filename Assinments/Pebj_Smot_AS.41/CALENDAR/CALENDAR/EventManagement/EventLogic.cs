@@ -64,7 +64,7 @@ namespace CALENDAR.EventManagement
         /// <summary>
         /// Add components to a given composite.
         /// </summary>
-        public void AddComponentsToComposite(Season season, EventsComposite composite, params EventComponent[] components)
+        public void AddComponentsToComposite(Season season, EventsComposite composite, EventComponent[] components)
         {
             throw new NotImplementedException();
         }

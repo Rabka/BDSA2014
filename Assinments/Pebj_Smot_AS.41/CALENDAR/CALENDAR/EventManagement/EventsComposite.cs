@@ -8,14 +8,10 @@ namespace CALENDAR.EventManagement
 {
     class EventsComposite : EventComponent
     {
-        public string TableID { get; set; } 
+        public int TableID { get; set; }
 
-        private EventComponent[] _eventComponents;
+        public EventComponent[] eventComponents = new EventComponent[0];
 
-        public EventsComposite(EventComponent[] eventComponents)
-        {
-            _eventComponents = eventComponents;
-        }
         public void Add(EventLogic eventLogic)
         {
             throw new NotImplementedException();

@@ -29,11 +29,11 @@ namespace CALENDAR.Storage
         {
             throw new NotImplementedException();
         }
-        public Account GetAccount(string username, string password)
+        public Account GetAccountByUsername(string username)
         {
             throw new NotImplementedException();
         }
-        public Account GetAccount(string tableID)
+        public Account GetAccountByTableID(string tableID)
         {
             throw new NotImplementedException();
         }

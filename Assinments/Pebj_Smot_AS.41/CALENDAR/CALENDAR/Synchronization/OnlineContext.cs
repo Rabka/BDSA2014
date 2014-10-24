@@ -92,5 +92,9 @@ namespace CALENDAR.Synchronization
                 _syncStrategy = new Offline();
             }
         }
+        public bool isOnline()
+        {
+            return (_syncStrategy is Online);
+        }
     }
 }

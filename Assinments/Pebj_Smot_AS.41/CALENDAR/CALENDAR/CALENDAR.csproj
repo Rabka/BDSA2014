@@ -64,6 +64,17 @@
     <Compile Include="EventManagement\EventLeaf.cs" />
     <Compile Include="EventManagement\EventLogic.cs" />
     <Compile Include="EventManagement\EventsComposite.cs" />
+    <Compile Include="Exceptions\AccountAllreadyExistException.cs" />
+    <Compile Include="Exceptions\AccountDoesntExistException.cs" />
+    <Compile Include="Exceptions\AccountInvalidUserCridentialsException.cs" />
+    <Compile Include="Exceptions\AccountRemovalPermissionException.cs" />
+    <Compile Include="Exceptions\ComponentsCannotBeEmptyException.cs" />
+    <Compile Include="Exceptions\DatabaseResponseStructureException.cs" />
+    <Compile Include="Exceptions\EventDoesntExistException.cs" />
+    <Compile Include="Exceptions\GetAccountsConsisitencyException.cs" />
+    <Compile Include="Exceptions\ListAccountsPermissionException.cs" />
+    <Compile Include="Exceptions\NotLoggedInException.cs" />
+    <Compile Include="Exceptions\OnlineOfflineConsistencyException.cs" />
     <Compile Include="GoogleCalendarAdapter\EventAdapter.cs" />
     <Compile Include="GoogleCalendarAdapter\GoogleRestAPIEvent.cs" />
     <Compile Include="GoogleCalendarAdapter\IEventClient.cs" />
@@ -166,6 +177,7 @@
   <ItemGroup>
     <Content Include="Graphicloads-Android-Settings-Calendar.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

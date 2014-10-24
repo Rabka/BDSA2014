@@ -8,6 +8,7 @@ namespace CALENDAR.EventManagement
 {
     interface EventComponent : DBObject
     {
+
         void Add(EventLogic eventLogic);
         void Update(EventLogic eventLogic);
         void Delete(EventLogic eventLogic);
