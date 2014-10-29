@@ -2,21 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CALENDAR.EventManagement;
+using CALENDAR.Commands;
 using CALENDAR.AccountManagement;
 using CALENDAR.Synchronization;
-using CALENDAR.GoogleCalendarAdapter;
-using CALENDAR.Commands;
-namespace CALENDAR.Synchronization
+namespace ComponentTesting.TestStubs
 {
-    public class Season : ISeason
+    class SeasonStub : ISeason
     {
-        private List<IChangeCommand> changeCommands;
-        public OnlineContext OnlineContext { get; private set; }
-        public Season()
+        public SeasonStub()
         {
-            OnlineContext = new OnlineContext();
-            changeCommands = new List<IChangeCommand>();
+
         }
         public void AddChangeCommand(IChangeCommand command)
         {
@@ -34,7 +29,5 @@ namespace CALENDAR.Synchronization
         {
             throw new NotImplementedException();
         }
-        public Account CurrentAccount { get; set; }
-
     }
 }

@@ -6,7 +6,7 @@ using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 namespace CALENDAR.Synchronization
 {
-    class OnlineContext
+    public class OnlineContext
     {   
         ISyncStrategy _syncStrategy;
         DateTime _lastSyncDateTime = DateTime.Now;

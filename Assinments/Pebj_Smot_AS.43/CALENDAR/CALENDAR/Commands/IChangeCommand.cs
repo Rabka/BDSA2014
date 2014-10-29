@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CALENDAR.Commands
 {
-    interface IChangeCommand
+    public interface IChangeCommand
     {
         void Execute();
         void Undo();
