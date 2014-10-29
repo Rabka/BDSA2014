@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>9d3577ce-95b8-4de8-96b1-2ef4c8d1fa87</ProjectGuid>
+    <ProjectGuid>{BC99C0F1-6DA5-4EA3-9FAF-E8E4B5DCCAFA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CALENDAR.Tests</RootNamespace>
