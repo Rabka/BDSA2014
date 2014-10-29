@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
-using CALENDAR.Storage;
 namespace CALENDAR.Synchronization
 {
-    interface ISyncStrategy 
+    interface ISyncStrategy
     {
         void Sync();
+        void SetDBType(DBTypeImplementor impl);
         void AddAccount(Account newAccount);
         void RemoveAccount(Account account);
         void UpdateAccount(Account account);

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CALENDAR.Storage;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 namespace CALENDAR.Synchronization
