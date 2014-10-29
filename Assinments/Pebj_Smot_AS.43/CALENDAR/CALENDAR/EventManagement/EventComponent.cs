@@ -1,17 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using CALENDAR.AccountManagement;
 using CALENDAR.Synchronization;
 
 namespace CALENDAR.EventManagement
 {
-    interface EventComponent : DBObject
+    public interface EventComponent : DBObject
     {
-
-        void Add(EventLogic eventLogic);
-        void Update(EventLogic eventLogic);
-        void Delete(EventLogic eventLogic);
+        DateTime DateFrom { get; }
+        DateTime DateTo { get; }
+        string Title { get; }
+        string Description { get; }
+        Account OwnedByAccount { get; }
+        Account[] SharedWithAccounts { get; }
+        INotification[] Notifications { get; }
+        EventComponent[] GetLeafs();
         void Draw();
+        bool IsLeaf();
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CALENDAR.Synchronization
 {
-    interface DBObject
+    public interface DBObject
     {
        int TableID { get; set; }
     }

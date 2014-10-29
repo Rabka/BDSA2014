@@ -55,6 +55,15 @@
   <ItemGroup>
     <Compile Include="TestAccountManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestEventComponent.cs" />
+    <Compile Include="TestEventLogic.cs" />
+    <Compile Include="TestSeason.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CALENDAR\CALENDAR.csproj">
+      <Project>{d236850b-4069-4191-a1d3-2bd712c622ba}</Project>
+      <Name>CALENDAR</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
