@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CALENDAR.Storage;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 
@@ -10,6 +9,11 @@ namespace CALENDAR.Synchronization
 {
     class Offline : ISyncStrategy
     {
+        public Abstraction abstraction;
+        public void SetDBType(DBTypeImplementor impl)
+        {
+            throw new NotImplementedException();
+        }
         public void Sync()
         {
             throw new NotImplementedException();

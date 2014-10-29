@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CALENDAR.Storage;
+using CALENDAR.Synchronization;
 namespace CALENDAR.GoogleCalendarAdapter
 {
     class EventAdapter : IEventClient
