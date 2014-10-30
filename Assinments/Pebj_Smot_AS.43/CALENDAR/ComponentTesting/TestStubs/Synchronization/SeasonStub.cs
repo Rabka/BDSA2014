@@ -7,7 +7,7 @@ using CALENDAR.AccountManagement;
 using CALENDAR.Synchronization;
 namespace ComponentTesting.TestStubs
 {
-    class SeasonStub : ISeason
+    public class SeasonStub : ISeason
     {
         public SeasonStub()
         {
@@ -29,5 +29,9 @@ namespace ComponentTesting.TestStubs
         {
             throw new NotImplementedException();
         }
+
+        public Account CurrentAccount { get; set; }
+        public OnlineContext OnlineContext { get; private set; } // man skal have OnlineContextStub istedet når man bruger get
+        public OnlineContextStub OnlineContextStub { get; private set; }
     }
 }

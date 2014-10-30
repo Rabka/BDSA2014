@@ -6,9 +6,8 @@ using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 namespace CALENDAR.Synchronization
 {
-    public class OnlineContext
+    public class OnlineContextStub
     {   
-        ISyncStrategy _syncStrategy;
         DateTime _lastSyncDateTime = DateTime.Now;
         /// <summary>
         /// Synchronizes the local database with that of the server.
@@ -19,7 +18,6 @@ namespace CALENDAR.Synchronization
         /// </returns>
         public DateTime Sync()
         {
-            _syncStrategy.Sync();
             //Do some synchronization.
             return DateTime.Now;
         }
@@ -82,18 +80,10 @@ namespace CALENDAR.Synchronization
         }
         private void SetOfflineOnlineInterface(bool isOnline)
         {
-            if (isOnline && !(_syncStrategy is Online))
-            {
-                _syncStrategy = new Online();
-            }
-            else if (!isOnline && !(_syncStrategy is Offline))
-            {
-                _syncStrategy = new Offline();
-            }
         }
         public bool isOnline()
         {
-            return (_syncStrategy is Online);
+            throw new NotImplementedException();
         }
     }
 }

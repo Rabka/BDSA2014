@@ -22,13 +22,14 @@ namespace CALENDAR.EventManagement
         }
 
         public int TableID { get; set; }
-        public DateTime DateFrom { get; private set; }
-        public DateTime DateTo { get; private set; }
-        public string Title { get; private set; }
-        public string Description { get; private set; }
+        public DateTime DateFrom { get; set; }
+        public DateTime DateTo { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
         public Account OwnedByAccount { get; private set; }
         public Account[] SharedWithAccounts { get; private set; }
-        public INotification[] Notifications { get; private set; }
+        public INotification[] Notifications { get; set; }
+
         public EventComponent[] GetLeafs()
         {
             return new EventComponent[] {this};

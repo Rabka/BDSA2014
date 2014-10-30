@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using CALENDAR.GoogleCalendarAdapter;
+ using CALENDAR.AccountManagement;
+ using CALENDAR.GoogleCalendarAdapter;
 using CALENDAR.Synchronization;
 namespace CALENDAR.EventManagement
 {
     public class EventLogic
     {
-        private Season season;
+        private ISeason season;
 
         /// <summary>
         /// The class construktor
         /// </summary>
         /// <param name="season">The season to use in all of the methods</param>
-        public EventLogic(Season season)
+        public EventLogic(ISeason season)
         {
             this.season = season;
         }
@@ -27,7 +28,7 @@ namespace CALENDAR.EventManagement
         /// <param name="dateTo"></param>
         /// <param name="notifications"></param>
         /// <returns>the event</returns>
-        public EventLeaf AddEvent(string description, DateTime dateFrom, DateTime dateTo, Notification[] notifications)
+        public EventComponent AddEvent(string description, DateTime dateFrom, DateTime dateTo, INotification[] notifications)
         {
             throw new NotImplementedException();
         }
@@ -68,14 +69,14 @@ namespace CALENDAR.EventManagement
         /// Joins multiple components together to a composite.
         /// </summary>
         /// <returns>EventsComposite</returns>
-        public EventComposite JoinComponentsToNewComposite(params EventComponent[] components)
+        public EventComposite JoinComponentsToNewComposite(string title, string description, Account ownedByAccount, params EventComponent[] components)
         {
             throw new NotImplementedException();
         }
         /// <summary>
         /// Add components to a given composite.
         /// </summary>
-        public void AddComponentsToComposite(EventComposite composite, EventComponent[] components)
+        public void AddComponentsToComposite(EventComponent composite, EventComponent[] components)
         {
             throw new NotImplementedException();
         }
