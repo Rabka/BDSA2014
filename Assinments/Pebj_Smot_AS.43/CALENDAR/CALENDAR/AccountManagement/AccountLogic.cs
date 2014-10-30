@@ -6,7 +6,7 @@ using CALENDAR.Synchronization;
 
 namespace CALENDAR.AccountManagement
 {
-    class AccountLogic
+    public class AccountLogic
     {
         /// <summary>
         /// 
@@ -15,7 +15,7 @@ namespace CALENDAR.AccountManagement
         /// <param name="password"></param>
         /// <param name="email"></param>
         /// <returns>Succeded boolean</returns>
-        public bool TryCreateAccount(Season season, string username, string password, string email)
+        public bool TryCreateAccount(ISeason season, string username, string password, string email)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +25,7 @@ namespace CALENDAR.AccountManagement
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns>return true if success</returns>
-        public bool TryLogin(Season season, string username, string password)
+        public bool TryLogin(ISeason season, string username, string password)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +33,8 @@ namespace CALENDAR.AccountManagement
         /// Removes a specified account.
         /// </summary>
         /// <param name="account"></param>
-        public static void RemoveAccount(Season season, Account account)
+        /// <returns>return true if success</returns>
+        public bool TryRemoveAccount(ISeason season, Account account)
         {
             throw new NotImplementedException();
         }
@@ -42,7 +43,16 @@ namespace CALENDAR.AccountManagement
         /// </summary>
         /// <param name="username"></param>
         /// <returns>Account</returns>
-        public Account[] ListAccounts(Season season, int from, int maxAmount)
+        public Account[] TryListAccounts(ISeason season, int from, int maxAmount)
+        {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// Gets the number of acccounts.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>Account</returns>
+        public int TryGetNumberOfAccounts(ISeason season)
         {
             throw new NotImplementedException();
         }

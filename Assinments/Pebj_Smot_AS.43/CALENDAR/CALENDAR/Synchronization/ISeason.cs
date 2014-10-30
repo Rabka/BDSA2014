@@ -8,13 +8,13 @@ using CALENDAR.AccountManagement;
 using CALENDAR.Synchronization;
 namespace CALENDAR.Synchronization
 {
-    interface ISeason
+    public interface ISeason
     {
         void AddChangeCommand(IChangeCommand command);
         void UndoLastChangeCommand();
         void UndoAllChangeCommands();
         void SyncChangeCommands();
-        Account currentAccount {get;set;}
+        Account CurrentAccount {get;set;}
         OnlineContext OnlineContext { get;   }
     }
 }
