@@ -6,8 +6,19 @@ using CALENDAR.GoogleCalendarAdapter;
 using CALENDAR.Synchronization;
 namespace CALENDAR.EventManagement
 {
-    class EventLogic
+    public class EventLogic
     {
+        private Season season;
+
+        /// <summary>
+        /// The class construktor
+        /// </summary>
+        /// <param name="season">The season to use in all of the methods</param>
+        public EventLogic(Season season)
+        {
+            this.season = season;
+        }
+
         /// <summary>
         /// Adds a new event to the database
         /// </summary>
@@ -16,7 +27,7 @@ namespace CALENDAR.EventManagement
         /// <param name="dateTo"></param>
         /// <param name="notifications"></param>
         /// <returns>the event</returns>
-        public EventLeaf AddEvent(Season season,string description, DateTime dateFrom, DateTime dateTo, Notification[] notifications)
+        public EventLeaf AddEvent(string description, DateTime dateFrom, DateTime dateTo, Notification[] notifications)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +36,7 @@ namespace CALENDAR.EventManagement
         /// </summary>
         /// <param name="name"></param>
         /// <returns>Event</returns>
-        public EventComponent GetEventById(Season season, string name)
+        public EventComponent GetEventById(string name)
         {
             throw new NotImplementedException();
         }
@@ -34,7 +45,7 @@ namespace CALENDAR.EventManagement
         /// </summary>
         /// <param name="name"></param>
         /// <returns>Event</returns>
-        public EventComponent[] GetEvents(Season season, DateTime from, DateTime to)
+        public EventComponent[] GetEvents(DateTime from, DateTime to)
         {
             throw new NotImplementedException();
         }
@@ -42,14 +53,14 @@ namespace CALENDAR.EventManagement
         /// Removes an existing event from the database
         /// </summary>
         /// <param name="anEvent"></param>
-        public void RemoveEvent(Season season, EventComponent anEvent)
+        public void RemoveEvent(EventComponent anEvent)
         {
             throw new NotImplementedException();
         }
         /// <summary>
         /// updates a given event in the database
         /// </summary>
-        public void UpdateEvent(Season season, EventComponent anEvent)
+        public void UpdateEvent(EventComponent anEvent)
         {
             throw new NotImplementedException();
         }
@@ -57,14 +68,14 @@ namespace CALENDAR.EventManagement
         /// Joins multiple components together to a composite.
         /// </summary>
         /// <returns>EventsComposite</returns>
-        public EventComposite JoinComponentsToNewComposite(Season season, params EventComponent[] components)
+        public EventComposite JoinComponentsToNewComposite(params EventComponent[] components)
         {
             throw new NotImplementedException();
         }
         /// <summary>
         /// Add components to a given composite.
         /// </summary>
-        public void AddComponentsToComposite(Season season, EventComposite composite, EventComponent[] components)
+        public void AddComponentsToComposite(EventComposite composite, EventComponent[] components)
         {
             throw new NotImplementedException();
         }
@@ -72,7 +83,7 @@ namespace CALENDAR.EventManagement
         /// Gets a link for the user to visit for adding the component to his calendar.
         /// </summary>
         /// <returns>true if you are the owner of the event.</returns>
-        public string GetSharedEventLink(Season season, EventComponent component)
+        public string GetSharedEventLink(EventComponent component)
         {
             throw new NotImplementedException();
         }

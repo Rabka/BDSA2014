@@ -20,14 +20,14 @@
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="434.57901166819886" width="1714.8229071929816" x="321.212868739721" y="-570.0226484513848"/>
+              <y:Geometry height="441.37316937481376" width="1714.8229071929816" x="321.212868739721" y="-570.0226484513848"/>
               <y:Fill color="#F5F5F5" transparent="false"/>
               <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
               <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="1714.8229071929816" x="0.0" y="0.0">EventManagement</y:NodeLabel>
               <y:Shape type="roundrectangle"/>
               <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
               <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
-              <y:BorderInsets bottom="15" bottomF="15.098615174741099" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+              <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
             </y:GroupNode>
             <y:GroupNode>
               <y:Geometry height="50.0" width="50.0" x="0.0" y="60.0"/>
@@ -252,7 +252,7 @@
           <data key="d4"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="168.75" width="723.5398801043474" x="1228.1733932903833" y="-334.2922519579271"/>
+              <y:Geometry height="190.642772881356" width="723.5398801043474" x="1228.1733932903833" y="-334.2922519579271"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="74.0654296875" x="324.7372252084237" y="3.0">EventLogic<y:LabelModel>
@@ -263,15 +263,16 @@
                 </y:ModelParameter>
               </y:NodeLabel>
               <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="true">
-                <y:AttributeLabel/>
-                <y:MethodLabel>+ AddEvent(OnlineSeason season,string description, DateTime dateFrom, DateTime dateTo, Notification[] notifications) : EventLeaf
-+ GetEventById(OnlineSeason season,string name) : EventComponent
-+ GetEvents(OnlineSeason season,DateTime from, DateTime to) : EventComponent[]
-+ RemoveEvent(OnlineSeason season,EventComponent anEvent)
-+ UpdateEvent(OnlineSeason season,EventComponent anEvent) : boo
-+ JoinComponentsToComposite(OnlineSeason season,params EventComponent[] components) : boo
-+ AddComponentsToComposite(OnlineSeason season,EventsComposite composite,params EventComponent[] components) : bool
-+ GetSharedEventLink(OnlineSeason season,EventComponent component) : string
+                <y:AttributeLabel>- Season season</y:AttributeLabel>
+                <y:MethodLabel>+ EventLogic(Season season)
++ AddEvent(string description, DateTime dateFrom, DateTime dateTo, Notification[] notifications) : EventLeaf
++ GetEventById(string name) : EventComponent
++ GetEvents(DateTime from, DateTime to) : EventComponent[]
++ RemoveEvent(EventComponent anEvent)
++ UpdateEvent(EventComponent anEvent) : boo
++ JoinComponentsToComposite(params EventComponent[] components) : boo
++ AddComponentsToComposite(EventsComposite composite,params EventComponent[] components) : bool
++ GetSharedEventLink(EventComponent component) : string
 
 
 </y:MethodLabel>
