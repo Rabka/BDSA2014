@@ -7,9 +7,16 @@ using CALENDAR.Synchronization;
 using System.Windows.Forms;
 namespace CALENDAR.EventManagement
 {
-    public class EventsComposite : EventComponent
+    public class EventComposite : EventComponent
     {
         public EventComponent[] eventComponents;
+
+        public EventComposite(string title, string description, Account ownedByAccount)
+        {
+            OwnedByAccount = ownedByAccount;
+            Description = description;
+            Title = title;
+        }
 
         public int TableID { get; set; }
         public DateTime DateFrom { get; private set; }

@@ -63,7 +63,7 @@
     <Compile Include="EventManagement\EventComponent.cs" />
     <Compile Include="EventManagement\EventLeaf.cs" />
     <Compile Include="EventManagement\EventLogic.cs" />
-    <Compile Include="EventManagement\EventsComposite.cs" />
+    <Compile Include="EventManagement\EventComposite.cs" />
     <Compile Include="Exceptions\AccountAllreadyExistException.cs" />
     <Compile Include="Exceptions\AccountDoesntExistException.cs" />
     <Compile Include="Exceptions\AccountInvalidUserCridentialsException.cs" />

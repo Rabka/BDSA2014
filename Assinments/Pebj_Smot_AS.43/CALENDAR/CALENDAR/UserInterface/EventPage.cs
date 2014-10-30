@@ -15,11 +15,11 @@ namespace CALENDAR.UserInterface
         {
             InitializeComponent();
         }
-        public void UpdateEvent(IEvent @event)
+        public void UpdateEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }
-        public void CreateEvent(IEvent @event)
+        public void CreateEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }

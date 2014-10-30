@@ -7,7 +7,7 @@ namespace ComponentTesting
     public class TestAccountManagement
     {
         [TestMethod]
-        public void TestAccountManagement()
+        public void TestAccountManagement_()
         {
         }
     }

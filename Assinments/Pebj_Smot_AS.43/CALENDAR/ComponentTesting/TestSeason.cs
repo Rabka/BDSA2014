@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ComponentTesting
@@ -6,6 +7,8 @@ namespace ComponentTesting
     [TestClass]
     public class TestSeason
     {
+        //Der skal vare PolymorphismTest med sterdegy design patteren
+
         [TestMethod]
         public void EquivalenceTest()
         {

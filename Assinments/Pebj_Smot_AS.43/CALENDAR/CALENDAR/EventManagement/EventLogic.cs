@@ -57,14 +57,14 @@ namespace CALENDAR.EventManagement
         /// Joins multiple components together to a composite.
         /// </summary>
         /// <returns>EventsComposite</returns>
-        public EventsComposite JoinComponentsToNewComposite(Season season, params EventComponent[] components)
+        public EventComposite JoinComponentsToNewComposite(Season season, params EventComponent[] components)
         {
             throw new NotImplementedException();
         }
         /// <summary>
         /// Add components to a given composite.
         /// </summary>
-        public void AddComponentsToComposite(Season season, EventsComposite composite, EventComponent[] components)
+        public void AddComponentsToComposite(Season season, EventComposite composite, EventComponent[] components)
         {
             throw new NotImplementedException();
         }

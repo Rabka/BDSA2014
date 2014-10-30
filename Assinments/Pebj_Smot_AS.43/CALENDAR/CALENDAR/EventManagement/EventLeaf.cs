@@ -31,7 +31,7 @@ namespace CALENDAR.EventManagement
         public INotification[] Notifications { get; private set; }
         public EventComponent[] GetLeafs()
         {
-            throw new NotImplementedException();
+            return new EventComponent[] {this};
         }
 
         public void Draw()
