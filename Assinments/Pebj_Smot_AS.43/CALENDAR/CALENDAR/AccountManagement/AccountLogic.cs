@@ -8,6 +8,17 @@ namespace CALENDAR.AccountManagement
 {
     public class AccountLogic
     {
+        private ISeason season;
+
+        /// <summary>
+        /// The class construktor
+        /// </summary>
+        /// <param name="season">The season to use in all of the methods</param>
+        public AccountLogic(ISeason season)
+        {
+            this.season = season;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -15,7 +26,7 @@ namespace CALENDAR.AccountManagement
         /// <param name="password"></param>
         /// <param name="email"></param>
         /// <returns>Succeded boolean</returns>
-        public bool TryCreateAccount(ISeason season, string username, string password, string email)
+        public bool TryCreateAccount(string username, string password, string email)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +36,7 @@ namespace CALENDAR.AccountManagement
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns>return true if success</returns>
-        public bool TryLogin(ISeason season, string username, string password)
+        public bool TryLogin(string username, string password)
         {
             throw new NotImplementedException();
         }
@@ -34,7 +45,7 @@ namespace CALENDAR.AccountManagement
         /// </summary>
         /// <param name="account"></param>
         /// <returns>return true if success</returns>
-        public bool TryRemoveAccount(ISeason season, Account account)
+        public bool TryRemoveAccount(Account account)
         {
             throw new NotImplementedException();
         }
@@ -43,7 +54,7 @@ namespace CALENDAR.AccountManagement
         /// </summary>
         /// <param name="username"></param>
         /// <returns>Account</returns>
-        public Account[] TryListAccounts(ISeason season, int from, int maxAmount)
+        public Account[] TryListAccounts(int from, int maxAmount)
         {
             throw new NotImplementedException();
         }
@@ -52,7 +63,7 @@ namespace CALENDAR.AccountManagement
         /// </summary>
         /// <param name="username"></param>
         /// <returns>Account</returns>
-        public int TryGetNumberOfAccounts(ISeason season)
+        public int TryGetNumberOfAccounts()
         {
             throw new NotImplementedException();
         }

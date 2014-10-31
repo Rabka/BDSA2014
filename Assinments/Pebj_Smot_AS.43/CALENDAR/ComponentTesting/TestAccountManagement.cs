@@ -8,70 +8,60 @@ namespace ComponentTesting
     [TestClass]
     public class TestAccountManagement
     {
-        [TestMethod]        
-        public void TestEquivalence()
+        private AccountLogic accountLogic;
+        private SeasonStub seasonStub;
+
+        [TestInitialize]
+        public void SetUp(int i)
         {
-            #region Test 1 : TryCreateAccount
-            {
-                SeasonStub season = new SeasonStub();
-                AccountLogic accountLogic = new AccountLogic();
-                Assert.AreEqual(false, accountLogic.TryCreateAccount(season, "", "", ""));
-                Assert.AreEqual(true, accountLogic.TryCreateAccount(season, "John", "JohnsPassword", "testmail@gmail.com"));
-                Assert.AreEqual(false, accountLogic.TryCreateAccount(season, "staticAccount", "JohnsPassword", "testmail@gmail.com"));
-            }
-            #endregion
-            #region Test 2 : TryLogin
-            {
-                SeasonStub season = new SeasonStub();
-                AccountLogic accountLogic = new AccountLogic();
-                Assert.AreEqual(false, accountLogic.TryLogin(season, "", ""));
-                Assert.AreEqual(false, accountLogic.TryLogin(season, "Johny", "JohnsPassword"));
-                Assert.AreEqual(true, accountLogic.TryLogin(season, "staticModerator", "JohnsPassword"));
-            }
-            #endregion
-            #region Test 3 : TryRemoveAccount
-            {
-                SeasonStub season = new SeasonStub();
-                AccountLogic accountLogic = new AccountLogic();
-                Account account = new Account("", "", "", false);
-                ((DBObject)account).TableID = 1; //SeasonTestStub contains an account by default with a database id of 1.
-                Assert.AreEqual(true, accountLogic.TryRemoveAccount(season, account));
-            }
-            #endregion
-            #region Test 4 : TryListAccounts
-            {
-                //By default, we are logged into a moderator account known as ModeratorAccount.
-                SeasonStub season = new SeasonStub();
-                AccountLogic accountLogic = new AccountLogic();
-                Assert.AreEqual(true, accountLogic.TryListAccounts(season,0,1).Length == 1);
-            }
-            #endregion
+            seasonStub = new SeasonStub();
+            seasonStub.CurrentAccount = new Account("account", "u", "e", true);
+            accountLogic = new AccountLogic(seasonStub);
         }
 
         [TestMethod]
-        public void TestBoundary()
+        public void EquivalenceTest_TryCreateAccount()
         {
-            #region Test 1 : TryListAccounts
-            {
-                //By default, we are logged into a moderator account known as ModeratorAccount.
-                SeasonStub season = new SeasonStub();
-                AccountLogic accountLogic = new AccountLogic();
-                //from cannot be larger than to
-                Assert.AreEqual(true, accountLogic.TryListAccounts(season, 1, 0).Length == 0);
-                //Length cannot be larger than the count of entries in the database.
-                Assert.AreEqual(true, accountLogic.TryListAccounts(season, 0, 3).Length == 2);
-            }
-            #endregion
-            #region Test 2 : TryGetNumberOfAccounts
-            {
-                //By default, we are logged into a moderator account known as ModeratorAccount.
-                SeasonStub season = new SeasonStub();
-                AccountLogic accountLogic = new AccountLogic();
-                //from cannot be larger than to.
-                Assert.AreEqual(true, accountLogic.TryGetNumberOfAccounts(season) == 2);
-            }
-            #endregion
+                Assert.AreEqual(false, accountLogic.TryCreateAccount( "", "", ""));
+                Assert.AreEqual(true, accountLogic.TryCreateAccount( "John", "JohnsPassword", "testmail@gmail.com"));
+                Assert.AreEqual(false, accountLogic.TryCreateAccount( "u", "e", "testmail@gmail.com"));
+        }
+        [TestMethod]
+        public void EquivalenceTest_TryLogin()
+        {
+                Assert.AreEqual(false, accountLogic.TryLogin("", ""));
+                Assert.AreEqual(false, accountLogic.TryLogin("u", "wrongpassword"));
+                Assert.AreEqual(true, accountLogic.TryLogin("u", "e"));
+        }
+         [TestMethod]
+        public void EquivalenceTest_TryRemoveAccount()
+        {
+                Account account = new Account("", "", "", false);
+                ((DBObject)account).TableID = 1; //SeasonTestStub contains an account by default with a database id of 1.
+                Assert.AreEqual(true, accountLogic.TryRemoveAccount(account));
+        }
+         [TestMethod]
+         public void EquivalenceTest_TryRemoveAccount()
+         {
+                 //By default, we are logged into a moderator account known as ModeratorAccount.
+                 Assert.AreEqual(true, accountLogic.TryListAccounts(0, 1).Length == 1);
+         }
 
+        [TestMethod]
+         public void BoundaryTest_TryListAccounts()
+        {
+                //By default, we are logged into a moderator account known as ModeratorAccount.
+                //from cannot be larger than to
+                Assert.AreEqual(true, accountLogic.TryListAccounts(1, 0).Length == 0);
+                //Length cannot be larger than the count of entries in the database.
+                Assert.AreEqual(true, accountLogic.TryListAccounts(0, 3).Length == 2);
+        }
+        [TestMethod]
+        public void BoundaryTest_TryGetNumberOfAccounts()
+        {
+                //By default, we are logged into a moderator account known as ModeratorAccount.
+                //from cannot be larger than to.
+                Assert.AreEqual(true, accountLogic.TryGetNumberOfAccounts() == 2);
         }
 
         [TestMethod]
