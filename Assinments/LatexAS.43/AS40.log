@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.24)  31 OCT 2014 16:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.24)  31 OCT 2014 17:35
 entering extended mode
 **AS40.tex
 (C:\Users\stin7054\Documents\GitHub\BDSA2014\Assinments\LatexAS.43\AS40.tex
@@ -730,11 +730,11 @@ LaTeX Font Info:    ... okay on input line 18.
 \makeMPintoPDFobject=\count131
 \everyMPtoPDFconversion=\toks38
 ) ABD: EveryShipout initializing macros
-<UMLtestDiagram.PNG, id=4, 578.91281pt x 346.29375pt>
+<UMLtestDiagram.PNG, id=4, 497.60907pt x 291.33844pt>
 File: UMLtestDiagram.PNG Graphic file (type png)
  <use UMLtestDiagram.PNG>
 Package pdftex.def Info: UMLtestDiagram.PNG used on input line 31.
-(pdftex.def)             Requested size: 345.0pt x 206.3723pt.
+(pdftex.def)             Requested size: 345.0pt x 201.99284pt.
 
 [1
 
@@ -742,22 +742,22 @@ Package pdftex.def Info: UMLtestDiagram.PNG used on input line 31.
 uments/GitHub/BDSA2014/Assinments/LatexAS.43/UMLtestDiagram.PNG>]
 (C:\Users\stin7054\Documents\GitHub\BDSA2014\Assinments\LatexAS.43\AS40.aux) ) 
 Here is how much of TeX's memory you used:
- 13041 strings out of 493921
- 253140 string characters out of 3144867
- 285086 words of memory out of 3000000
- 16089 multiletter control sequences out of 15000+200000
+ 13042 strings out of 493921
+ 253151 string characters out of 3144867
+ 286094 words of memory out of 3000000
+ 16090 multiletter control sequences out of 15000+200000
  10888 words of font info for 31 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 62i,6n,56p,496b,296s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,6n,56p,501b,296s stack positions out of 5000i,500n,10000p,200000b,50000s
  
 <C:\Users\stin7054\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecrm1000.pk> <C:\Users\stin7054\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
 en\ec\dpi600\ecbx1440.pk> <C:\Users\stin7054\AppData\Local\MiKTeX\2.9\fonts\pk\
 ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\stin7054\AppData\Local\MiKTeX\
 2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk>
-Output written on AS40.pdf (2 pages, 60928 bytes).
+Output written on AS40.pdf (2 pages, 57260 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 125 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
