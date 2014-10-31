@@ -12,7 +12,7 @@ namespace CALENDAR.Storage
     public class Season : ISeason
     {
         private List<IChangeCommand> changeCommands;
-        public OnlineContext OnlineContext { get; private set; }
+        public IOnlineContext OnlineContext { get; private set; }
         public Season()
         {
             OnlineContext = new OnlineContext();

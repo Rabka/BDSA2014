@@ -1,6 +1,6 @@
 ﻿using System;
 using CALENDAR.AccountManagement;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ComponentTesting

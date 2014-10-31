@@ -29,10 +29,10 @@ namespace ComponentTesting.TestStubs
         }
         public void SyncChangeCommands()
         {
-            OnlineContext.Sync(changeCommands.ToArray());
+            OnlineContext.Sync();
         }
 
         public Account CurrentAccount { get; set; }
-        public OnlineContextStub OnlineContext { get; private set; } 
+        public IOnlineContext OnlineContext { get; private set; }
     }
 }

@@ -80,6 +80,7 @@
     <Compile Include="GoogleCalendarAdapter\IEventClient.cs" />
     <Compile Include="GoogleCalendarAdapter\GoogleRestAPILegacyClass.cs" />
     <Compile Include="Storage\Abstraction.cs" />
+    <Compile Include="Storage\IOnlineContext.cs" />
     <Compile Include="Storage\DBObject.cs" />
     <Compile Include="Storage\DBTypeFactory.cs" />
     <Compile Include="Storage\DBTypeImplementor.cs" />

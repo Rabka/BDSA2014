@@ -15,6 +15,6 @@ namespace CALENDAR.Storage
         void UndoAllChangeCommands();
         void SyncChangeCommands();
         Account CurrentAccount {get;set;}
-        OnlineContext OnlineContext { get;   }
+        IOnlineContext OnlineContext { get;   }
     }
 }

@@ -45,7 +45,7 @@ namespace ComponentTesting
             Assert.AreEqual(1, changeCommand2.undoWasCalled);
         }
         [TestMethod]
-        public void TestPath_UndoAllChangeCommands()
+        public void TestPath_UndoAllChangeCommands2()
         {
             ChangeCommandStub changeCommand1 = new ChangeCommandStub();
             ChangeCommandStub changeCommand2 = new ChangeCommandStub();

@@ -6,7 +6,7 @@ using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 namespace CALENDAR.Storage
 {
-    public class OnlineContext
+    public class OnlineContext : IOnlineContext
     {   
         ISyncStrategy _syncStrategy;
         DateTime _lastSyncDateTime = DateTime.Now;
@@ -80,26 +80,20 @@ namespace CALENDAR.Storage
         {
             //SetOfflineOnlineInterface(true);
         }
-        private void SetOfflineOnlineInterface(bool isOnline)
+
+        public void SetOfflineOnlineInterface(bool isOnline)
         {
-            if (isOnline && !(_syncStrategy is Online))
-            {
-                _syncStrategy = new Online();
-            }
-            else if (!isOnline && !(_syncStrategy is Offline))
-            {
-                _syncStrategy = new Offline();
-            }
+            throw new NotImplementedException();
         }
+
         public bool isOnline()
         {
             return (_syncStrategy is Online);
         }
 
-        EventComponent[] GetEventComponents(DateTime from, DateTime to)
+        public EventComponent[] GetEventComponents(DateTime @from, DateTime to)
         {
             throw new NotImplementedException();
-
         }
     }
 }

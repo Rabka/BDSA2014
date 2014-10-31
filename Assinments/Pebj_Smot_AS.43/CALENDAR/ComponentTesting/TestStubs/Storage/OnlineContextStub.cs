@@ -7,7 +7,7 @@ using CALENDAR.EventManagement;
 using CALENDAR.Commands;
 namespace CALENDAR.Storage
 {
-    public class OnlineContextStub
+    public class OnlineContextStub : IOnlineContext
     {
         int tableID = 0;
         List<Account> accounts = new List<Account>();
@@ -28,16 +28,21 @@ namespace CALENDAR.Storage
             return _lastSyncDateTime;
         }
 
+        public DateTime Sync()
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddAccount(Account newAccount)
         {
-            if (accounts.Select(x => x).Where(x => x.Username == newAccount.Username).Count() > 0)
+            if (accounts.Select(x => x).Any(x => x.Username == newAccount.Username))
                 throw new Exception();
             newAccount.TableID = tableID++;
             accounts.Add(newAccount);
         }
         public void RemoveAccount(Account account)
         {
-            accounts.Remove(accounts.Select(x => x).Where(x => x.TableID == account.TableID).First());
+            accounts.Remove(accounts.Select(x => x).First(x => x.TableID == account.TableID));
         }
         public void UpdateAccount(Account account)
         {
@@ -49,12 +54,28 @@ namespace CALENDAR.Storage
         }
         public Account GetAccount(string username)
         {
-            return accounts.Select(x => x).Where(x => x.Username == username).First();
+            return accounts.Select(x => x).First(x => x.Username == username);
         }
         public int GetAccountsCount()
         {
             return accounts.Count;
         }
+
+        public void AddEvent(EventComponent newEvent)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveEvent(EventComponent @event)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateEvent(EventComponent @event)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddEvent(EventLeaf newEvent)
         {
             newEvent.TableID = tableID++;
@@ -62,7 +83,7 @@ namespace CALENDAR.Storage
         }
         public void RemoveEvent(EventLeaf @event)
         {
-            events.Remove(events.Select(x => x).Where(x => x.TableID == @event.TableID).First());
+            events.Remove(events.Select(x => x).First(x => x.TableID == @event.TableID));
         }
         public void UpdateEvent(EventLeaf account)
         {
@@ -87,6 +108,12 @@ namespace CALENDAR.Storage
         public void checkOnlineStatus()
         {
         }
+
+        void IOnlineContext.SetOfflineOnlineInterface(bool isOnline)
+        {
+            SetOfflineOnlineInterface(isOnline);
+        }
+
         private void SetOfflineOnlineInterface(bool isOnline)
         {
         }
@@ -96,6 +123,11 @@ namespace CALENDAR.Storage
         public bool isOnline()
         {
             return isOnlineVar;
+        }
+
+        public EventComponent[] GetEventComponents(DateTime @from, DateTime to)
+        {
+            throw new NotImplementedException();
         }
 
         EventComponent[] GetEvents(DateTime from, DateTime to)
