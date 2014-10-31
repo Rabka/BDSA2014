@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using CALENDAR.EventManagement;
 using CALENDAR.AccountManagement;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 using CALENDAR.GoogleCalendarAdapter;
 using CALENDAR.Commands;
 namespace CALENDAR.Storage
 {
-    class Season : ISeason
+    public class Season : ISeason
     {
         private List<IChangeCommand> changeCommands;
         public OnlineContext OnlineContext { get; private set; }
@@ -34,7 +34,7 @@ namespace CALENDAR.Storage
         {
             throw new NotImplementedException();
         }
-        public Account currentAccount { get; set; }
+        public Account CurrentAccount { get; set; }
 
     }
 }

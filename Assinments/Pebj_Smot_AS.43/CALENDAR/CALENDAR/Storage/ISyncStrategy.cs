@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
-namespace CALENDAR.Synchronization
+namespace CALENDAR.Storage
 {
     interface ISyncStrategy
     {
@@ -17,9 +17,9 @@ namespace CALENDAR.Synchronization
         Account GetAccountByUsername(string username);
         Account GetAccountByTableID(string tableID);
         int GetAccountsCount();
-        void AddEvent(EventLeaf newEvent);
-        void RemoveEvent(EventLeaf @event);
-        void UpdateEvent(EventLeaf @event);
+        void AddEvent(EventComponent newEvent);
+        void RemoveEvent(EventComponent @event);
+        void UpdateEvent(EventComponent @event);
         EventComponent GetEvent(string tableID);
         EventComponent[] GetEvents(DateTime from, DateTime to);
     }

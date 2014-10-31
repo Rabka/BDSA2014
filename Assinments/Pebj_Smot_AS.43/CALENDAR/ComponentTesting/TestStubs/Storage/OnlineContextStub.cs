@@ -5,7 +5,7 @@ using System.Text;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 using CALENDAR.Commands;
-namespace CALENDAR.Synchronization
+namespace CALENDAR.Storage
 {
     public class OnlineContextStub
     {

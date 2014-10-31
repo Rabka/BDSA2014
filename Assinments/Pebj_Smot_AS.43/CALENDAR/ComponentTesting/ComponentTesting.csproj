@@ -58,9 +58,9 @@
     <Compile Include="TestEventComponent.cs" />
     <Compile Include="TestEventLogic.cs" />
     <Compile Include="TestSeason.cs" />
-    <Compile Include="TestStubs\Synchronization\ChangeCommandStub.cs" />
-    <Compile Include="TestStubs\Synchronization\OnlineContextStub.cs" />
-    <Compile Include="TestStubs\Synchronization\SeasonStub.cs" />
+    <Compile Include="TestStubs\Storage\ChangeCommandStub.cs" />
+    <Compile Include="TestStubs\Storage\OnlineContextStub.cs" />
+    <Compile Include="TestStubs\Storage\SeasonStub.cs" />
     <Compile Include="TestIntegrationES.cs" />
     <Compile Include="TestIntegrationAS.cs" />
   </ItemGroup>

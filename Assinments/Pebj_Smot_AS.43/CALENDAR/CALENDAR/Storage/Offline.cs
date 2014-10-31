@@ -5,13 +5,18 @@ using System.Text;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 
-namespace CALENDAR.Synchronization
+namespace CALENDAR.Storage
 {
-    class RDBMS : DBTypeImplementor
+    class Offline : ISyncStrategy
     {
-        public RDBMS(string connectionString)
+        public Abstraction abstraction;
+        public void SetDBType(DBTypeImplementor impl)
         {
-
+            throw new NotImplementedException();
+        }
+        public void Sync()
+        {
+            throw new NotImplementedException();
         }
         public void AddAccount(Account newAccount)
         {
@@ -41,15 +46,15 @@ namespace CALENDAR.Synchronization
         {
             throw new NotImplementedException();
         }
-        public void AddEvent(EventLeaf newEvent)
+        public void AddEvent(EventComponent newEvent)
         {
             throw new NotImplementedException();
         }
-        public void RemoveEvent(EventLeaf @event)
+        public void RemoveEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }
-        public void UpdateEvent(EventLeaf @event)
+        public void UpdateEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }
@@ -63,4 +68,3 @@ namespace CALENDAR.Synchronization
         }
     }
 }
-

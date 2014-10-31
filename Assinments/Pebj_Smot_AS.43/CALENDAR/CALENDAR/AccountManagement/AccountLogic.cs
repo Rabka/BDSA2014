@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 
 namespace CALENDAR.AccountManagement
 {

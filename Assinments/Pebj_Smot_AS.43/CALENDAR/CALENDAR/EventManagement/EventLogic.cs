@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
  using CALENDAR.AccountManagement;
  using CALENDAR.GoogleCalendarAdapter;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 namespace CALENDAR.EventManagement
 {
     public class EventLogic

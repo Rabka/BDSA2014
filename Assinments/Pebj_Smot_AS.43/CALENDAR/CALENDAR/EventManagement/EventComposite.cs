@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CALENDAR.AccountManagement;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 using System.Windows.Forms;
 namespace CALENDAR.EventManagement
 {

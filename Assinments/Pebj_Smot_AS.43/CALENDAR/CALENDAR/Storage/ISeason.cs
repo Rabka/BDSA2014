@@ -5,16 +5,16 @@ using System.Text;
 using CALENDAR.Commands;
 using CALENDAR.EventManagement;
 using CALENDAR.AccountManagement;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 namespace CALENDAR.Storage
 {
-    interface ISeason
+    public interface ISeason
     {
         void AddChangeCommand(IChangeCommand command);
         void UndoLastChangeCommand();
         void UndoAllChangeCommands();
         void SyncChangeCommands();
-        Account currentAccount {get;set;}
+        Account CurrentAccount {get;set;}
         OnlineContext OnlineContext { get;   }
     }
 }

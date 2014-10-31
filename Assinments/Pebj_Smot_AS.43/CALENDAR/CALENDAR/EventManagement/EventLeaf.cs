@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 
 namespace CALENDAR.EventManagement
 {

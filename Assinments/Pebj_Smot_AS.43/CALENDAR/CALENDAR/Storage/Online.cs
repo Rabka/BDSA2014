@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
-namespace CALENDAR.Synchronization
+using CALENDAR.AccountManagement;
+namespace CALENDAR.Storage
 {
-    class Abstraction : DBTypeImplementor
+    class Online : ISyncStrategy
     {
-        private DBTypeImplementor _imp;
-        public Abstraction(DBTypeImplementor imp)
+        public Abstraction abstraction;
+        public void SetDBType(DBTypeImplementor impl)
         {
-            this._imp = imp;
+            throw new NotImplementedException();
+        }
+        public void Sync()
+        {
+            throw new NotImplementedException();
+        }
+        public string GetSharedEventLink(EventComponent @event)
+        {
+            throw new NotImplementedException();
         }
         public void AddAccount(Account newAccount)
         {
@@ -41,15 +49,15 @@ namespace CALENDAR.Synchronization
         {
             throw new NotImplementedException();
         }
-        public void AddEvent(EventLeaf newEvent)
+        public void AddEvent(EventComponent newEvent)
         {
             throw new NotImplementedException();
         }
-        public void RemoveEvent(EventLeaf @event)
+        public void RemoveEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }
-        public void UpdateEvent(EventLeaf @event)
+        public void UpdateEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }
@@ -59,6 +67,7 @@ namespace CALENDAR.Synchronization
         }
         public EventComponent[] GetEvents(DateTime from, DateTime to)
         {
+        
             throw new NotImplementedException();
         }
     }

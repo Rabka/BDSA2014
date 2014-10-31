@@ -16,9 +16,9 @@ namespace CALENDAR.Storage
          Account GetAccountByUsername(string username);
          Account GetAccountByTableID(string tableID);
          int GetAccountsCount();
-         void AddEvent(EventLeaf newEvent);
-         void RemoveEvent(EventLeaf @event);
-         void UpdateEvent(EventLeaf @event);
+         void AddEvent(EventComponent newEvent);
+         void RemoveEvent(EventComponent @event);
+         void UpdateEvent(EventComponent @event);
          EventComponent GetEvent(string tableID);
          EventComponent[] GetEvents(DateTime from, DateTime to);
         

@@ -1,6 +1,6 @@
 ﻿using System;
 using CALENDAR.AccountManagement;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 
 namespace CALENDAR.EventManagement
 {

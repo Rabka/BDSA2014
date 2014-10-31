@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
-namespace CALENDAR.Synchronization
+namespace CALENDAR.Storage
 {
     public class OnlineContext
     {   
@@ -24,15 +24,15 @@ namespace CALENDAR.Synchronization
             return DateTime.Now;
         }
 
-        public void AddAccount(DBObject newAccount)
+        public void AddAccount(Account newAccount)
         {
             throw new NotImplementedException();
         }
-        public void RemoveAccount(DBObject account)
+        public void RemoveAccount(Account account)
         {
             throw new NotImplementedException();
         }
-        public void UpdateAccount(DBObject account)
+        public void UpdateAccount(Account account)
         {
             throw new NotImplementedException();
         }
@@ -48,15 +48,15 @@ namespace CALENDAR.Synchronization
         {
             throw new NotImplementedException();
         }
-        public void AddEvent(DBObject newAccount)
+        public void AddEvent(EventComponent newEvent)
         {
             throw new NotImplementedException();
         }
-        public void RemoveEvent(DBObject account)
+        public void RemoveEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }
-        public void UpdateEvent(DBObject account)
+        public void UpdateEvent(EventComponent @event)
         {
             throw new NotImplementedException();
         }

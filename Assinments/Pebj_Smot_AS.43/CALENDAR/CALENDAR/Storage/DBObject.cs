@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CALENDAR.Storage
 {
-    interface DBObject
+    public interface DBObject
     {
        int TableID { get; set; }
     }

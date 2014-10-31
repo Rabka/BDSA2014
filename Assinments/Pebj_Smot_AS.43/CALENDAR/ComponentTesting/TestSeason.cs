@@ -2,9 +2,9 @@
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ComponentTesting.TestStubs;
-using CALENDAR.Synchronization;
+using CALENDAR.Storage;
 using CALENDAR.Commands;
-using ComponentTesting.TestStubs.Synchronization;
+using ComponentTesting.TestStubs.Storage;
 namespace ComponentTesting
 {
     [TestClass]
@@ -23,13 +23,7 @@ namespace ComponentTesting
         {
             season.AddChangeCommand(new ChangeCommandStub());
         }
-
-        [TestMethod]
-        public void BoundaryTest()
-        {
-
-        }
-
+        
         [TestMethod]
         public void TestPath_SyncChangeCommands()
         {
@@ -61,12 +55,7 @@ namespace ComponentTesting
             Assert.AreEqual(0, changeCommand1.undoWasCalled);
             Assert.AreEqual(1, changeCommand2.undoWasCalled);     
         }
-
-        [TestMethod]
-        public void StateBasedTest()
-        {
-        }
-
+        
         [TestMethod]
         public void TestPolymorphism_Season()
         {
