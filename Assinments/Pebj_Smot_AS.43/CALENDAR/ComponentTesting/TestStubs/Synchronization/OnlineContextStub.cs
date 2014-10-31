@@ -81,9 +81,17 @@ namespace CALENDAR.Synchronization
         private void SetOfflineOnlineInterface(bool isOnline)
         {
         }
+
+        private bool isOnlineVar = true;
+
         public bool isOnline()
         {
-            throw new NotImplementedException();
+            return isOnlineVar;
+        }
+
+        public void IsOnlineToFalse()
+        {
+            isOnlineVar = false;
         }
     }
 }

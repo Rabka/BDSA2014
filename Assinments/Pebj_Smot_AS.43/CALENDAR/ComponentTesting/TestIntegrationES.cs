@@ -2,36 +2,35 @@
 using System.Linq;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
-using ComponentTesting.TestStubs;
+using CALENDAR.Synchronization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 
 namespace ComponentTesting
 {
     /// <summary>
-    /// This class is a unit test of the EventLogic class
+    /// Intergration test of EventLogic and Season
     /// </summary>
     [TestClass]
-    public class TestEventLogic
+    public class TestIntegrationES
     {
         private EventLogic eventLogic;
-        private SeasonStub seasonStub;
+        private Season season;
 
         [TestInitialize]
         public void SetUp(int i)
         {
-            seasonStub = new SeasonStub();
-            seasonStub.CurrentAccount = new Account("account", "u", "e", false);
-            eventLogic = new EventLogic(seasonStub);
+            season = new Season();
+            season.CurrentAccount = new Account("account", "u", "e", false);
+            eventLogic = new EventLogic(season);
         }
 
         [TestMethod]
         public void EquivalenceTest_AddEvent()
         {
             EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
-                                                    new INotification[] {new Notification(DateTime.Parse("11-11-9"), false)});
-            Assert.AreEqual(true,e.TableID != 0);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContextStub.GetEvent(e.TableID).TableID);
+                                                    new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
+            Assert.AreEqual(true, e.TableID != 0);
+            Assert.AreEqual(e.TableID, season.OnlineContext.GetEvent(e.TableID).TableID);
         }
 
         [TestMethod]
@@ -40,11 +39,11 @@ namespace ComponentTesting
             EventComponent e = eventLogic.AddEvent("", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
                                                     new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
             Assert.AreEqual(true, e.TableID != 0);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContextStub.GetEvent(e.TableID).TableID);
+            Assert.AreEqual(e.TableID, season.OnlineContext.GetEvent(e.TableID).TableID);
 
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"), null);
             Assert.AreEqual(true, e2.TableID != 0);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
         }
 
         [TestMethod]
@@ -53,12 +52,12 @@ namespace ComponentTesting
             EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
                                                     new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
             Assert.AreEqual(true, e.TableID != 0);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContextStub.GetEvent(e.TableID).TableID);
+            Assert.AreEqual(e.TableID, season.OnlineContext.GetEvent(e.TableID).TableID);
 
             EventComponent e2 = eventLogic.AddEvent("", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
                                                     new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
             Assert.AreEqual(true, e2.TableID != 0);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
         }
 
         [TestMethod]
@@ -67,7 +66,7 @@ namespace ComponentTesting
             EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
                                                     new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
             Assert.AreEqual(e.TableID, eventLogic.GetEventById(e.TableID.ToString()).TableID);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContextStub.GetEvent(e.TableID).TableID);
+            Assert.AreEqual(e.TableID, season.OnlineContext.GetEvent(e.TableID).TableID);
         }
 
         [TestMethod]
@@ -75,12 +74,12 @@ namespace ComponentTesting
         {
             EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"), null);
             Assert.AreEqual(e.TableID, eventLogic.GetEventById(e.TableID.ToString()).TableID);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContextStub.GetEvent(e.TableID).TableID);
+            Assert.AreEqual(e.TableID, season.OnlineContext.GetEvent(e.TableID).TableID);
 
             EventComponent e2 = eventLogic.AddEvent("", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
                                                     new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
             Assert.AreEqual(e2.TableID, eventLogic.GetEventById(e2.TableID.ToString()).TableID);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
         }
 
         [TestMethod]
@@ -89,14 +88,14 @@ namespace ComponentTesting
             EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"), null);
 
             Assert.AreEqual(e.TableID, eventLogic.GetEventById(e.TableID.ToString()).TableID);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContextStub.GetEvent(e.TableID).TableID);
+            Assert.AreEqual(e.TableID, season.OnlineContext.GetEvent(e.TableID).TableID);
 
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
                                                     new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
             EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec", "d", new Account("n", "u", "e", false), e, e2);
 
             Assert.AreEqual(ec.TableID, eventLogic.GetEventById(ec.TableID.ToString()).TableID);
-            Assert.AreEqual(ec.TableID, seasonStub.OnlineContextStub.GetEvent(ec.TableID).TableID);
+            Assert.AreEqual(ec.TableID, season.OnlineContext.GetEvent(ec.TableID).TableID);
         }
 
         [TestMethod]
@@ -168,9 +167,9 @@ namespace ComponentTesting
         public void EquivalenceTest_RemoveEvent()
         {
             EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContextStub.GetEvent(e.TableID).TableID);
+            Assert.AreEqual(e.TableID, season.OnlineContext.GetEvent(e.TableID).TableID);
             eventLogic.RemoveEvent(e);
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(e.TableID) == null);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(e.TableID) == null);
         }
 
         [TestMethod]
@@ -179,12 +178,12 @@ namespace ComponentTesting
             EventComponent e1 = eventLogic.AddEvent("e1", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec", "d", new Account("n", "u", "e", false), e1, e2);
-            
-            Assert.AreEqual(ec, seasonStub.OnlineContextStub.GetEvent(ec.TableID));
+
+            Assert.AreEqual(ec, season.OnlineContext.GetEvent(ec.TableID));
             eventLogic.RemoveEvent(ec);
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec.TableID) == null);
-            Assert.AreEqual(e1.TableID, seasonStub.OnlineContextStub.GetEvent(e1.TableID).TableID);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec.TableID) == null);
+            Assert.AreEqual(e1.TableID, season.OnlineContext.GetEvent(e1.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
         }
 
         [TestMethod]
@@ -194,17 +193,17 @@ namespace ComponentTesting
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec", "d", new Account("n", "u", "e", false), e1, e2);
 
-            Assert.AreEqual(e1.TableID, seasonStub.OnlineContextStub.GetEvent(e1.TableID).TableID);
+            Assert.AreEqual(e1.TableID, season.OnlineContext.GetEvent(e1.TableID).TableID);
             eventLogic.RemoveEvent(e1);
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(e1.TableID) == null);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(e1.TableID) == null);
 
-            Assert.AreEqual(ec.TableID, seasonStub.OnlineContextStub.GetEvent(ec.TableID).TableID);
+            Assert.AreEqual(ec.TableID, season.OnlineContext.GetEvent(ec.TableID).TableID);
             eventLogic.RemoveEvent(ec);
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec.TableID) == null);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec.TableID) == null);
 
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
             eventLogic.RemoveEvent(e2);
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(e2.TableID) == null);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(e2.TableID) == null);
         }
 
         [TestMethod]
@@ -214,7 +213,7 @@ namespace ComponentTesting
             e.Title = "new e";
             eventLogic.UpdateEvent(e);
 
-            Assert.AreEqual("new e", seasonStub.OnlineContextStub.GetEvent(e.TableID).Title);
+            Assert.AreEqual("new e", season.OnlineContext.GetEvent(e.TableID).Title);
         }
 
         [TestMethod]
@@ -224,30 +223,30 @@ namespace ComponentTesting
             e.Title = null;
             eventLogic.UpdateEvent(e);
 
-            Assert.AreEqual(null, seasonStub.OnlineContextStub.GetEvent(e.TableID).Title);
+            Assert.AreEqual(null, season.OnlineContext.GetEvent(e.TableID).Title);
 
             EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec", "d", new Account("n", "u", "e", false), e);
             ec.Title = "new title";
             eventLogic.UpdateEvent(ec);
 
-            Assert.AreEqual("new title", seasonStub.OnlineContextStub.GetEvent(ec.TableID).Title);
+            Assert.AreEqual("new title", season.OnlineContext.GetEvent(ec.TableID).Title);
         }
 
         [TestMethod]
         public void PathTest_UpdateEvent()
         {
             EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
-            seasonStub.CurrentAccount = new Account("other account","u","e",false);
+            season.CurrentAccount = new Account("other account", "u", "e", false);
             e.Title = "new e";
             eventLogic.UpdateEvent(e);
 
-            Assert.AreEqual("e", seasonStub.OnlineContextStub.GetEvent(e.TableID).Title);
+            Assert.AreEqual("e", season.OnlineContext.GetEvent(e.TableID).Title);
 
-            seasonStub.CurrentAccount = new Account("moderator account", "u", "e",true);
+            season.CurrentAccount = new Account("moderator account", "u", "e", true);
             e.Title = "new e";
             eventLogic.UpdateEvent(e);
 
-            Assert.AreEqual("new e", seasonStub.OnlineContextStub.GetEvent(e.TableID).Title);
+            Assert.AreEqual("new e", season.OnlineContext.GetEvent(e.TableID).Title);
         }
 
         [TestMethod]
@@ -257,13 +256,13 @@ namespace ComponentTesting
             e.Title = null;
             eventLogic.UpdateEvent(e);
 
-            Assert.AreEqual(null, seasonStub.OnlineContextStub.GetEvent(e.TableID).Title);
+            Assert.AreEqual(null, season.OnlineContext.GetEvent(e.TableID).Title);
 
             EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec", "d", new Account("n", "u", "e", false), e);
             ec.Title = "new title";
             eventLogic.UpdateEvent(ec);
 
-            Assert.AreEqual("new title", seasonStub.OnlineContextStub.GetEvent(ec.TableID).Title);
+            Assert.AreEqual("new title", season.OnlineContext.GetEvent(ec.TableID).Title);
         }
 
         [TestMethod]
@@ -271,14 +270,14 @@ namespace ComponentTesting
         {
             EventComponent e1 = eventLogic.AddEvent("e1", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
-            EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec","d",new Account("n","u","e",false), e1, e2);
+            EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec", "d", new Account("n", "u", "e", false), e1, e2);
 
-            Assert.AreEqual(e1.TableID, seasonStub.OnlineContextStub.GetEvent(e1.TableID).TableID);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
-            Assert.AreEqual(ec.TableID, seasonStub.OnlineContextStub.GetEvent(ec.TableID).TableID);
+            Assert.AreEqual(e1.TableID, season.OnlineContext.GetEvent(e1.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(ec.TableID, season.OnlineContext.GetEvent(ec.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(e1.TableID).GetLeafs()[0].TableID == e1.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(e1.TableID).GetLeafs()[1].TableID == e1.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(e1.TableID).GetLeafs()[0].TableID == e1.TableID ||
+                                  season.OnlineContext.GetEvent(e1.TableID).GetLeafs()[1].TableID == e1.TableID);
         }
 
         [TestMethod]
@@ -287,10 +286,10 @@ namespace ComponentTesting
             EventComponent e1 = eventLogic.AddEvent("e1", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent ec = eventLogic.JoinComponentsToNewComposite("ec", "d", new Account("n", "u", "e", false), e1);
 
-            Assert.AreEqual(e1.TableID, seasonStub.OnlineContextStub.GetEvent(e1.TableID).TableID);
-            Assert.AreEqual(ec.TableID, seasonStub.OnlineContextStub.GetEvent(ec.TableID).TableID);
+            Assert.AreEqual(e1.TableID, season.OnlineContext.GetEvent(e1.TableID).TableID);
+            Assert.AreEqual(ec.TableID, season.OnlineContext.GetEvent(ec.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(e1.TableID).GetLeafs()[0].TableID == e1.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(e1.TableID).GetLeafs()[0].TableID == e1.TableID);
         }
 
         [TestMethod]
@@ -302,14 +301,14 @@ namespace ComponentTesting
             EventComponent e3 = eventLogic.AddEvent("e3", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent ec2 = eventLogic.JoinComponentsToNewComposite("ec2", "d", new Account("n", "u", "e", false), ec1, e3);
 
-            Assert.AreEqual(e1.TableID, seasonStub.OnlineContextStub.GetEvent(e1.TableID).TableID);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
-            Assert.AreEqual(ec1.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(e1.TableID, season.OnlineContext.GetEvent(e1.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(ec1.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec1.TableID) == null);
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e1.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e1.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e1.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec1.TableID) == null);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e1.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e1.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e1.TableID);
         }
 
         [TestMethod]
@@ -321,14 +320,14 @@ namespace ComponentTesting
             EventComponent e3 = eventLogic.AddEvent("e3", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent ec2 = eventLogic.JoinComponentsToNewComposite("ec2", "d", new Account("n", "u", "e", false), ec1, e3);
 
-            Assert.AreEqual(e1.TableID, seasonStub.OnlineContextStub.GetEvent(e1.TableID).TableID);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContextStub.GetEvent(e2.TableID).TableID);
-            Assert.AreEqual(ec1.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(e1.TableID, season.OnlineContext.GetEvent(e1.TableID).TableID);
+            Assert.AreEqual(e2.TableID, season.OnlineContext.GetEvent(e2.TableID).TableID);
+            Assert.AreEqual(ec1.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec1.TableID) == null);
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e1.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e1.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e1.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec1.TableID) == null);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e1.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e1.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e1.TableID);
         }
 
         [TestMethod]
@@ -338,13 +337,13 @@ namespace ComponentTesting
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent ec1 = eventLogic.JoinComponentsToNewComposite("ec1", "d", new Account("n", "u", "e", false), e1, e2);
             EventComponent e3 = eventLogic.AddEvent("e3", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
-            eventLogic.AddComponentsToComposite(ec1,new EventComponent[] {e3});
+            eventLogic.AddComponentsToComposite(ec1, new EventComponent[] { e3 });
 
-            Assert.AreEqual(ec1.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(ec1.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e3.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e3.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[2].TableID == e3.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e3.TableID ||
+                                  season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e3.TableID ||
+                                  season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[2].TableID == e3.TableID);
         }
 
         [TestMethod]
@@ -355,10 +354,10 @@ namespace ComponentTesting
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             eventLogic.AddComponentsToComposite(ec1, new EventComponent[] { e2 });
 
-            Assert.AreEqual(ec1.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(ec1.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e2.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e2.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e2.TableID ||
+                                  season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e2.TableID);
         }
 
         [TestMethod]
@@ -370,11 +369,11 @@ namespace ComponentTesting
             EventComponent e3 = eventLogic.AddEvent("e3", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             eventLogic.AddComponentsToComposite(ec1, new EventComponent[] { e3 });
 
-            Assert.AreEqual(ec1.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(ec1.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e3.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e3.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[2].TableID == e3.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e3.TableID ||
+                                  season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e3.TableID ||
+                                  season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[2].TableID == e3.TableID);
 
             EventComponent e4 = eventLogic.AddEvent("e4", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent e5 = eventLogic.AddEvent("e5", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
@@ -383,13 +382,13 @@ namespace ComponentTesting
             EventComponent ec3 = eventLogic.JoinComponentsToNewComposite("ec3", "d", new Account("n", "u", "e", false), e5, e6);
             eventLogic.AddComponentsToComposite(ec2, new EventComponent[] { ec3 });
 
-            Assert.AreEqual(ec2.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(ec2.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e6.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e6.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e6.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e6.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e6.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e6.TableID);
 
-            Assert.AreEqual(3, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs().Length);
+            Assert.AreEqual(3, season.OnlineContext.GetEvent(ec1.TableID).GetLeafs().Length);
         }
 
         [TestMethod]
@@ -401,11 +400,11 @@ namespace ComponentTesting
             EventComponent e3 = eventLogic.AddEvent("e3", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             eventLogic.AddComponentsToComposite(ec1, new EventComponent[] { e3 });
 
-            Assert.AreEqual(ec1.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(ec1.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e3.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e3.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs()[2].TableID == e3.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[0].TableID == e3.TableID ||
+                                  season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[1].TableID == e3.TableID ||
+                                  season.OnlineContext.GetEvent(ec1.TableID).GetLeafs()[2].TableID == e3.TableID);
 
             EventComponent e4 = eventLogic.AddEvent("e4", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
             EventComponent e5 = eventLogic.AddEvent("e5", DateTime.Parse("11-11-10"), DateTime.Parse("11-11-10"), null);
@@ -414,13 +413,13 @@ namespace ComponentTesting
             EventComponent ec3 = eventLogic.JoinComponentsToNewComposite("ec3", "d", new Account("n", "u", "e", false), e5, e6);
             eventLogic.AddComponentsToComposite(ec2, new EventComponent[] { ec3 });
 
-            Assert.AreEqual(ec2.TableID, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).TableID);
+            Assert.AreEqual(ec2.TableID, season.OnlineContext.GetEvent(ec1.TableID).TableID);
 
-            Assert.AreEqual(true, seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e6.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e6.TableID ||
-                                  seasonStub.OnlineContextStub.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e6.TableID);
+            Assert.AreEqual(true, season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[0].TableID == e6.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[1].TableID == e6.TableID ||
+                                  season.OnlineContext.GetEvent(ec2.TableID).GetLeafs()[2].TableID == e6.TableID);
 
-            Assert.AreEqual(3, seasonStub.OnlineContextStub.GetEvent(ec1.TableID).GetLeafs().Length);
+            Assert.AreEqual(3, season.OnlineContext.GetEvent(ec1.TableID).GetLeafs().Length);
         }
     }
 }
