@@ -90,14 +90,22 @@ namespace CALENDAR.Synchronization
         private void SetOfflineOnlineInterface(bool isOnline)
         {
         }
+
+        private bool isOnlineVar = true;
+
         public bool isOnline()
         {
-            return false;
+            return isOnlineVar;
         }
 
         EventComponent[] GetEvents(DateTime from, DateTime to)
         {
             return events.Select(x => x).Where(x => x.DateFrom >= from && x.DateTo <= to).ToArray();
+        }
+
+        public void IsOnlineToFalse()
+        {
+            isOnlineVar = false;
         }
     }
 }

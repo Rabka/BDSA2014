@@ -61,6 +61,8 @@
     <Compile Include="TestStubs\Synchronization\ChangeCommandStub.cs" />
     <Compile Include="TestStubs\Synchronization\OnlineContextStub.cs" />
     <Compile Include="TestStubs\Synchronization\SeasonStub.cs" />
+    <Compile Include="TestIntegrationES.cs" />
+    <Compile Include="TestIntegrationAS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CALENDAR\CALENDAR.csproj">

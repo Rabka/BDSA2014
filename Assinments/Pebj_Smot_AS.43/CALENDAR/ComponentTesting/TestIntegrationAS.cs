@@ -1,24 +1,21 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CALENDAR.AccountManagement;
 using CALENDAR.Synchronization;
-using ComponentTesting.TestStubs;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace ComponentTesting
 {
-    /// <summary>
-    /// This class is a unit test of the AccountManagement class
-    /// </summary>
     [TestClass]
-    public class TestAccountManagement
+    public class TestIntegrationAS
     {
         private AccountLogic accountLogic;
-        private SeasonStub seasonStub;
+        private Season seasonStub;
         private Account Maccount;
 
         [TestInitialize]
         public void SetUp(int i)
         {
-            seasonStub = new SeasonStub();
+            seasonStub = new Season();
             accountLogic = new AccountLogic(seasonStub);
 
 
@@ -28,12 +25,12 @@ namespace ComponentTesting
             accountLogic = new AccountLogic(seasonStub);
         }
 
-//        public int TryGetNumberOfAccounts()
+        //        public int TryGetNumberOfAccounts()
 
         [TestMethod]
         public void EquivalenceTest_TryCreateAccount()
         {
-            Assert.AreEqual(true, accountLogic.TryCreateAccount( "John", "JohnsPassword", "andentestmail@gmail.com"));
+            Assert.AreEqual(true, accountLogic.TryCreateAccount("John", "JohnsPassword", "andentestmail@gmail.com"));
         }
 
         [TestMethod]
@@ -49,9 +46,6 @@ namespace ComponentTesting
             Assert.AreEqual(true, accountLogic.TryCreateAccount("John", "JohnsPassword", "testmail@gmail.com"));
             Assert.AreEqual(false, accountLogic.TryCreateAccount("Mu", "p", "testmail@gmail.com"));
             Assert.AreEqual(false, accountLogic.TryCreateAccount("u", "p", "Mtestmail@gmail.com"));
-
-            seasonStub.OnlineContextStub.IsOnlineToFalse();
-            Assert.AreEqual(false, accountLogic.TryCreateAccount("new name", "new password", "NewTestmail@gmail.com"));
         }
 
         [TestMethod]
@@ -77,25 +71,19 @@ namespace ComponentTesting
             Assert.AreEqual(false, accountLogic.TryLogin("", ""));
             Assert.AreEqual(false, accountLogic.TryLogin("u", ""));
             Assert.AreEqual(false, accountLogic.TryLogin("", "p"));
-
-            seasonStub.OnlineContextStub.IsOnlineToFalse();
-            Assert.AreEqual(false, accountLogic.TryLogin("u", "p"));
-            Assert.AreEqual(false, accountLogic.TryLogin("", ""));
-            Assert.AreEqual(false, accountLogic.TryLogin("u", ""));
-            Assert.AreEqual(false, accountLogic.TryLogin("", "p"));
         }
 
         [TestMethod]
         public void EquivalenceTest_TryRemoveAccount()
         {
-                Assert.AreEqual(true, accountLogic.TryRemoveAccount(Maccount));
+            Assert.AreEqual(true, accountLogic.TryRemoveAccount(Maccount));
         }
 
         [TestMethod]
         public void BoundaryTest_TryRemoveAccount()
         {
             accountLogic.TryCreateAccount("Ole", "p", "newmail@123.com");
-            Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContextStub.GetAccount("Ole")));
+            Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContext.GetAccount("Ole")));
 
             accountLogic.TryCreateAccount("Ole", "p", "newmail@123.com");
             accountLogic.TryLogin("Ole", "p");
@@ -106,26 +94,18 @@ namespace ComponentTesting
         public void TestPath_TryRemoveAccount()
         {
             accountLogic.TryCreateAccount("Ole", "p", "newmail@123.com");
-            Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContextStub.GetAccount("Ole")));
+            Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContext.GetAccount("Ole")));
 
             accountLogic.TryCreateAccount("Ole", "p", "newmail@123.com");
             accountLogic.TryLogin("Ole", "p");
             Assert.AreEqual(false, accountLogic.TryRemoveAccount(Maccount));
-
-            seasonStub.OnlineContextStub.IsOnlineToFalse();
-            accountLogic.TryLogin("Maccount", "Mpassword");
-            Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContextStub.GetAccount("Ole")));
         }
 
         [TestMethod]
         public void TestStateBased_TryRemoveAccount()
         {
             accountLogic.TryCreateAccount("Ole", "p", "newmail@123.com");
-            Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContextStub.GetAccount("Ole")));
-
-            accountLogic.TryCreateAccount("Ole", "p", "newmail@123.com");
-            seasonStub.OnlineContextStub.IsOnlineToFalse();
-            Assert.AreEqual(false, accountLogic.TryRemoveAccount(seasonStub.OnlineContextStub.GetAccount("Ole")));
+            Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContext.GetAccount("Ole")));
         }
 
         [TestMethod]
@@ -135,7 +115,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-         public void BoundaryTest_TryListAccounts()
+        public void BoundaryTest_TryListAccounts()
         {
             Assert.AreEqual(true, accountLogic.TryListAccounts(1, 0).Length == 0);
             Assert.AreEqual(true, accountLogic.TryListAccounts(0, 3).Length == 1);
@@ -152,11 +132,7 @@ namespace ComponentTesting
             accountLogic.TryCreateAccount("Ole3", "p", "3newmail@123.com");
 
             Assert.AreEqual(true, accountLogic.TryListAccounts(0, 5).Length == 4);
-            seasonStub.CurrentAccount = new Account("NotModerater","u","newemail@",false);
-            Assert.AreEqual(true, accountLogic.TryListAccounts(0, 5).Length == 1);
-
-            seasonStub.CurrentAccount = Maccount;
-            seasonStub.OnlineContextStub.IsOnlineToFalse();
+            seasonStub.CurrentAccount = new Account("NotModerater", "u", "newemail@", false);
             Assert.AreEqual(true, accountLogic.TryListAccounts(0, 5).Length == 1);
         }
 
@@ -171,12 +147,6 @@ namespace ComponentTesting
         {
             seasonStub.CurrentAccount = new Account("NotModerater", "u", "newemail@", false);
             Assert.AreEqual(true, accountLogic.TryGetNumberOfAccounts() == 0);
-
-            seasonStub.CurrentAccount = Maccount;
-            accountLogic.TryCreateAccount("Ole", "p", "newmail@123.com");
-            Assert.AreEqual(true, accountLogic.TryGetNumberOfAccounts() == 2);
-            seasonStub.OnlineContextStub.IsOnlineToFalse();
-            Assert.AreEqual(true, accountLogic.TryGetNumberOfAccounts() == 1);
         }
     }
 }
