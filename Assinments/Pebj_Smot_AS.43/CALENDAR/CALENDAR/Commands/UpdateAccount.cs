@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CALENDAR.AccountManagement;
+using CALENDAR.Synchronization;
 namespace CALENDAR.Commands
 {
     class UpdateAccount : IChangeCommand
     {
         public Account accountSnapshot;
+        public void SetSeason(ISeason season)
+        {
+            throw new NotImplementedException();
+        }
         public void Execute()
         {
             throw new NotImplementedException();

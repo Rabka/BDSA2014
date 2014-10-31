@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CALENDAR.Commands;
 using CALENDAR.Synchronization;
-
-namespace CALENDAR.Commands
+namespace ComponentTesting.TestStubs.Synchronization
 {
-    class CreateAccount : IChangeCommand
+    class ChangeCommandStub : IChangeCommand
     {
+        public int executeWasCalled = 0;
+        public int undoWasCalled = 0;
         public void SetSeason(ISeason season)
         {
-            throw new NotImplementedException();
         }
         public void Execute()
         {
-            throw new NotImplementedException();
+            executeWasCalled ++;
         }
         public void Undo()
         {
-            throw new NotImplementedException();
+            undoWasCalled++;
         }
     }
 }

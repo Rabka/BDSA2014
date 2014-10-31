@@ -58,6 +58,7 @@
     <Compile Include="TestEventComponent.cs" />
     <Compile Include="TestEventLogic.cs" />
     <Compile Include="TestSeason.cs" />
+    <Compile Include="TestStubs\Synchronization\ChangeCommandStub.cs" />
     <Compile Include="TestStubs\Synchronization\OnlineContextStub.cs" />
     <Compile Include="TestStubs\Synchronization\SeasonStub.cs" />
   </ItemGroup>

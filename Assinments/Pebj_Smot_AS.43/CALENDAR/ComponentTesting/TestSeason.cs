@@ -1,27 +1,65 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using ComponentTesting.TestStubs;
+using CALENDAR.Synchronization;
+using CALENDAR.Commands;
+using ComponentTesting.TestStubs.Synchronization;
 namespace ComponentTesting
 {
     [TestClass]
     public class TestSeason
     {
-        //Der skal vare PolymorphismTest med sterdegy design patteren
+        private Season season;
 
-        [TestMethod]
-        public void EquivalenceTest()
+        [TestInitialize]
+        public void SetUp(int i)
         {
+            season = new Season();
+        }
+        
+        [TestMethod]
+        public void TestEquivalence_AddChangeCommand()
+        {
+            season.AddChangeCommand(new ChangeCommandStub());
         }
 
         [TestMethod]
         public void BoundaryTest()
         {
+
         }
 
         [TestMethod]
-        public void PathTest()
+        public void TestPath_SyncChangeCommands()
         {
+            ChangeCommandStub changeCommand = new ChangeCommandStub();
+            season.AddChangeCommand(changeCommand);
+            season.SyncChangeCommands();
+            Assert.AreEqual(1, changeCommand.executeWasCalled);
+        }
+
+        [TestMethod]
+        public void TestPath_UndoAllChangeCommands()
+        {
+            ChangeCommandStub changeCommand1 = new ChangeCommandStub();
+            ChangeCommandStub changeCommand2 = new ChangeCommandStub();
+            season.AddChangeCommand(changeCommand1);
+            season.AddChangeCommand(changeCommand2);
+            season.UndoAllChangeCommands();
+            Assert.AreEqual(1, changeCommand1.undoWasCalled);
+            Assert.AreEqual(1, changeCommand2.undoWasCalled);
+        }
+        [TestMethod]
+        public void TestPath_UndoAllChangeCommands()
+        {
+            ChangeCommandStub changeCommand1 = new ChangeCommandStub();
+            ChangeCommandStub changeCommand2 = new ChangeCommandStub();
+            season.AddChangeCommand(changeCommand1);
+            season.AddChangeCommand(changeCommand2);
+            season.UndoLastChangeCommand();
+            Assert.AreEqual(0, changeCommand1.undoWasCalled);
+            Assert.AreEqual(1, changeCommand2.undoWasCalled);     
         }
 
         [TestMethod]
@@ -30,8 +68,10 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void PolymorphismTest()
+        public void TestPolymorphism_Season()
         {
+            season.SyncChangeCommands();
+            ((ISeason)season).SyncChangeCommands();
         }
     }
 }

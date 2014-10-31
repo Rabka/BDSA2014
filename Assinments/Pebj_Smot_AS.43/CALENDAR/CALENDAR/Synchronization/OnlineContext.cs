@@ -60,7 +60,7 @@ namespace CALENDAR.Synchronization
         {
             throw new NotImplementedException();
         }
-        public EventComponent GetEvent(int itemIndex)
+        public EventComponent GetEventComponent(int itemIndex)
         {
             throw new NotImplementedException();
         }
@@ -94,6 +94,12 @@ namespace CALENDAR.Synchronization
         public bool isOnline()
         {
             return (_syncStrategy is Online);
+        }
+
+        EventComponent[] GetEventComponents(DateTime from, DateTime to)
+        {
+            throw new NotImplementedException();
+
         }
     }
 }

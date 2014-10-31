@@ -9,29 +9,30 @@ namespace ComponentTesting.TestStubs
 {
     public class SeasonStub : ISeason
     {
+        List<IChangeCommand> changeCommands = new List<IChangeCommand>();
         public SeasonStub()
         {
-
+            OnlineContext = new OnlineContextStub();
         }
         public void AddChangeCommand(IChangeCommand command)
         {
-            throw new NotImplementedException();
+            command.SetSeason(this);
+            changeCommands.Add(command);
         }
         public void UndoLastChangeCommand()
         {
-            throw new NotImplementedException();
+            changeCommands[changeCommands.Count - 1].Undo();
         }
         public void UndoAllChangeCommands()
         {
-            throw new NotImplementedException();
+            changeCommands.ForEach(x => x.Undo());
         }
         public void SyncChangeCommands()
         {
-            throw new NotImplementedException();
+            OnlineContext.Sync(changeCommands.ToArray());
         }
 
         public Account CurrentAccount { get; set; }
-        public OnlineContext OnlineContext { get; private set; } // man skal have OnlineContextStub istedet når man bruger get
-        public OnlineContextStub OnlineContextStub { get; private set; }
+        public OnlineContextStub OnlineContext { get; private set; } 
     }
 }
