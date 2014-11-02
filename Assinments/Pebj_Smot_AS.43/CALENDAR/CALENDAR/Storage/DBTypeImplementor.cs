@@ -9,12 +9,12 @@ namespace CALENDAR.Storage
 {
     interface DBTypeImplementor
     {
-         void AddAccount(Account newAccount);
-         void RemoveAccount(Account account);
-         void UpdateAccount(Account account);
-         Account[] GetAccounts(int from,int to);
-         Account GetAccountByUsername(string username);
-         Account GetAccountByTableID(string tableID);
+         void AddAccount(IAccount newAccount);
+         void RemoveAccount(IAccount account);
+         void UpdateAccount(IAccount account);
+         IAccount[] GetAccounts(int from,int to);
+         IAccount GetAccountByUsername(string username);
+         IAccount GetAccountByTableID(string tableID);
          int GetAccountsCount();
          void AddEvent(EventComponent newEvent);
          void RemoveEvent(EventComponent @event);

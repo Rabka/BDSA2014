@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NorthWindVisualizer.tests")]
+[assembly: AssemblyTitle("NorthWindVisualizer.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("d")]
-[assembly: AssemblyProduct("NorthWindVisualizer.tests")]
-[assembly: AssemblyCopyright("Copyright © d 2014")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("NorthWindVisualizer.Tests")]
+[assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("dc12c2c4-764b-4655-a177-32f2b5a7d8b8")]
+[assembly: Guid("c2898e0e-22b2-4bab-82fb-1afa13787042")]
 
 // Version information for an assembly consists of the following four values:
 //

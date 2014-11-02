@@ -16,16 +16,15 @@ namespace ComponentTesting.TestStubs
         }
         public void AddChangeCommand(IChangeCommand command)
         {
-            command.SetSeason(this);
             changeCommands.Add(command);
         }
         public void UndoLastChangeCommand()
         {
-            changeCommands[changeCommands.Count - 1].Undo();
+            changeCommands[changeCommands.Count - 1].Undo(OnlineContext);
         }
         public void UndoAllChangeCommands()
         {
-            changeCommands.ForEach(x => x.Undo());
+            changeCommands.ForEach(x => x.Undo(OnlineContext));
         }
         public void SyncChangeCommands()
         {

@@ -17,7 +17,7 @@ namespace CALENDAR.EventManagement
             Date = dateForNotification;
             HasBeenProccesed = processed;
         }
-
+        public int TableID { get; set; }
         public DateTime Date { get; private set; }
         public bool HasBeenProccesed { get; set; }
     }
