@@ -79,10 +79,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataClasses\Category.cs" />
-    <Compile Include="DataClasses\Customer.cs" />
-    <Compile Include="DataClasses\Employee.cs" />
     <Compile Include="IRespiratory.cs" />
+    <Compile Include="ModelView\OrdersModelView.cs" />
     <Compile Include="Model\Categories.cs">
       <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
     </Compile>
@@ -117,11 +115,8 @@
       <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
     </Compile>
     <Compile Include="NorthWind.cs" />
-    <Compile Include="DataClasses\Order.cs" />
-    <Compile Include="DataClasses\Order_Detail.cs" />
-    <Compile Include="DataClasses\Product.cs" />
     <Compile Include="Respiratory.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -129,7 +124,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

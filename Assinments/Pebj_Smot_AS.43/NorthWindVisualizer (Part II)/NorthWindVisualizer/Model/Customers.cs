@@ -11,179 +11,26 @@ namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
-    public partial class Customers : INotifyPropertyChanged
+    
+    public partial class Customers
     {
         public Customers()
         {
             this.Orders = new HashSet<Orders>();
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
-        public string _CustomerID { get; set; }
-        private string _CompanyName { get; set; }
-        private string _ContactName { get; set; }
-        private string _ContactTitle { get; set; }
-        private string _Address { get; set; }
-        private string _City { get; set; }
-        private string _Region { get; set; }
-        private string _PostalCode { get; set; }
-        private string _Country { get; set; }
-        private string _Phone { get; set; }
-        private string _Fax { get; set; }
-        private ICollection<Orders> _Orders { get; set; }
-        public string CustomerID
-        {
-            get
-            {
-                return _CustomerID;
-            }
-            set
-            {
-                _CustomerID = value;
-                NotifyPropertyChanged("CustomerID");
-            }
-        }
-        public string CompanyName
-        {
-            get
-            {
-                return _CompanyName;
-            }
-            set
-            {
-                _CompanyName = value;
-                NotifyPropertyChanged("CompanyName");
-            }
-        }
-        public string ContactName
-        {
-            get
-            {
-                return _ContactName;
-            }
-            set
-            {
-                _ContactName = value;
-                NotifyPropertyChanged("ContactName");
-            }
-        }
-        public string ContactTitle
-        {
-            get
-            {
-                return _ContactTitle;
-            }
-            set
-            {
-                _ContactTitle = value;
-                NotifyPropertyChanged("ContactTitle");
-            }
-        }
-        public string Address
-        {
-            get
-            {
-                return _Address;
-            }
-            set
-            {
-                _Address = value;
-                NotifyPropertyChanged("Address");
-            }
-        }
-        public string City
-        {
-            get
-            {
-                return _City;
-            }
-            set
-            {
-                _City = value;
-                NotifyPropertyChanged("City");
-            }
-        }
-        public string Region
-        {
-            get
-            {
-                return _Region;
-            }
-            set
-            {
-                _Region = value;
-                NotifyPropertyChanged("Region");
-            }
-        }
-        public string PostalCode
-        {
-            get
-            {
-                return _PostalCode;
-            }
-            set
-            {
-                _PostalCode = value;
-                NotifyPropertyChanged("PostalCode");
-            }
-        }
-        public string Country
-        {
-            get
-            {
-                return _Country;
-            }
-            set
-            {
-                _Country = value;
-                NotifyPropertyChanged("Country");
-            }
-        }
-        public string Phone
-        {
-            get
-            {
-                return _Phone;
-            }
-            set
-            {
-                _Phone = value;
-                NotifyPropertyChanged("Phone");
-            }
-        }
-        public string Fax
-        {
-            get
-            {
-                return _Fax;
-            }
-            set
-            {
-                _Fax = value;
-                NotifyPropertyChanged("Fax");
-            }
-        }
-        public virtual ICollection<Orders> Orders
-        {
-            get
-            {
-                return _Orders;
-            }
-            set
-            {
-                _Orders = value;
-                NotifyPropertyChanged("Orders");
-            }
-        }
+    
+        public string CustomerID { get; set; }
+        public string CompanyName { get; set; }
+        public string ContactName { get; set; }
+        public string ContactTitle { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Region { get; set; }
+        public string PostalCode { get; set; }
+        public string Country { get; set; }
+        public string Phone { get; set; }
+        public string Fax { get; set; }
+    
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B81A2360-DC4A-48F3-8340-32F8ED1371ED}</ProjectGuid>
+    <ProjectGuid>{308D2D3E-9EAF-490F-9B2E-E92D5AFC851C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NorthWindVisualizer.Tests</RootNamespace>
