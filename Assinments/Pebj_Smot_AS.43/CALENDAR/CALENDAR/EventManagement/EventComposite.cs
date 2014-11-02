@@ -23,8 +23,8 @@ namespace CALENDAR.EventManagement
         public DateTime DateTo { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public IAccount OwnedByAccount { get; private set; }
-        public IAccount[] SharedWithAccounts { get; private set; }
+        public Account OwnedByAccount { get; private set; }
+        public Account[] SharedWithAccounts { get; private set; }
         public INotification[] Notifications { get; set; }
 
         public EventComponent[] GetLeafs()

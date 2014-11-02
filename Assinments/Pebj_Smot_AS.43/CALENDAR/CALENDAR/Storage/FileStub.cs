@@ -12,27 +12,27 @@ namespace CALENDAR.Storage
         {
 
         }
-        public void AddAccount(IAccount newAccount)
+        public void AddAccount(Account newAccount)
         {
             throw new NotImplementedException();
         }
-        public void RemoveAccount(IAccount account)
+        public void RemoveAccount(Account account)
         {
             throw new NotImplementedException();
         }
-        public void UpdateAccount(IAccount account)
+        public void UpdateAccount(Account account)
         {
             throw new NotImplementedException();
         }
-        public IAccount[] GetAccounts(int from, int to)
+        public Account[] GetAccounts(int from, int to)
         {
             throw new NotImplementedException();
         }
-        public IAccount GetAccountByUsername(string username)
+        public Account GetAccountByUsername(string username)
         {
             throw new NotImplementedException();
         }
-        public IAccount GetAccountByTableID(string tableID)
+        public Account GetAccountByTableID(string tableID)
         {
             throw new NotImplementedException();
         }

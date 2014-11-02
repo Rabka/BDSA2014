@@ -12,7 +12,6 @@ namespace CALENDAR.Storage
     public class Season : ISeason
     {
         private List<IChangeCommand> changeCommands;
-        public Account CurrentAccount { get; set; }
         public IOnlineContext OnlineContext { get; private set; }
         public Season()
         {
@@ -35,6 +34,7 @@ namespace CALENDAR.Storage
         {
             throw new NotImplementedException();
         }
+        public Account CurrentAccount { get; set; }
 
     }
 }

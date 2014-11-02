@@ -24,23 +24,23 @@ namespace CALENDAR.Storage
             return DateTime.Now;
         }
 
-        public void AddAccount(IAccount newAccount)
+        public void AddAccount(Account newAccount)
         {
             throw new NotImplementedException();
         }
-        public void RemoveAccount(IAccount account)
+        public void RemoveAccount(Account account)
         {
             throw new NotImplementedException();
         }
-        public void UpdateAccount(IAccount account)
+        public void UpdateAccount(Account account)
         {
             throw new NotImplementedException();
         }
-        public IAccount GetAccount(int itemIndex)
+        public Account GetAccount(int itemIndex)
         {
             throw new NotImplementedException();
         }
-        public IAccount GetAccount(string username)
+        public Account GetAccount(string username)
         {
             throw new NotImplementedException();
         }

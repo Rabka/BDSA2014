@@ -6,7 +6,7 @@ using CALENDAR.Storage;
 
 namespace CALENDAR.AccountManagement
 {
-    public interface IAccount : DBObject
+    interface IAccount : DBObject
     {
         string Name { get; }
         string Username { get; }

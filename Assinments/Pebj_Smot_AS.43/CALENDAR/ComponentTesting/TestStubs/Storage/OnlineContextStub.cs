@@ -5,7 +5,6 @@ using System.Text;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
 using CALENDAR.Commands;
-using CALENDAR.Storage;
 namespace CALENDAR.Storage
 {
     public class OnlineContextStub : IOnlineContext
@@ -24,7 +23,7 @@ namespace CALENDAR.Storage
         public DateTime Sync(IChangeCommand[] commands)
         {
             //Do some synchronization.
-            commands.ToList().ForEach(x => x.Execute(this));
+            commands.ToList().ForEach(x => x.Execute());
             _lastSyncDateTime = DateTime.Now;
             return _lastSyncDateTime;
         }
@@ -77,16 +76,16 @@ namespace CALENDAR.Storage
             throw new NotImplementedException();
         }
 
-        public void AddEvent(EventComponent newEvent)
+        public void AddEvent(EventLeaf newEvent)
         {
             newEvent.TableID = tableID++;
             events.Add(newEvent);
         }
-        public void RemoveEvent(EventComponent @event)
+        public void RemoveEvent(EventLeaf @event)
         {
             events.Remove(events.Select(x => x).First(x => x.TableID == @event.TableID));
         }
-        public void UpdateEvent(EventComponent account)
+        public void UpdateEvent(EventLeaf account)
         {
 
         }

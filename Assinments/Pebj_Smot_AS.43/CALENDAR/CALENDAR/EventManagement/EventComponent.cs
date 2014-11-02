@@ -10,8 +10,8 @@ namespace CALENDAR.EventManagement
         DateTime DateTo { get; set; }
         string Title { get; set; }
         string Description { get; set; }
-        IAccount OwnedByAccount { get; }
-        IAccount[] SharedWithAccounts { get; }
+        Account OwnedByAccount { get; }
+        Account[] SharedWithAccounts { get; }
         INotification[] Notifications { get; set; }
         EventComponent[] GetLeafs();
         void Draw();

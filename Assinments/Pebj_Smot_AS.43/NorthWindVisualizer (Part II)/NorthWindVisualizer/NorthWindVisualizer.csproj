@@ -79,9 +79,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="INorthWind.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="IRespiratory.cs" />
-    <Compile Include="ModelView\OrdersModelView.cs" />
+    <Compile Include="Modeltest.cs" />
     <Compile Include="Model\Categories.cs">
       <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
     </Compile>
@@ -116,8 +118,17 @@
       <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
     </Compile>
     <Compile Include="NorthWind.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrdersByTotalPriceDto.cs" />
+    <Compile Include="OrdersViewModel.cs" />
+    <Compile Include="Order_Detail.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductsBySaleDto.cs" />
+    <Compile Include="Report.cs" />
+    <Compile Include="ReportError.cs" />
+    <Compile Include="ReportingModule.cs" />
     <Compile Include="Respiratory.cs" />
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -125,7 +136,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -212,7 +223,6 @@
       <DependentUpon>NORTHWND.MDF</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

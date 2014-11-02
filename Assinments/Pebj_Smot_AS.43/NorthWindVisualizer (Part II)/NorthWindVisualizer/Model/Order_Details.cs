@@ -11,16 +11,110 @@ namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Order_Details
+    using System.ComponentModel;
+
+    public partial class Order_Details : INotifyPropertyChanged
     {
-        public int OrderID { get; set; }
-        public int ProductID { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short Quantity { get; set; }
-        public float Discount { get; set; }
-    
-        public virtual Orders Orders { get; set; }
-        public virtual Products Products { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+        private int _OrderID { get; set; }
+        private int _ProductID { get; set; }
+        private decimal _UnitPrice { get; set; }
+        private short _Quantity { get; set; }
+        private float _Discount { get; set; }
+        private Orders _Orders { get; set; }
+        private Products _Products { get; set; }
+        public int OrderID
+        {
+            get
+            {
+                return _OrderID;
+            }
+            set
+            {
+                _OrderID = value;
+                NotifyPropertyChanged("OrderID");
+            }
+        }
+        public int ProductID
+        {
+            get
+            {
+                return _ProductID;
+            }
+            set
+            {
+                _ProductID = value;
+                NotifyPropertyChanged("ProductID");
+            }
+        }
+        public decimal UnitPrice
+        {
+            get
+            {
+                return _UnitPrice;
+            }
+            set
+            {
+                _UnitPrice = value;
+                NotifyPropertyChanged("Orders");
+            }
+        }
+        public short Quantity
+        {
+            get
+            {
+                return _Quantity;
+            }
+            set
+            {
+                _Quantity = value;
+                NotifyPropertyChanged("Quantity");
+            }
+        }
+        public float Discount
+        {
+            get
+            {
+                return _Discount;
+            }
+            set
+            {
+                _Discount = value;
+                NotifyPropertyChanged("Discount");
+            }
+        }
+        public virtual Orders Orders
+        {
+            get
+            {
+                return _Orders;
+            }
+            set
+            {
+                _Orders = value;
+                NotifyPropertyChanged("Orders");
+            }
+        }
+        public virtual Products Products
+        {
+            get
+            {
+                return _Products;
+            }
+            set
+            {
+                _Products = value;
+                NotifyPropertyChanged("Products");
+            }
+        }
     }
 }

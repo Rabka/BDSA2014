@@ -7,3 +7,6 @@ Date	Version Author		Item		Description
 02-10	0.2	Smot		Initial	A.O.	Chanse name of server to websevis
 02-10	0.3	Pebj		Use Cases model	Added Synchronization and validation
 23-10	0.2	Smot		A.Object Model 	reworkt to inclode design patters
+01-10	0.3	Pebj		A.Object Model 	optimized.
+02-10	0.3	Pebj		NorthWindVisualizer developed and 5 unit tests added for the viewmodel
+02-10	0.3	Pebj		A.Object Model 	updated to better reflect the C# code.

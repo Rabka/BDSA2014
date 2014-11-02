@@ -11,18 +11,88 @@ namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     
-    public partial class Categories
+    public partial class Categories : INotifyPropertyChanged
     {
         public Categories()
         {
             this.Products = new HashSet<Products>();
         }
-    
-        public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
-        public string Description { get; set; }
-        public byte[] Picture { get; set; }    
-        public virtual ICollection<Products> Products { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+        private int _CategoryID { get; set; }
+        private string _CategoryName { get; set; }
+        private string _Description { get; set; }
+        private byte[] _Picture { get; set; }
+        private ICollection<Products> _Products { get; set; }
+        public int CategoryID 
+        {
+            get
+            {
+                return _CategoryID;
+            }
+            set
+            {
+                _CategoryID = value;
+                NotifyPropertyChanged("CategoryID");
+            }
+        }
+        public string CategoryName
+        {
+            get
+            {
+                return _CategoryName;
+            }
+            set
+            {
+                _CategoryName = value;
+                NotifyPropertyChanged("CategoryName");
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                _Description = value;
+                NotifyPropertyChanged("Description");
+            }
+        }
+        public byte[] Picture
+        {
+            get
+            {
+                return _Picture;
+            }
+            set
+            {
+                _Picture = value;
+                NotifyPropertyChanged("Picture");
+            }
+        }
+        public virtual ICollection<Products> Products
+        {
+            get
+            {
+                return _Products;
+            }
+            set
+            {
+                _Products = value;
+                NotifyPropertyChanged("Products");
+            }
+        }
     }
 }

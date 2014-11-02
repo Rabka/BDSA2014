@@ -9,11 +9,11 @@ namespace CALENDAR.Storage
     public interface IOnlineContext
     {   
         DateTime Sync();
-        void AddAccount(IAccount newAccount);
-        void RemoveAccount(IAccount account);
-        void UpdateAccount(IAccount account);
-        IAccount GetAccount(int itemIndex);
-        IAccount GetAccount(string username);
+        void AddAccount(Account newAccount);
+        void RemoveAccount(Account account);
+        void UpdateAccount(Account account);
+        Account GetAccount(int itemIndex);
+        Account GetAccount(string username);
         int GetAccountsCount();
         void AddEvent(EventComponent newEvent);
         void RemoveEvent(EventComponent @event);

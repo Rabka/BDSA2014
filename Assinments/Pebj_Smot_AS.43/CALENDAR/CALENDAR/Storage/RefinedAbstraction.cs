@@ -40,15 +40,15 @@ namespace CALENDAR.Storage
         {
             throw new NotImplementedException();
         }
-        public void AddEvent(EventComponent newEvent)
+        public void AddEvent(EventLeaf newEvent)
         {
             throw new NotImplementedException();
         }
-        public void RemoveEvent(EventComponent @event)
+        public void RemoveEvent(EventLeaf @event)
         {
             throw new NotImplementedException();
         }
-        public void UpdateEvent(EventComponent @event)
+        public void UpdateEvent(EventLeaf @event)
         {
             throw new NotImplementedException();
         }
