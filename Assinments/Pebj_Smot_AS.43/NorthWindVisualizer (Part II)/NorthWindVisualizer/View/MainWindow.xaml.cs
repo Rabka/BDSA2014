@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using NorthWindVisualizer.Model;
 using NorthWindVisualizer.ModelView;
-namespace NorthWindVisualizer
+namespace NorthWindVisualizer.View
 {
     /// <summary>
     ///     Interaction logic for MainWindow.xaml

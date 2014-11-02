@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ModelViewTest.cs" />
+    <Compile Include="NorthWindTestStub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindVisualizer", "NorthWindVisualizer\NorthWindVisualizer.csproj", "{A6E10D10-6225-42C5-9354-FA5D68F4FFDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindVisualizer.tests", "NorthWindVisualizer.tests\NorthWindVisualizer.tests.csproj", "{308D2D3E-9EAF-490F-9B2E-E92D5AFC851C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindVisualizer.tests", "NorthWindVisualizer.Tests\NorthWindVisualizer.tests.csproj", "{308D2D3E-9EAF-490F-9B2E-E92D5AFC851C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

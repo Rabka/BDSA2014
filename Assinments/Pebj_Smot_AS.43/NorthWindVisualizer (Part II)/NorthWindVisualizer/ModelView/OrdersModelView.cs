@@ -4,18 +4,16 @@ using System.Linq;
 using System.ComponentModel;
 using System.Text;
 using NorthWindVisualizer.Model;
-using System.ComponentModel;
 using System.Collections.ObjectModel;
-
 namespace NorthWindVisualizer.ModelView
 {
     public delegate void ModelChangeEvent();
-    class OrdersModelView : INotifyPropertyChanged
+    public class OrdersModelView : INotifyPropertyChanged
     {
         private Orders _Order;
-        private NorthWind northWind;
+        private INorthWind northWind;
         public ModelChangeEvent modelChangeEvent;
-        public OrdersModelView(NorthWind northWind)
+        public OrdersModelView(INorthWind northWind)
         {
             this.northWind = northWind;
             modelChangeEvent += modelChanged;
@@ -36,6 +34,7 @@ namespace NorthWindVisualizer.ModelView
             {
                 _Order = value;
                 NotifyPropertyChanged("CurrentOrder");
+                NotifyPropertyChanged("TotalPrice");
             }
         }
         private void modelChanged()

@@ -1,4 +1,4 @@
-﻿<Window x:Class="NorthWindVisualizer.MainWindow"
+﻿<Window x:Class="NorthWindVisualizer.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="View Orders" Height="350" Width="525">
@@ -18,21 +18,21 @@
         <Label x:Name="OrderInfo_ShipNameValue" Content="{Binding Path=CurrentOrder}" HorizontalAlignment="Left" Margin="97,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
             <Label.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=ShipName}" />
+                    <TextBlock Text="{Binding Path=ShipName}" />
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
         <Label x:Name="OrderInfo_CustommerValue" Content="{Binding Path=CurrentOrder}" HorizontalAlignment="Left" Margin="104,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
             <Label.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=Customers.ContactName}" />
+                    <TextBlock Text="{Binding Path=Customers.ContactName}" />
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
         <Label x:Name="OrderInfo_EmployeeValue" Content="{Binding Path=CurrentOrder}" HorizontalAlignment="Left" Margin="94,62,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
             <Label.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=Employees.FirstName}" />
+                    <TextBlock Text="{Binding Path=Employees.FirstName}" />
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
@@ -40,35 +40,29 @@
         <Label x:Name="OrderInfo_ShipAddressValue" Content="{Binding Path=CurrentOrder}" HorizontalAlignment="Left" Margin="108,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
             <Label.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=ShipAddress}" />
+                    <TextBlock Text="{Binding Path=ShipAddress}" />
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
         <Label x:Name="OrderInfo_ShipCityValue" Content="{Binding Path=CurrentOrder}" HorizontalAlignment="Left" Margin="86,140,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
             <Label.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=ShipCity}" />
+                    <TextBlock Text="{Binding Path=ShipCity}" />
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
         <Label x:Name="OrderInfo_ShippingDateValue" Content="{Binding Path=CurrentOrder}" HorizontalAlignment="Left" Margin="114,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
             <Label.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=ShippedDate, StringFormat='yyyy-MM-dd'}" />
+                    <TextBlock Text="{Binding Path=ShippedDate, StringFormat='yyyy-MM-dd'}" />
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
-        <Label x:Name="OrderInfo_TotalPriceValue" HorizontalAlignment="Left" Margin="94,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
-            <Label.ContentTemplate>
-                <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=TotalPrice}" />
-                </DataTemplate>
-            </Label.ContentTemplate>
-        </Label>
+        <Label x:Name="OrderInfo_TotalPriceValue" Content="{Binding Path=TotalPrice}" HorizontalAlignment="Left" Margin="94,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1" />
         <Label x:Name="OrderInfo_IdValue" Content="{Binding Path=CurrentOrder}" HorizontalAlignment="Left" Margin="53,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.5,-1.423" Grid.Column="1">
             <Label.ContentTemplate>
                 <DataTemplate>
-                    <TextBlock Grid.Column="0" Text="{Binding Path=OrderID}" />
+                    <TextBlock Text="{Binding Path=OrderID}" />
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>

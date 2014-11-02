@@ -9,10 +9,10 @@ namespace NorthWindVisualizer
     /// <summary>
     ///     A NorthWind class ther represent the top-level of the system.
     /// </summary>
-    public class NorthWind
+    public class NorthWind : INorthWind
     {
         private readonly Respiratory respiratory;
-        public newOrderEventDelegate newOrderEvent;
+        public newOrderEventDelegate newOrderEvent { get; set; }
 
         /// <summary>
         ///     Sets the Respiratory

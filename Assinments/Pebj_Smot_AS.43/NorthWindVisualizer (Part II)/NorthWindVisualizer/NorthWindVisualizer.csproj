@@ -79,6 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="INorthWind.cs" />
     <Compile Include="IRespiratory.cs" />
     <Compile Include="ModelView\OrdersModelView.cs" />
     <Compile Include="Model\Categories.cs">
