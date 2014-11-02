@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using NorthWindVisualizer.Model;
 
 namespace NorthWindVisualizer
 {
-
     public delegate void newOrderEventDelegate(Orders addedOrder);
 
     /// <summary>
-    /// A NorthWind class ther represent the top-level of the system.
+    ///     A NorthWind class ther represent the top-level of the system.
     /// </summary>
     public class NorthWind
     {
-        Respiratory respiratory;
+        private readonly Respiratory respiratory;
         public newOrderEventDelegate newOrderEvent;
 
         /// <summary>
-        /// Sets the Respiratory
+        ///     Sets the Respiratory
         /// </summary>
         /// <param name="respiratory">A Respiratory containing data classes</param>
         public NorthWind(Respiratory respiratory)
@@ -27,7 +24,7 @@ namespace NorthWindVisualizer
         }
 
         /// <summary>
-        /// Adds a new order to the Respiratory
+        ///     Adds a new order to the Respiratory
         /// </summary>
         /// <param name="requiredDate">The data the oder is required</param>
         /// <param name="name">The name of the ship containing the order</param>
@@ -36,9 +33,10 @@ namespace NorthWindVisualizer
         /// <param name="region">The ships region</param>
         /// <param name="postalCode">The ships postalCode</param>
         /// <param name="country">The ships country</param>
-        public void AddOrder(DateTime requiredDate, string name, string address, string city, string region, string postalCode, string country)
+        public void AddOrder(DateTime requiredDate, string name, string address, string city, string region,
+            string postalCode, string country)
         {
-            Orders order = new Orders();
+            var order = new Orders();
             order.RequiredDate = requiredDate;
             order.ShipName = name;
             order.ShipAddress = address;
@@ -48,11 +46,11 @@ namespace NorthWindVisualizer
             order.ShipCountry = country;
             order.OrderDate = DateTime.Now;
             respiratory.CreateOrder(order);
-                newOrderEvent(order);
+            newOrderEvent(order);
         }
 
         /// <summary>
-        /// Gets and returns the products from the Respiratory
+        ///     Gets and returns the products from the Respiratory
         /// </summary>
         /// <returns>All products in the Respiratory (Product[])</returns>
         public IQueryable<Products> Products()
@@ -61,10 +59,10 @@ namespace NorthWindVisualizer
         }
 
         /// <summary>
-        /// Gets and returns the orders from the Respiratory
+        ///     Gets and returns the orders from the Respiratory
         /// </summary>
         /// <returns>All orders in the Respiratory (Order[])</returns>
-        public  IQueryable<Orders> Orders()
+        public IQueryable<Orders> Orders()
         {
             return respiratory.Orders();
         }

@@ -72,7 +72,7 @@
                 </DataTemplate>
             </Label.ContentTemplate>
         </Label>
-        <DataGrid x:Name="OrdersDataGrid" AutoGenerateColumns="False" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ItemsSource="{Binding Path=ListOrders}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="300" Width="162" Grid.ColumnSpan="2">
+        <DataGrid x:Name="OrdersDataGrid" AutoGenerateColumns="False" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" ItemsSource="{Binding Path=ListOrders}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="300" Width="162" Grid.ColumnSpan="2" SelectionChanged="OrdersDataGrid_SelectionChanged_1">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="OrderID">
                     <DataGridTemplateColumn.CellTemplate>

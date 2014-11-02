@@ -79,11 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Category.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="Employee.cs" />
+    <Compile Include="DataClasses\Category.cs" />
+    <Compile Include="DataClasses\Customer.cs" />
+    <Compile Include="DataClasses\Employee.cs" />
     <Compile Include="IRespiratory.cs" />
-    <Compile Include="Modeltest.cs" />
     <Compile Include="Model\Categories.cs">
       <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
     </Compile>
@@ -118,15 +117,9 @@
       <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
     </Compile>
     <Compile Include="NorthWind.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrdersByTotalPriceDto.cs" />
-    <Compile Include="OrdersViewModel.cs" />
-    <Compile Include="Order_Detail.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductsBySaleDto.cs" />
-    <Compile Include="Report.cs" />
-    <Compile Include="ReportError.cs" />
-    <Compile Include="ReportingModule.cs" />
+    <Compile Include="DataClasses\Order.cs" />
+    <Compile Include="DataClasses\Order_Detail.cs" />
+    <Compile Include="DataClasses\Product.cs" />
     <Compile Include="Respiratory.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
