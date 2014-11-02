@@ -7,8 +7,7 @@ namespace CALENDAR.Commands
 {
     public interface IChangeCommand
     {
-        void SetSeason(ISeason season);
-        void Execute();
-        void Undo();
+        void Execute(IOnlineContext context);
+        void Undo(IOnlineContext context);
     }
 }

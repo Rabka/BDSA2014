@@ -10,15 +10,11 @@ namespace CALENDAR.Commands
     class UpdateEvent : IChangeCommand
     {
         public EventLeaf eventLeafSnapshot;
-        public void SetSeason(ISeason season)
+        public void Execute(IOnlineContext context)
         {
             throw new NotImplementedException();
         }
-        public void Execute()
-        {
-            throw new NotImplementedException();
-        }
-        public void Undo()
+        public void Undo(IOnlineContext context)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
-﻿namespace CALENDAR.AccountManagement
+﻿using CALENDAR.Storage;
+namespace CALENDAR.AccountManagement
 {
     public class Account : IAccount
     {
@@ -19,13 +20,7 @@
             Email = email;
             IsModerator = isModerator;
         }
-
-        public int TableID
-        {
-            get { return 1; }
-            set { string s = Name; }
-        }
-
+        public int TableID { get; set; }
         public string Name { get; private set; }
         public string Username { get; private set; }
         public string Email { get; private set; }
