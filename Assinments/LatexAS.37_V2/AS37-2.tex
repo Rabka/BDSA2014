@@ -1,29 +1,34 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
+%\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[T1]{fontenc}	%ADDED for << og >>
+\usepackage{enumitem}		%ADDED for smaller spacing
 \usepackage[german]{babel}
 
 
-% For at få faver på texten skal man gå til ''Format" og så "Syntax Colering''.
-% Her kom jeg til https://www.youtube.com/watch?v=Xl1c_1yL47k
+\title{Assinment37}
+\author{pebj, smot}
+\date{\today}
 
 \begin{document}
+\maketitle
 
-	\title{Assignment 37}
-	\author{pebj, smot}
-	\maketitle
 
-	\begin{enumerate}
-		\item Identify all relevant \textbf{Actors}.
-		\begin{enumerate}
-			\item[1)]Client
-			\item[2)]Server
-			\item[3)]Moderater
-		\end{enumerate}
-		\item Identify and describe \textbf{2 non-trivial Scenarios}.
-	\end{enumerate}
+\begin{enumerate}
+	\item Identify all relevant \textbf{Actors}.\\
+    \begin{enumerate}[noitemsep,nolistsep]
+        \item[1)]Client
+        \item[2)]Server
+        \item[3)]Moderater
+    \end{enumerate}
+	\item Identify and describe \textbf{2 non-trivial Scenarios}.\\
+\end{enumerate}
+    
+
 
 \begin{tabular}{l r @{} l}
 	\multicolumn{2}{c}{} \\
@@ -35,14 +40,15 @@
 	\hline
 	Flow of events	&1)&Claus' birthday is coming up, so he needs to invite any participants\\ 
 					&&who would like to come. therefore he makes an event in the CALENDAR.\\
-				&2)&When Claus have opened his CALENDAR, he uses the ''New event'' function. which\\ 
-					&&opens a new window for specifying the new event. \\
+				&2)&When Claus have opened his CALENDAR, he uses the ''New event'' function.\\
+                	&&which opens a new window for specifying the new event. \\
 				&3)&He enters the date, place and a short discription of the event.\\
 					&&Claus also choses a color for the event. A time he like to be alermed\\
 					&&of the event and then he confirms his input.\\
-				&4)&The CALENDAR closes the spicification window and shows Claus CALENDAR with\\
-					&&his new event. Claus then uses the ''Share'' function and gets a digital code\\
-					&&he copyes and pasts it on hes Facebook wall.\\
+				&4)&The CALENDAR closes the spicification window and shows Claus\\
+					&& CALENDAR with his new event. Claus then uses the ''Share''\\
+					&&function and gets a digital code he copyes and pasts it on hes\\
+					&&Facebook wall.\\
 				&5)&The friend Jan notices this digital code and wishes to take part in Claus' \\ 
 					&&birthday. He therefore uses the digital code to get to a window, where he can\\
 					&&chose to accept, which will put the event in his CALENDAR.\\
@@ -81,7 +87,7 @@
 	\multicolumn{2}{c}{} \\
 	4.1&&\\
 	\hline
-	Use case name:	&&Edit personal information\\
+	Use case name:	&&Edit personal information (login data)\\
 	\hline
 	Participating actors:&&User \\
 	\hline
@@ -91,6 +97,7 @@
 	Entry condition:	&&User is logged into the system.\\
 	\hline
 	Exit condition:	&&The user updates his personal information.\\
+    &&Account data is invalid\\
 	\hline
 \end{tabular}
 	\\
@@ -115,6 +122,7 @@
 	Entry condition:	&&User is logged into the system.\\
 	\hline
 	Exit condition:	&&The user chooses to enable/disable the alert.\\
+    &&User cancels the creation/update of the event\\
 	\hline
 \end{tabular}
 	\\
@@ -148,19 +156,55 @@
 		\item[6.] Identify \textbf{Initial Analysis Objects} and document them in a table\\
 \end{enumerate}
 
-\begin{tabular}{l r @{} l}
-	\textbf{Participating objects for the enable alert use case.}\\
+\begin{tabular}{l}
+	\textbf{Participating objects for use cases 4.1, 4.2 and 4.3.}\\
 	\hline
-	\textbf{Server:} Server activity which regularly checks up on all events and \\
+	\textbf{Server:} 
+    Server activity which regularly checks up on all events and \\
 	notifies users in case of an upcoming event. It is up to the user if he wants to have a notification sent,\\ 
-	so the server will participate in the user’ events and choice of enabling the notification alert.\\
+	so the server will participate in the user’ events and choice of enabling the notification alert.\\ The server will also process shared events when a user enters a shared event link and\\
+    add them to the user' calendar (read ''Shared event link'' for a more concrete explanation)\\
 	\hline
-	\textbf{User} the user can create events in his calendar. As such he is the initiator of event creation and \\
+	\textbf{User:} 
+    the user can create events in his calendar. As such he is the initiator of event creation and \\
 	other users may participate in those events if they are shared. \\
 	Additionally a new possible event alert may be initiated which the server will participate in.\\
 	\hline
+    \textbf{Calendar:} 
+    this system is where a user can store information on \textit{things} that is going to happen that\\
+    he would like to keep track of. The \textit{things} is associated with a date and time that will\\
+    happen,\textit{things} saved in this system are an event \\
+	\hline
+    \textbf{Event:} 
+    a data entry that holds title, discription, dates for start, end and associated notifications to it.\\ It may also contain events as children as part of a composite pattern. \\
+	\hline
+    \textbf{Notification:} 
+    Notifications can be an email etc. that is sent to the user when the current date\\
+    exceeds the date property inside Notification.\\
+    A notification is always associated with one particular event.\\
+	\hline
+    \textbf{Login:} 
+    An action a user have to do to identify himself and show that he have authority to manipulate\\
+    events associated with the account the user has logged in to. To login the user needs a username\\
+    and a password, both associated with the account he like to login to. A moderator also need to\\
+    login to show show that he have authority as a moderator.\\
+	\hline
+    \textbf{Account:} 
+    Represents a user and contains events and notifications the user have. it also contains\\
+    infomation about the user, however the password property of the account\\ must never be available to the client data structure.\\
+	\hline
+    \textbf{Shared event link:} 
+    If the user wishes to share an event with friends and such, he can though\\
+    his calendarsoftware generate a ''shared event link''. If anyone enters this link in a browser etc.\\
+    a serverpage should appear asking for nessesary information for adding the event to the one who\\
+    opened the link' calendar. Once done, a sync between client/server will get the shared event to\\
+    appear in the user' calendar. A shared event can only be modified by its creator. Everyone else\\
+    who is shared with are observers who can only remove it from their own calendar. \\
+	\hline
 \end{tabular}
 	\\
+\pagebreak
+
 
 \begin{enumerate}
 		\item[7.] Identify \textbf{Non-functional Requirements} and document them i a table\\
