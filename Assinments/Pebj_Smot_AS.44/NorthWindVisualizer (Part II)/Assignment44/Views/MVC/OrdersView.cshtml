@@ -46,7 +46,7 @@
             @Html.DisplayNameFor(model => model.Customers.CompanyName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employees.LastName)
+            Employee
         </th>
         <th></th>
     </tr>
@@ -102,7 +102,8 @@
             @Html.DisplayFor(modelItem => item.Customers.CompanyName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employees.LastName)
+            @{ string name = item.Employees.FirstName + " " + item.Employees.LastName;}
+            @Html.DisplayFor(modelItem => name)
         </td>
         <td>
             @Html.ActionLink("Details", "Order_detailsView", "MVC", new { OrderId = (int)item.OrderID }, null)

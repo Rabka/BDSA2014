@@ -24,7 +24,7 @@
             Customer Name
         </th>
         <th>
-            Total price
+            Price
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Products.ProductName)
@@ -50,13 +50,22 @@
             @Html.DisplayFor(modelItem => item.Orders.Customers.ContactName)
         </th>
         <th>
-            @{Decimal parameterValue = item.UnitPrice*item.Quantity - Convert.ToDecimal(item.Discount);}
+            @{var parameterValue = item.UnitPrice*item.Quantity - Convert.ToDecimal(item.Discount);}
             @Html.DisplayFor(modelItem => parameterValue)
         </th>
         <td>
-            @Html.ActionLink(item.Products.ProductName, "ProductsView", "MVC", new { ProductId = (int)item.ProductID }, null)
+            @Html.ActionLink(item.Products.ProductName, "ProductsView", "MVC", new { ProductId = item.ProductID }, null)
         </td>
     </tr>
 }
+
+    <td>
+        @{
+            Decimal totalValue = 0;
+            totalValue += Model.Sum(item => item.UnitPrice * item.Quantity - Convert.ToDecimal(item.Discount));
+            var totalString = "Total price: " + totalValue;
+            @Html.DisplayFor(modelItem => totalString)
+        }
+    </td>
 
 </table>
