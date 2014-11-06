@@ -7,7 +7,8 @@ namespace CALENDAR.Commands
 {
     public interface IChangeCommand
     {
-        void Execute(IOnlineContext context);
-        void Undo(IOnlineContext context);
+        void Execute();
+        void Undo();
+        void SetOnlineContext(IOnlineContext onlineContext);
     }
 }
