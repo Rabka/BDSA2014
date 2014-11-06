@@ -21,36 +21,31 @@ namespace NorthWindVisualizer.Tests
         }
 
         [TestMethod]
-        public void ListOrdersTest()
+        public void TestBoundaryListOrders()
         {
-            //Boundary test
             Assert.AreEqual(2, ordersModelView.ListOrders.Count);
         }
         [TestMethod]
-        public void TotalPriceWithNoCurrentOrderTest()
+        public void TestStateBasedTotalPriceWithNoCurrentOrder()
         {
-            //State-based test
             Assert.AreEqual(0, ordersModelView.TotalPrice);
         }
         [TestMethod]
-        public void TotalPriceTest()
+        public void TestEquilenceTotalPrice()
         {
-            //Equilence test
             ordersModelView.CurrentOrder = northWindTestStub.Orders().First();
             Assert.AreEqual(27964.5, ordersModelView.TotalPrice);
         }
         [TestMethod]
-        public void TestCurrentOrderChangeCausesPropertyChange()
+        public void TestPathCurrentOrderChangeCausesPropertyChange()
         {
-            //Path test
             ordersModelView.PropertyChanged += PropertyChanged;
             ordersModelView.CurrentOrder = northWindTestStub.Orders().First();
             Assert.AreEqual(true, delegateCalled);
         }
         [TestMethod]
-        public void TestModelChangeEvent()
+        public void TestPathModelChangeEvent()
         {
-            //Path test
             ordersModelView.PropertyChanged += PropertyChanged;
             ordersModelView.modelChangeEvent();
             Assert.AreEqual(true, delegateCalled);
