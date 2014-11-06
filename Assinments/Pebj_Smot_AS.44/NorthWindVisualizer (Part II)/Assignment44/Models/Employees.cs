@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NorthWindVisualizer.Model
+namespace Assignment44.Models
 {
     using System;
     using System.Collections.Generic;

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Assignment44.Models.Order_Details>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for Order @ViewBag.Id</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orders.CustomerID)
+        </th>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Total price
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.ProductName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Orders.CustomerID)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.Orders.Customers.ContactName)
+        </th>
+        <th>
+            @{Decimal parameterValue = item.UnitPrice*item.Quantity - Convert.ToDecimal(item.Discount);}
+            @Html.DisplayFor(modelItem => parameterValue)
+        </th>
+        <td>
+            @Html.ActionLink(item.Products.ProductName, "ProductsView", "MVC", new { ProductId = (int)item.ProductID }, null)
+        </td>
+    </tr>
+}
+
+</table>

@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -108,12 +116,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -160,76 +162,83 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\MVCController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Categories.cs">
-      <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customers.cs">
-      <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employees.cs">
-      <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\NorthWindWNDModel.Context.cs">
-      <DependentUpon>NorthWindWNDModel.Context.tt</DependentUpon>
+    <Compile Include="Models\NorthWindModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NorthWindWNDModel.cs">
-      <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
+    <Compile Include="Models\NorthWindModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NorthWindWNDModel.Designer.cs">
-      <DependentUpon>NorthWindWNDModel.edmx</DependentUpon>
+    <Compile Include="Models\NorthWindModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Orders.cs">
-      <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Order_Details.cs">
-      <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Products.cs">
-      <DependentUpon>NorthWindWNDModel.tt</DependentUpon>
+      <DependentUpon>NorthWindModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\NORTHWND.MDF" />
+    <Content Include="App_Data\NORTHWND_log.ldf">
+      <DependentUpon>NORTHWND.MDF</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="NORTHWND.MDF" />
+    <Content Include="NORTHWND_log.ldf">
+      <DependentUpon>NORTHWND.MDF</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\NorthWindWNDModel.edmx">
+    <EntityDeploy Include="Models\NorthWindModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NorthWindWNDModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NorthWindModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\NorthWindWNDModel.Context.tt">
+    <Content Include="Models\NorthWindModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthWindWNDModel.edmx</DependentUpon>
-      <LastGenOutput>NorthWindWNDModel.Context.cs</LastGenOutput>
+      <DependentUpon>NorthWindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthWindModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\NorthWindWNDModel.edmx.diagram">
-      <DependentUpon>NorthWindWNDModel.edmx</DependentUpon>
+    <Content Include="Models\NorthWindModel.edmx.diagram">
+      <DependentUpon>NorthWindModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\NorthWindWNDModel.tt">
+    <Content Include="Models\NorthWindModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthWindWNDModel.edmx</DependentUpon>
-      <LastGenOutput>NorthWindWNDModel.cs</LastGenOutput>
+      <DependentUpon>NorthWindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthWindModel.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\hardmech.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -242,7 +251,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -253,37 +264,21 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\Test\Welcome.cshtml" />
+    <Content Include="Views\MVC\OrdersView.cshtml" />
+    <Content Include="Views\MVC\Order_DetailsView.cshtml" />
+    <Content Include="Views\MVC\ProductsView.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,113 @@
+﻿@using Microsoft.Ajax.Utilities
+@model IEnumerable<Assignment44.Models.Orders>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>Orders</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipVia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Freight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipRegion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipPostalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customers.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employees.LastName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @{string parameterValue = ((DateTime)item.OrderDate).ToShortDateString();}
+            @Html.DisplayFor(modelItem => parameterValue)
+        </td>
+        <td>
+            @{parameterValue = ((DateTime)item.RequiredDate).ToShortDateString();}
+            @Html.DisplayFor(modelItem => parameterValue)
+        </td>
+        <td>
+            @{
+                if (item.ShippedDate != null)
+                {
+                    parameterValue = ((DateTime) item.ShippedDate).ToShortDateString();
+                }
+                else
+                {
+                    parameterValue = null;
+                }
+            }
+            @Html.DisplayFor(modelItem => parameterValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipVia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Freight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipRegion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipPostalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customers.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employees.LastName)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Order_detailsView", "MVC", new { OrderId = (int)item.OrderID }, null)
+        </td>
+    </tr>
+}
+
+</table>
