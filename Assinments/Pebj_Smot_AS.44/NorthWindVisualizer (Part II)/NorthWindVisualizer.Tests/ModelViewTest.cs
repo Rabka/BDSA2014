@@ -50,7 +50,7 @@ namespace NorthWindVisualizer.Tests
             ordersModelView.modelChangeEvent();
             Assert.AreEqual(true, delegateCalled);
         }
-        private void PropertyChanged(object sender,  PropertyChangedEventArgs e)
+        private void PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             delegateCalled = true;
         }

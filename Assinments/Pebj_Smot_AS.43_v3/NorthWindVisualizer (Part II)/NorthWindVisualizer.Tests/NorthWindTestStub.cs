@@ -17,22 +17,10 @@ namespace NorthWindVisualizer.Tests
             //Add content
             AddOrder(DateTime.Now, "Patrick", "Road1", "Copenhagen", "None", "2300", "Denmark");
             AddOrder(DateTime.Now, "Stinus", "Road2", "Copenhagen", "None", "2300", "Denmark");
-            Categories testCategory = new Categories();
-            testCategory.CategoryID=0;
-            testCategory.CategoryName = "General";
-            testCategory.Description="Visual effects";
-            Products testProduct= new Model.Products();
+            Categories testCategory = new Categories(0, "General", "Visual effects", null);
+            Products testProduct = new Model.Products(0, "ITU Wall LED Display", null, null, "", null, null, null, null, false, testCategory);
             testCategory.Products.Add(testProduct);
-            testProduct.Categories = testCategory;
-            testProduct.ProductID = 0;
-            testProduct.ProductName ="ITU Wall LED Display";
-            Order_Details order_Details = new Order_Details();
-            order_Details.Discount = 35.5f;
-            order_Details.OrderID = 0;
-            order_Details.Orders = orders[0];
-            order_Details.Products = testProduct;
-            order_Details.Quantity = 4;
-            order_Details.UnitPrice = 7000;
+            Order_Details order_Details = new Order_Details(0, -1, 7000, 4, 35.5f, orders[0], testProduct);
             orders[0].Order_Details.Add(order_Details);
             testProduct.Order_Details.Add(order_Details);
             products.Add(testProduct);
@@ -50,18 +38,10 @@ namespace NorthWindVisualizer.Tests
         public void AddOrder(DateTime requiredDate, string name, string address, string city, string region,
             string postalCode, string country)
         {
-            var order = new Orders();
-            order.RequiredDate = requiredDate;
-            order.ShipName = name;
-            order.ShipAddress = address;
-            order.ShipCity = city;
-            order.ShipRegion = region;
-            order.ShipPostalCode = postalCode;
-            order.ShipCountry = country;
-            order.OrderDate = DateTime.Now;
+            var order = new Orders(orders.Count - 1, requiredDate, name, address, city, region, postalCode, country);
             orders.Add(order);
             if (newOrderEvent != null)
-            newOrderEvent(order);
+                newOrderEvent(order);
         }
 
         /// <summary>
