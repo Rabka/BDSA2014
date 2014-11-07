@@ -71,19 +71,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountManagement\AccountLogic.cs" />
-    <Compile Include="Entities\Implementation\Account.cs" />
-    <Compile Include="Entities\Implementation\Event.cs" />
-    <Compile Include="Entities\Implementation\Notification.cs" />
-    <Compile Include="Entities\Interfaces\IAccount.cs" />
-    <Compile Include="Entities\Interfaces\IEvent.cs" />
-    <Compile Include="Entities\Interfaces\INotification.cs" />
-    <Compile Include="EventManagement\implementation\EventLogic.cs" />
-    <Compile Include="Storage\implementation\Database.cs" />
-    <Compile Include="Synchronization\Implementations\DataChange.cs" />
-    <Compile Include="Synchronization\Implementations\Synchronization.cs" />
-    <Compile Include="Synchronization\Interfaces\IDataChange.cs" />
-    <Compile Include="Synchronization\Interfaces\ISynchronization.cs" />
     <Compile Include="Webservice.aspx.cs">
       <DependentUpon>Webservice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,14 +78,9 @@
     <Compile Include="Webservice.aspx.designer.cs">
       <DependentUpon>Webservice.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NotificationManagement\implementation\MailUtils.cs" />
-    <Compile Include="NotificationManagement\implementation\NotificationTask.cs" />
-    <Compile Include="NotificationManagement\Interfaces\NotificationTaskI.cs" />
-    <Compile Include="NotificationManagement\Interfaces\WebserviceTaskI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AccountManagement\Implementation\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>

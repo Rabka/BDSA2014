@@ -69,7 +69,7 @@ namespace CALENDAR.EventManagement
         /// Joins multiple components together to a composite.
         /// </summary>
         /// <returns>EventsComposite</returns>
-        public EventComposite JoinComponentsToNewComposite(string title, string description, IAccount ownedByAccount, EventComponent[] components)
+        public EventComposite JoinComponentsToNewComposite(string title, string description, IAccount ownedByAccount, params EventComponent[] components)
         {
             throw new NotImplementedException();
         }

@@ -41,9 +41,9 @@ namespace ComponentTesting
             "ChangeCommand allready exists!")]
         public void TestBoundary_AddChangeCommand()
         {
-            ChangeCommandStub commandStub = new ChangeCommandStub();
-            season.AddChangeCommand((IChangeCommand)commandStub);
-            season.AddChangeCommand(commandStub);
+                ChangeCommandStub commandStub = new ChangeCommandStub();
+                season.AddChangeCommand((IChangeCommand)commandStub);
+                season.AddChangeCommand(commandStub);
         }
 
         [TestMethod]
@@ -73,12 +73,12 @@ namespace ComponentTesting
         {
             try
             {
-                season.SyncChangeCommands();
-                ((ISeason)season).SyncChangeCommands();
+            season.SyncChangeCommands();
+            ((ISeason) season).SyncChangeCommands();
             }
             catch (Exception ex)
             {
-                Assert.Fail("Expected no exception, but got: " + ex.Message);
+                   Assert.Fail("Expected no exception, but got: " + ex.Message);
             }
         }
 

@@ -16,17 +16,19 @@ namespace ComponentTesting.TestStubs
         }
         public void AddChangeCommand(IChangeCommand command)
         {
-            if (command == null)
-                throw new ArgumentException("Null is not acceptable argument");
+            if (changeCommands.Contains(command))
+                throw new Exception("ChangeCommand allready exists!");
             changeCommands.Add(command);
         }
         public void UndoLastChangeCommand()
         {
-            changeCommands[changeCommands.Count - 1].Undo(OnlineContext);
+            changeCommands[changeCommands.Count - 1].SetOnlineContext(OnlineContext);
+            changeCommands[changeCommands.Count - 1].Undo();
         }
         public void UndoAllChangeCommands()
         {
-            changeCommands.ForEach(x => x.Undo(OnlineContext));
+            changeCommands.ForEach(x => x.SetOnlineContext(OnlineContext));
+            changeCommands.ForEach(x => x.Undo());
         }
         public void SyncChangeCommands()
         {
