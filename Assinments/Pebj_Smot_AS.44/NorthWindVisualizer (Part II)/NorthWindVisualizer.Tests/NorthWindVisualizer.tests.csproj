@@ -57,12 +57,6 @@
     <Compile Include="NorthWindTestStub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NorthWindVisualizer\NorthWindVisualizer.csproj">
-      <Project>{a6e10d10-6225-42c5-9354-fa5d68f4ffdf}</Project>
-      <Name>NorthWindVisualizer</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
