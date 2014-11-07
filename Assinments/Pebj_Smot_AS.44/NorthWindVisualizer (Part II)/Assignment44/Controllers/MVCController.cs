@@ -14,24 +14,38 @@ namespace Assignment44.Controllers
     {
         private readonly IRespiratory db;
 
+        /// <summary>
+        /// Default Constructor. Will create a respiratory rather than reuse it.
+        /// </summary>
         public MVCController()
         {
             db = new Respiratory(new NORTHWNDdataset());
         }
 
+        /// <summary>
+        /// Default Constructor. Will reuse provided respiratory.
+        /// </summary>
+        /// <param name="respiratory">Respiratory to reuse</param>
         public MVCController(IRespiratory respiratory)
         {
             db = respiratory;
         }
 
-        // GET: Orders
+        /// <summary>
+        /// Returns a list of orders to the view only including Customers and Employees.
+        /// </summary>
+        /// <returns>View</returns>
         public ActionResult OrdersView()
         {
             var orders = db.Orders().Include(o => o.Customers).Include(o => o.Employees);
             return View(orders.ToList());
         }
 
-        // GET: Order_Details
+        /// <summary>
+        /// Returns a list of Order_Details for a given orderId that includes the Order_Details' associated Order and Products.
+        /// </summary>
+        /// <param name="orderId">OrderId of the Order to get the details of</param>
+        /// <returns>View</returns>
         public ActionResult Order_detailsView(int? orderId)
         {
             if (orderId != null)
@@ -45,7 +59,11 @@ namespace Assignment44.Controllers
             return View(order_Details.ToList());
         }
 
-        // GET: Products
+        /// <summary>
+        /// Returns a list of products that has the given productId and will include Categories.
+        /// </summary>
+        /// <param name="productId">productId of the Product</param>
+        /// <returns>View</returns>
         public ActionResult ProductsView(int? productId)
         {
             if (productId != null)
