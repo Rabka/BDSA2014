@@ -2,6 +2,7 @@
 using ComponentTesting.TestStubs.Storage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CALENDAR.Commands;
+using System;
 
 namespace ComponentTesting
 {
@@ -19,7 +20,20 @@ namespace ComponentTesting
         [TestMethod]
         public void TestEquivalence_AddChangeCommand()
         {
-             season.AddChangeCommand(new ChangeCommandStub());
+            try
+            {
+                season.AddChangeCommand(new ChangeCommandStub());
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Expected no exception, but got: " + ex.Message);
+            }
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Null is not acceptable argument")]
+        public void TestEquivalence_AddChangeCommand2()
+        {
+            season.AddChangeCommand(null);
         }
 
         [TestMethod]
@@ -57,8 +71,15 @@ namespace ComponentTesting
         [TestMethod]
         public void TestPolymorphism_Season()
         {
+            try
+            {
             season.SyncChangeCommands();
             ((ISeason) season).SyncChangeCommands();
+            }
+            catch (Exception ex)
+            {
+                   Assert.Fail("Expected no exception, but got: " + ex.Message);
+            }
         }
 
         [TestMethod]

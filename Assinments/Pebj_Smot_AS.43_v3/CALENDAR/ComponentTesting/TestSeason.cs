@@ -1,7 +1,8 @@
-﻿using System;
-using CALENDAR.Storage;
+﻿using CALENDAR.Storage;
 using ComponentTesting.TestStubs.Storage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CALENDAR.Commands;
+using System;
 
 namespace ComponentTesting
 {
@@ -28,12 +29,21 @@ namespace ComponentTesting
                 Assert.Fail("Expected no exception, but got: " + ex.Message);
             }
         }
-
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Null is not acceptable argument")]
         public void TestEquivalence_AddChangeCommand2()
         {
             season.AddChangeCommand(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.Exception),
+            "ChangeCommand allready exists!")]
+        public void TestBoundary_AddChangeCommand()
+        {
+            ChangeCommandStub commandStub = new ChangeCommandStub();
+            season.AddChangeCommand((IChangeCommand)commandStub);
+            season.AddChangeCommand(commandStub);
         }
 
         [TestMethod]
@@ -57,23 +67,28 @@ namespace ComponentTesting
             Assert.AreEqual(1, changeCommand2.undoWasCalled);
         }
 
-        [TestMethod]
-        public void TestPath_UndoAllChangeCommands2()
-        {
-            var changeCommand1 = new ChangeCommandStub();
-            var changeCommand2 = new ChangeCommandStub();
-            season.AddChangeCommand(changeCommand1);
-            season.AddChangeCommand(changeCommand2);
-            season.UndoLastChangeCommand();
-            Assert.AreEqual(0, changeCommand1.undoWasCalled);
-            Assert.AreEqual(1, changeCommand2.undoWasCalled);
-        }
 
         [TestMethod]
         public void TestPolymorphism_Season()
         {
+            try
+            {
+                season.SyncChangeCommands();
+                ((ISeason)season).SyncChangeCommands();
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Expected no exception, but got: " + ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void TestPolymorphism_AddChangeCommand()
+        {
+            ChangeCommandStub commandStub = new ChangeCommandStub();
+            season.AddChangeCommand((IChangeCommand)commandStub);
             season.SyncChangeCommands();
-            ((ISeason) season).SyncChangeCommands();
+            Assert.AreEqual(1, commandStub.executeWasCalled);
         }
     }
 }

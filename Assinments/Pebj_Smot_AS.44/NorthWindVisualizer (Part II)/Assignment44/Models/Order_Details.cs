@@ -7,20 +7,34 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment44.Models
+namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Order_Details
     {
-        public int OrderID { get; set; }
-        public int ProductID { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short Quantity { get; set; }
-        public float Discount { get; set; }
+        public Order_Details()
+        {
+
+        }
+        public Order_Details(int newID,int productID,decimal unitPrice,short quantity,float discount,Orders order, Products product)
+        {
+            this.OrderID = newID;
+            this.ProductID = productID;
+            this.UnitPrice = unitPrice;
+            this.Quantity = quantity;
+            this.Discount = discount;
+            this.Orders = order;
+            this.Products = product;
+        }
+        public int OrderID { get; private set; }
+        public int ProductID { get; private set; }
+        public decimal UnitPrice { get; private set; }
+        public short Quantity { get; private set; }
+        public float Discount { get; private set; }
     
-        public virtual Orders Orders { get; set; }
-        public virtual Products Products { get; set; }
+        public virtual Orders Orders { get; private set; }
+        public virtual Products Products { get; private set; }
     }
 }

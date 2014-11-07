@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment44.Models
+namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
@@ -18,19 +18,36 @@ namespace Assignment44.Models
         {
             this.Order_Details = new HashSet<Order_Details>();
         }
+
+        public Products(int newID,string productName, Nullable<int> supplierID, Nullable<int> categoryID, string quantityPerUnit, Nullable<decimal> unitPrice, Nullable<short> unitsInStock, Nullable<short> unitsOnOrder, Nullable<short> reorderLevel, bool discontinued, Categories categories)
+        {
+            this.Order_Details = new HashSet<Order_Details>();
+            this.ProductID = newID;
+            this.ProductName = productName;
+            this.SupplierID = supplierID;
+            this.CategoryID = categoryID;
+            this.QuantityPerUnit = quantityPerUnit;
+            this.UnitPrice = unitPrice;
+            this.UnitsInStock = unitsInStock;
+            this.UnitsOnOrder = unitsOnOrder;
+            this.ReorderLevel = reorderLevel;
+            this.Discontinued = discontinued;
+            this.Categories = categories;
+
+        }
     
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public Nullable<int> SupplierID { get; set; }
-        public Nullable<int> CategoryID { get; set; }
-        public string QuantityPerUnit { get; set; }
-        public Nullable<decimal> UnitPrice { get; set; }
-        public Nullable<short> UnitsInStock { get; set; }
-        public Nullable<short> UnitsOnOrder { get; set; }
-        public Nullable<short> ReorderLevel { get; set; }
-        public bool Discontinued { get; set; }
+        public int ProductID { get; private set; }
+        public string ProductName { get; private set; }
+        public Nullable<int> SupplierID { get; private set; }
+        public Nullable<int> CategoryID { get; private set; }
+        public string QuantityPerUnit { get; private set; }
+        public Nullable<decimal> UnitPrice { get; private set; }
+        public Nullable<short> UnitsInStock { get; private set; }
+        public Nullable<short> UnitsOnOrder { get; private set; }
+        public Nullable<short> ReorderLevel { get; private set; }
+        public bool Discontinued { get; private set; }
     
-        public virtual Categories Categories { get; set; }
-        public virtual ICollection<Order_Details> Order_Details { get; set; }
+        public virtual Categories Categories { get; private set; }
+        public virtual ICollection<Order_Details> Order_Details { get; private set; }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment44.Models
+namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
@@ -19,18 +19,18 @@ namespace Assignment44.Models
             this.Orders = new HashSet<Orders>();
         }
     
-        public string CustomerID { get; set; }
-        public string CompanyName { get; set; }
-        public string ContactName { get; set; }
-        public string ContactTitle { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string Region { get; set; }
-        public string PostalCode { get; set; }
-        public string Country { get; set; }
-        public string Phone { get; set; }
-        public string Fax { get; set; }
+        public string CustomerID { get; private set; }
+        public string CompanyName { get; private set; }
+        public string ContactName { get; private set; }
+        public string ContactTitle { get; private set; }
+        public string Address { get; private set; }
+        public string City { get; private set; }
+        public string Region { get; private set; }
+        public string PostalCode { get; private set; }
+        public string Country { get; private set; }
+        public string Phone { get; private set; }
+        public string Fax { get; private set; }
     
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Orders> Orders { get; private set; }
     }
 }
