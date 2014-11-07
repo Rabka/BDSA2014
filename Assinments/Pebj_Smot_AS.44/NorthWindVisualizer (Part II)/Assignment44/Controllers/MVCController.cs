@@ -12,7 +12,17 @@ namespace Assignment44.Controllers
 {
     public class MVCController : Controller
     {
-        private NORTHWNDdataset db = new NORTHWNDdataset();
+        private NORTHWNDdataset db;
+
+        public MVCController()
+        {
+            db = new NORTHWNDdataset();
+        }
+
+        public MVCController(DbContext dataset)
+        {
+            db = (NORTHWNDdataset)dataset;
+        }
 
         // GET: Orders
         public ActionResult OrdersView()

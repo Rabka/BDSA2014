@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using Assignment44.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assignment44;
 using Assignment44.Controllers;
@@ -13,39 +15,40 @@ namespace Assignment44.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index()
+        public void Test_OrdersView()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            MVCController controller = new MVCController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            ViewResult result = controller.OrdersView() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
-        public void About()
+        public void Test_Order_detailsView()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            MVCController controller = new MVCController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = controller.Order_detailsView(null) as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, ((IEnumerable<Order_Details>)result.Model).First().OrderID);
         }
 
         [TestMethod]
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            MVCController controller = new MVCController();
 
             // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            ViewResult result = controller.ProductsView(null) as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
