@@ -12,22 +12,22 @@ namespace Assignment44.Controllers
 {
     public class MVCController : Controller
     {
-        private NORTHWNDdataset db;
+        private readonly IRespiratory db;
 
         public MVCController()
         {
-            db = new NORTHWNDdataset();
+            db = new Respiratory(new NORTHWNDdataset());
         }
 
-        public MVCController(DbContext dataset)
+        public MVCController(IRespiratory respiratory)
         {
-            db = (NORTHWNDdataset)dataset;
+            db = respiratory;
         }
 
         // GET: Orders
         public ActionResult OrdersView()
         {
-            var orders = db.Orders.Include(o => o.Customers).Include(o => o.Employees);
+            var orders = db.Orders().Include(o => o.Customers).Include(o => o.Employees);
             return View(orders.ToList());
         }
 
@@ -36,12 +36,12 @@ namespace Assignment44.Controllers
         {
             if (orderId != null)
             {
-                var order_Details2 = db.Order_Details.Select(x => x).Where(x => x.OrderID == orderId).Include(o => o.Orders).Include(o => o.Products);
+                var order_Details2 = db.OrderDetails().Select(x => x).Where(x => x.OrderID == orderId).Include(o => o.Orders).Include(o => o.Products);
                 ViewBag.Id = orderId;
                 return View(order_Details2.ToList());
             }
 
-            var order_Details = db.Order_Details.Include(o => o.Orders).Include(o => o.Products);
+            var order_Details = db.OrderDetails().Include(o => o.Orders).Include(o => o.Products);
             return View(order_Details.ToList());
         }
 
@@ -50,11 +50,11 @@ namespace Assignment44.Controllers
         {
             if (productId != null)
             {
-                var products2 = db.Products.Select(x => x).Where(x => x.ProductID == productId).Include(p => p.Categories);
+                var products2 = db.Products().Select(x => x).Where(x => x.ProductID == productId).Include(p => p.Categories);
                 return View(products2.ToList());
             }
 
-            var products = db.Products.Include(p => p.Categories);
+            var products = db.Products().Include(p => p.Categories);
             return View(products.ToList());
         }
     }
