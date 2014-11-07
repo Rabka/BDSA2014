@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment44.Models
+namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
@@ -18,12 +18,19 @@ namespace Assignment44.Models
         {
             this.Products = new HashSet<Products>();
         }
+        public Categories(int newID, string categoryName, string description,byte[] picture)
+        {
+            this.CategoryID = newID;
+            this.CategoryName = categoryName;
+            this.Description = description;
+            this.Picture = picture;
+            this.Products = new HashSet<Products>();
+        }
     
-        public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
-        public string Description { get; set; }
-        public byte[] Picture { get; set; }
-    
-        public virtual ICollection<Products> Products { get; set; }
+        public int CategoryID { get; private set; }
+        public string CategoryName { get; private set; }
+        public string Description { get; private set; }
+        public byte[] Picture { get; private set; }    
+        public virtual ICollection<Products> Products { get; private set; }
     }
 }

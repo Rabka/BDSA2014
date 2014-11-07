@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment44.Models
+namespace NorthWindVisualizer.Model
 {
     using System;
     using System.Collections.Generic;
@@ -18,24 +18,36 @@ namespace Assignment44.Models
         {
             this.Order_Details = new HashSet<Order_Details>();
         }
+        public Orders(int newID,DateTime requiredDate,string shipName,string shipAddress,string shipCity,string shipRegion,string shipPostalCode,string shipCountry)
+        {
+            this.Order_Details = new HashSet<Order_Details>();
+            this.OrderID = newID;
+            this.RequiredDate = requiredDate;
+            this.ShipName = shipName;
+            this.ShipAddress = shipAddress;
+            this.ShipCity = shipCity;
+            this.ShipRegion = shipRegion;
+            this.ShipPostalCode = shipPostalCode;
+            this.ShipCountry = shipCountry;
+            OrderDate = DateTime.Now;
+        }
+        public int OrderID { get; private set; }
+        public string CustomerID { get; private set; }
+        public Nullable<int> EmployeeID { get; private set; }
+        public Nullable<System.DateTime> OrderDate { get; private set; }
+        public Nullable<System.DateTime> RequiredDate { get; private set; }
+        public Nullable<System.DateTime> ShippedDate { get; private set; }
+        public Nullable<int> ShipVia { get; private set; }
+        public Nullable<decimal> Freight { get; private set; }
+        public string ShipName { get; private set; }
+        public string ShipAddress { get; private set; }
+        public string ShipCity { get; private set; }
+        public string ShipRegion { get; private set; }
+        public string ShipPostalCode { get; private set; }
+        public string ShipCountry { get; private set; }
     
-        public int OrderID { get; set; }
-        public string CustomerID { get; set; }
-        public Nullable<int> EmployeeID { get; set; }
-        public Nullable<System.DateTime> OrderDate { get; set; }
-        public Nullable<System.DateTime> RequiredDate { get; set; }
-        public Nullable<System.DateTime> ShippedDate { get; set; }
-        public Nullable<int> ShipVia { get; set; }
-        public Nullable<decimal> Freight { get; set; }
-        public string ShipName { get; set; }
-        public string ShipAddress { get; set; }
-        public string ShipCity { get; set; }
-        public string ShipRegion { get; set; }
-        public string ShipPostalCode { get; set; }
-        public string ShipCountry { get; set; }
-    
-        public virtual Customers Customers { get; set; }
-        public virtual Employees Employees { get; set; }
-        public virtual ICollection<Order_Details> Order_Details { get; set; }
+        public virtual Customers Customers { get; private set; }
+        public virtual Employees Employees { get; private set; }
+        public virtual ICollection<Order_Details> Order_Details { get; private set; }
     }
 }
