@@ -11,7 +11,7 @@ namespace CALENDAR.Storage
     public class OnlineContextStub : IOnlineContext
     {
         int tableID = 0;
-        List<Account> accounts = new List<Account>();
+        List<IAccount> accounts = new List<IAccount>();
         List<EventComponent> events = new List<EventComponent>();
         DateTime _lastSyncDateTime = DateTime.Now;
         /// <summary>
@@ -24,7 +24,7 @@ namespace CALENDAR.Storage
         public DateTime Sync(IChangeCommand[] commands)
         {
             //Do some synchronization.
-            commands.ToList().ForEach(x => x.Execute(this));
+            commands.ToList().ForEach(x => x.SetOnlineContext(this));
             _lastSyncDateTime = DateTime.Now;
             return _lastSyncDateTime;
         }
@@ -34,26 +34,26 @@ namespace CALENDAR.Storage
             throw new NotImplementedException();
         }
 
-        public void AddAccount(Account newAccount)
+        public void AddAccount(IAccount newAccount)
         {
             if (accounts.Select(x => x).Any(x => x.Username == newAccount.Username))
                 throw new Exception();
             newAccount.TableID = tableID++;
             accounts.Add(newAccount);
         }
-        public void RemoveAccount(Account account)
+        public void RemoveAccount(IAccount account)
         {
             accounts.Remove(accounts.Select(x => x).First(x => x.TableID == account.TableID));
         }
-        public void UpdateAccount(Account account)
+        public void UpdateAccount(IAccount account)
         {
 
         }
-        public Account GetAccount(int itemIndex)
+        public IAccount GetAccount(int itemIndex)
         {
             return accounts[itemIndex];
         }
-        public Account GetAccount(string username)
+        public IAccount GetAccount(string username)
         {
             return accounts.Select(x => x).First(x => x.Username == username);
         }
@@ -61,17 +61,6 @@ namespace CALENDAR.Storage
         {
             return accounts.Count;
         }
-
-        public void AddEvent(EventComponent newEvent)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveEvent(EventComponent @event)
-        {
-            throw new NotImplementedException();
-        }
-
         public void UpdateEvent(EventComponent @event)
         {
             throw new NotImplementedException();
@@ -85,10 +74,6 @@ namespace CALENDAR.Storage
         public void RemoveEvent(EventComponent @event)
         {
             events.Remove(events.Select(x => x).First(x => x.TableID == @event.TableID));
-        }
-        public void UpdateEvent(EventComponent account)
-        {
-
         }
         public EventComponent GetEventComponent(int itemIndex)
         {

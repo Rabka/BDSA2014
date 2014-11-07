@@ -35,7 +35,6 @@ namespace ComponentTesting
         {
             Assert.AreEqual(true, accountLogic.TryCreateAccount( "John", "JohnsPassword", "andentestmail@gmail.com"));
         }
-
         [TestMethod]
         public void BoundaryTest_TryCreateAccount()
         {

@@ -45,7 +45,7 @@ namespace CALENDAR.AccountManagement
         /// </summary>
         /// <param name="account"></param>
         /// <returns>return true if success</returns>
-        public bool TryRemoveAccount(Account account)
+        public bool TryRemoveAccount(IAccount account)
         {
             throw new NotImplementedException();
         }

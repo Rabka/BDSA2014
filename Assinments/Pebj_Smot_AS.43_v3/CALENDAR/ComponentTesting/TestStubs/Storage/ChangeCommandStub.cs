@@ -10,8 +10,10 @@ namespace ComponentTesting.TestStubs.Storage
     {
         public int executeWasCalled = 0;
         public int undoWasCalled = 0;
-        public void SetSeason(ISeason season)
+        public bool onlineContextWasSet = false;
+        public void SetOnlineContext(IOnlineContext season)
         {
+            onlineContextWasSet = true;
         }
         public void Execute()
         {
