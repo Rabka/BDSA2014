@@ -11,14 +11,14 @@ namespace Assignment44.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Order_Details
     {
         public Order_Details()
         {
 
         }
-        public Order_Details(int newID,int productID,decimal unitPrice,short quantity,float discount,Orders order, Products product)
+        public Order_Details(int newID, int productID, decimal unitPrice, short quantity, float discount, Orders order, Products product)
         {
             this.OrderID = newID;
             this.ProductID = productID;
@@ -33,7 +33,7 @@ namespace Assignment44.Models
         public decimal UnitPrice { get; private set; }
         public short Quantity { get; private set; }
         public float Discount { get; private set; }
-    
+
         public virtual Orders Orders { get; private set; }
         public virtual Products Products { get; private set; }
     }

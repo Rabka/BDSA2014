@@ -11,7 +11,7 @@ namespace Assignment44.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Employees
     {
         public Employees()
@@ -19,7 +19,7 @@ namespace Assignment44.Models
             this.Employees1 = new HashSet<Employees>();
             this.Orders = new HashSet<Orders>();
         }
-    
+
         public int EmployeeID { get; private set; }
         public string LastName { get; private set; }
         public string FirstName { get; private set; }
@@ -38,7 +38,7 @@ namespace Assignment44.Models
         public string Notes { get; private set; }
         public Nullable<int> ReportsTo { get; private set; }
         public string PhotoPath { get; private set; }
-    
+
         public virtual ICollection<Employees> Employees1 { get; private set; }
         public virtual Employees Employees2 { get; private set; }
         public virtual ICollection<Orders> Orders { get; private set; }

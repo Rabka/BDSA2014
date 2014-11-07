@@ -11,14 +11,14 @@ namespace Assignment44.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Categories
     {
         public Categories()
         {
             this.Products = new HashSet<Products>();
         }
-        public Categories(int newID, string categoryName, string description,byte[] picture)
+        public Categories(int newID, string categoryName, string description, byte[] picture)
         {
             this.CategoryID = newID;
             this.CategoryName = categoryName;
@@ -26,11 +26,11 @@ namespace Assignment44.Models
             this.Picture = picture;
             this.Products = new HashSet<Products>();
         }
-    
+
         public int CategoryID { get; private set; }
         public string CategoryName { get; private set; }
         public string Description { get; private set; }
-        public byte[] Picture { get; private set; }    
+        public byte[] Picture { get; private set; }
         public virtual ICollection<Products> Products { get; private set; }
     }
 }

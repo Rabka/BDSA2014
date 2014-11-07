@@ -11,14 +11,14 @@ namespace Assignment44.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Orders
     {
         public Orders()
         {
             this.Order_Details = new HashSet<Order_Details>();
         }
-        public Orders(int newID,DateTime requiredDate,string shipName,string shipAddress,string shipCity,string shipRegion,string shipPostalCode,string shipCountry)
+        public Orders(int newID, DateTime requiredDate, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPostalCode, string shipCountry)
         {
             this.Order_Details = new HashSet<Order_Details>();
             this.OrderID = newID;
@@ -45,7 +45,7 @@ namespace Assignment44.Models
         public string ShipRegion { get; private set; }
         public string ShipPostalCode { get; private set; }
         public string ShipCountry { get; private set; }
-    
+
         public virtual Customers Customers { get; private set; }
         public virtual Employees Employees { get; private set; }
         public virtual ICollection<Order_Details> Order_Details { get; private set; }

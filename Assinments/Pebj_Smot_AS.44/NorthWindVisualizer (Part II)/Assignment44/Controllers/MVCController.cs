@@ -19,7 +19,7 @@ namespace Assignment44.Controllers
         /// </summary>
         public MVCController()
         {
-            db = new Respiratory(new NORTHWNDdataset());
+            db = new Respiratory(new NORTHWNDEntities());
         }
 
         /// <summary>

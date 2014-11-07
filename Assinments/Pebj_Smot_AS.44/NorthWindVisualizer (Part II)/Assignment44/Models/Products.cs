@@ -11,7 +11,7 @@ namespace Assignment44.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Products
     {
         public Products()
@@ -19,7 +19,7 @@ namespace Assignment44.Models
             this.Order_Details = new HashSet<Order_Details>();
         }
 
-        public Products(int newID,string productName, Nullable<int> supplierID, Nullable<int> categoryID, string quantityPerUnit, Nullable<decimal> unitPrice, Nullable<short> unitsInStock, Nullable<short> unitsOnOrder, Nullable<short> reorderLevel, bool discontinued, Categories categories)
+        public Products(int newID, string productName, Nullable<int> supplierID, Nullable<int> categoryID, string quantityPerUnit, Nullable<decimal> unitPrice, Nullable<short> unitsInStock, Nullable<short> unitsOnOrder, Nullable<short> reorderLevel, bool discontinued, Categories categories)
         {
             this.Order_Details = new HashSet<Order_Details>();
             this.ProductID = newID;
@@ -35,7 +35,7 @@ namespace Assignment44.Models
             this.Categories = categories;
 
         }
-    
+
         public int ProductID { get; private set; }
         public string ProductName { get; private set; }
         public Nullable<int> SupplierID { get; private set; }
@@ -46,7 +46,7 @@ namespace Assignment44.Models
         public Nullable<short> UnitsOnOrder { get; private set; }
         public Nullable<short> ReorderLevel { get; private set; }
         public bool Discontinued { get; private set; }
-    
+
         public virtual Categories Categories { get; private set; }
         public virtual ICollection<Order_Details> Order_Details { get; private set; }
     }

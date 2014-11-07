@@ -11,14 +11,14 @@ namespace Assignment44.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Customers
     {
         public Customers()
         {
             this.Orders = new HashSet<Orders>();
         }
-    
+
         public string CustomerID { get; private set; }
         public string CompanyName { get; private set; }
         public string ContactName { get; private set; }
@@ -30,7 +30,7 @@ namespace Assignment44.Models
         public string Country { get; private set; }
         public string Phone { get; private set; }
         public string Fax { get; private set; }
-    
+
         public virtual ICollection<Orders> Orders { get; private set; }
     }
 }

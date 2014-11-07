@@ -384,7 +384,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NORTHWNDdataset" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NORTHWNDEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Categories" />
           <EntitySet Name="Customers" EntityType="Self.Customers" />
           <EntitySet Name="Employees" EntityType="Self.Employees" />
@@ -421,7 +421,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NORTHWNDModelStoreContainer" CdmEntityContainer="NORTHWNDdataset">
+        <EntityContainerMapping StorageEntityContainer="NORTHWNDModelStoreContainer" CdmEntityContainer="NORTHWNDEntities">
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="NORTHWNDModel.Categories">
               <MappingFragment StoreEntitySet="Categories">

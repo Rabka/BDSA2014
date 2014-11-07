@@ -9,13 +9,13 @@ namespace Assignment44
     /// </summary>
     public class Respiratory : IRespiratory
     {
-        private readonly NORTHWNDdataset context;
+        private readonly NORTHWNDEntities context;
 
         /// <summary>
         /// Constructor 
         /// </summary>
         /// <param name="context">The connected NORTHWNDdataset DataContext to use</param>
-        public Respiratory(NORTHWNDdataset context)
+        public Respiratory(NORTHWNDEntities context)
         {
             this.context = context;
         }
