@@ -1,4 +1,5 @@
-﻿using CALENDAR.Storage;
+﻿using System;
+using CALENDAR.Storage;
 using ComponentTesting.TestStubs.Storage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -18,7 +19,21 @@ namespace ComponentTesting
         [TestMethod]
         public void TestEquivalence_AddChangeCommand()
         {
-            season.AddChangeCommand(new ChangeCommandStub());
+            try
+            {
+                season.AddChangeCommand(new ChangeCommandStub());
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Expected no exception, but got: " + ex.Message);
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Null is not acceptable argument")]
+        public void TestEquivalence_AddChangeCommand2()
+        {
+            season.AddChangeCommand(null);
         }
 
         [TestMethod]

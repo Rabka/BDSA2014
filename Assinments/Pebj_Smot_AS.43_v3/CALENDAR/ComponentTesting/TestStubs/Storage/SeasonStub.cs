@@ -16,6 +16,8 @@ namespace ComponentTesting.TestStubs
         }
         public void AddChangeCommand(IChangeCommand command)
         {
+            if (command == null)
+                throw new ArgumentException("Null is not acceptable argument");
             changeCommands.Add(command);
         }
         public void UndoLastChangeCommand()
