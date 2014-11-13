@@ -7,8 +7,8 @@
     <ProjectGuid>{95C4DAC9-E638-42EF-8522-88334B05FBBB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Assignment40_PartIII</RootNamespace>
-    <AssemblyName>Assignment40_PartIII</AssemblyName>
+    <RootNamespace>Assignment40_1</RootNamespace>
+    <AssemblyName>Assignment40_1</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
@@ -47,7 +47,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Assignment40_PartIII.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -70,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVimporter.cs" />
     <Compile Include="IRespiratory.cs" />
     <Compile Include="Model\Categories.cs">
       <DependentUpon>NorthWindDdContext.tt</DependentUpon>
@@ -116,7 +118,8 @@
     <Compile Include="Report.cs" />
     <Compile Include="ReportError.cs" />
     <Compile Include="ReportingModule.cs" />
-    <Compile Include="Respiratory.cs" />
+    <Compile Include="DBMSRespiratory.cs" />
+    <Compile Include="CSVRespiratory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

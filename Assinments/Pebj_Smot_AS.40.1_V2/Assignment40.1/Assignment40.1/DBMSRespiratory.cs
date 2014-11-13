@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assignment40_PartIII.Model;
-namespace Assignment40_PartIII
+using Assignment40_1.Model;
+namespace Assignment40_1
 {
-    public class Respiratory : IRespiratory
+    public class DBMSRespiratory : IRespiratory
     {
         NORTHWNDEntities1 context;
-        public Respiratory(NORTHWNDEntities1 context)
+        public DBMSRespiratory(NORTHWNDEntities1 context)
         {
             this.context = context;
         }

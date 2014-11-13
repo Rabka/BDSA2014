@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Assignment40_PartIII.Model;
+using Assignment40_1.Model;
 
-namespace Assignment40_PartIII
+namespace Assignment40_1
 {
-    interface IRespiratory
+    public interface IRespiratory
     {
          IQueryable<Products> Products();
          IQueryable<Categories> Categories();
-         IQueryable<Orders> Orders();        
+         IQueryable<Orders> Orders();    
         void CreateOrder(Orders order);
     }
 }

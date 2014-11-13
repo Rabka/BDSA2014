@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment40_PartIII.Model
+namespace Assignment40_1.Model
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    [Table("Categories")]
+    
     public partial class Categories
     {
         public Categories()
         {
             this.Products = new HashSet<Products>();
         }
-
-         [Key]
+        public Categories(int categoryID, string categoryName, string description)
+        {
+            CategoryID = categoryID;
+            CategoryName = categoryName;
+            Description = description;
+        }
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
-        public byte[] Picture { get; set; }
-    
+        public byte[] Picture { get; set; }    
         public virtual ICollection<Products> Products { get; set; }
     }
 }

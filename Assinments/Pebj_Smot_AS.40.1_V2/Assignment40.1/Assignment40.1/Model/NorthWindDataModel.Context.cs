@@ -7,17 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment40_PartIII.Model
+namespace Assignment40_1.Model
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.IO;
+    
     public partial class NORTHWNDEntities1 : DbContext
     {
         public NORTHWNDEntities1()
-            : base(@"Data Source=(LocalDB)\v11.0;AttachDbFilename="+(new FileInfo(System.Reflection.Assembly.GetEntryAssembly().Location)).Directory+@"\NORTHWND.MDF;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True;App=EntityFramework")
+            : base("name=NORTHWNDEntities1")
         {
+        }
+    
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
         }
     
         public DbSet<Categories> Categories { get; set; }

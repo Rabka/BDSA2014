@@ -7,23 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment40_PartIII.Model
+namespace Assignment40_1.Model
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    [Table("Order Details")]
+    
     public partial class Order_Details
     {
-        [Key]
+        public Order_Details(Orders order, Products product, decimal unitPrice, short quantity, float discount)
+        {
+            this.OrderID = order.OrderID;
+            this.ProductID = product.ProductID;
+            this.UnitPrice = unitPrice;
+            this.Quantity = quantity;
+            this.Discount = discount;
+            this.Orders = order;
+            this.Products = product;
+        }
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public decimal UnitPrice { get; set; }
         public short Quantity { get; set; }
-        public float Discount { get; set; }
-    
+        public float Discount { get; set; }    
         public virtual Orders Orders { get; set; }
         public virtual Products Products { get; set; }
     }
