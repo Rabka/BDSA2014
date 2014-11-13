@@ -1,12 +1,6 @@
-	
-- You were supposed to hand in one solution, rather than two separate ones for the assignment. 
-"In this assignment we’ll extend the application from last time, and add a real database backend to the application. [...] First part of this assignment will be to redesign the data repository interface and make a new implementation of this interface that uses a database." 
-If you need help with how to approach this check the following post on the forum:https://learnit.itu.dk/mod/forum/discuss.php?d=4116
 
 - You only test count, and not whether entries are correctly imported.
 
 - You are also missing unit tests for the reporting component.
-
-- Your current OO data structure does not allow accessing all data. Where are the order details? You have to construct an OO data model which allows you to query for all the required information through the interface presented in the assignment for the repository, and a separate interface for the top-level system under development.
 
 - Missing unit tests for part 2.
