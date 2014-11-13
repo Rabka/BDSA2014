@@ -16,7 +16,6 @@ namespace Assignment40_1
         List<Products> products;
         List<Categories> categories;
         List<Orders> orders;
-        List<Order_Details> ordersDetails;
 
         /// <summary>
         /// Set up the dataclasses to be containd.
@@ -25,12 +24,11 @@ namespace Assignment40_1
         /// <param name="categories">A array of the Categories</param>
         /// <param name="orders">A array of the Orders</param>
         /// <param name="ordersDetails">A array of the OrdersDetails</param>
-        public CSVRespiratory(Products[] products, Categories[] categories, Orders[] orders, Order_Details[] ordersDetails)
+        public CSVRespiratory(Products[] products, Categories[] categories, Orders[] orders)
         {
             this.products = products.ToList();
             this.categories = categories.ToList();
             this.orders = orders.ToList();
-            this.ordersDetails = ordersDetails.ToList();
         }
 
         /// <summary>

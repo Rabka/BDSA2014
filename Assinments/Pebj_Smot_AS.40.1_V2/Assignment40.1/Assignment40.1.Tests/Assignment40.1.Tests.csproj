@@ -9,8 +9,8 @@
     <ProjectGuid>{F03202D8-8443-42D8-8F5D-58C68D814C8B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Assignment40_PartII.Tests</RootNamespace>
-    <AssemblyName>Assignment40_PartII.Tests</AssemblyName>
+    <RootNamespace>Assignment40_1.Tests</RootNamespace>
+    <AssemblyName>Assignment40_1.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,18 +51,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UnitTestOfCSVimporter.cs" />
     <Compile Include="UnitTestOfLinQ.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Resources\TestCategories.csv" />
+    <None Include="Resources\TestOrders.csv" />
+    <None Include="Resources\TestOrder_details.csv" />
+    <None Include="Resources\TestProducts.csv" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Assignment40.1\Assignment40.1.csproj">
       <Project>{95c4dac9-e638-42ef-8522-88334b05fbbb}</Project>
       <Name>Assignment40.1</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -39,7 +39,7 @@ namespace Assignment40_1
                 case 0:
                     Console.WriteLine("CSV respiratory chosen");
                     Console.WriteLine("Loading CSV...");
-                    respiratory = CSVimporter.ImportCSV();
+                    respiratory = CSVimporter.ImportCSV(Resources.categories, Resources.products, Resources.orders, Resources.order_details);
                     Console.WriteLine("Loaded");
                     break;
                 case 1:

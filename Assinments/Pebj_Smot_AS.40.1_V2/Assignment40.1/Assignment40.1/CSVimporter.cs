@@ -15,7 +15,7 @@ namespace Assignment40_1
         /// then it instantiate a Respiratory with the new data classes and returns it.
         /// </summary>
         /// <returns>A Respiratory contaning data classes</returns>
-        public static CSVRespiratory ImportCSV()
+        public static CSVRespiratory ImportCSV(string _categories, string _products, string _orders, string _orderDetails)
         {
             var categories = new Dictionary<string, Categories>();
             var products = new Dictionary<string, Products>();
@@ -24,14 +24,14 @@ namespace Assignment40_1
 
             var path = AppDomain.CurrentDomain.BaseDirectory;
 
-            string[] catLines = Resources.categories.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string[] catLines = _categories.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int k = 1; k < catLines.Length; k++)
             {
                 string[] catCol = catLines[k].Split(';');
                 categories.Add(catCol[0], new Categories(Convert.ToInt32(catCol[0]), catCol[1], catCol[2]));
             }
 
-            string[] proLines = Resources.products.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string[] proLines = _products.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int k = 1; k < proLines.Length; k++)
             {
                 string[] proCol = proLines[k].Split(';');
@@ -41,7 +41,8 @@ namespace Assignment40_1
             {
                 category.Products = products.Values.Select(x =>x).Where(x => x.CategoryID == category.CategoryID).ToList();
             }
-            string[] ordLines = Resources.orders.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
+            string[] ordLines = _orders.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int k = 1; k < ordLines.Length; k++)
             {
                 string[] ordCol = ordLines[k].Split(';');
@@ -52,7 +53,7 @@ namespace Assignment40_1
                 orders.Add(ordCol[0], new Orders(int.Parse(ordCol[0]), null, null, DateTime.Parse(ordCol[3]), DateTime.Parse(ordCol[4]), d, int.Parse(ordCol[6]), decimal.Parse(ordCol[7].Replace(".", ",")), ordCol[8], ordCol[9], ordCol[10], ordCol[11], ordCol[12], ordCol[13]));
             }
 
-            string[] detLines = Resources.order_details.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string[] detLines = _orderDetails.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int k = 1; k < detLines.Length; k++)
             {
                 string[] detCol = detLines[k].Split(';');
@@ -62,14 +63,18 @@ namespace Assignment40_1
             {
                 product.Order_Details = orderDetails.Values.Select(x => x).Where(x => x.ProductID == product.ProductID).ToList();
             }
+            foreach (Orders order in orders.Values)
+            {
+                order.Order_Details = orderDetails.Values.Select(x => x).Where(x => x.OrderID == order.OrderID).ToList();
+            }
+
 
 
             Categories[] categoriesArray = categories.Values.ToArray();
             Products[] productsArray = products.Values.ToArray();
             Orders[] ordersArray = orders.Values.ToArray();
-            Order_Details[] orderDetailsArray = orderDetails.Values.ToArray();
 
-            return new CSVRespiratory(productsArray, categoriesArray, ordersArray, orderDetailsArray);
+            return new CSVRespiratory(productsArray, categoriesArray, ordersArray);
         }
     }
 }

@@ -2,8 +2,11 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using Assignment40_1.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assignment40_1.Model;
+using Assignment40_1.Tests.Properties;
+
 namespace Assignment40_1.Tests
 {
     /// <summary>
@@ -20,7 +23,7 @@ namespace Assignment40_1.Tests
         [TestInitialize]
         public void SetUp()
         {
-            respiratory = CSVimporter.ImportCSV();
+            respiratory = CSVimporter.ImportCSV(Resources.TestCategories, Resources.TestProducts, Resources.TestOrders, Resources.TestOrder_details);
         }
 
         /// <summary>
