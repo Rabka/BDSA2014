@@ -1,0 +1,2 @@
+ProductID;ProductName;SupplierID;CategoryID;QuantityPerUnit;UnitPrice;UnitsInStock;UnitsOnOrder;ReorderLevel;Discontinued
+1;TestChai;1;1;10 TestBoxes x 20 TestBags;100;10;0;10;0

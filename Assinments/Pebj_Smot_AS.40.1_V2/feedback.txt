@@ -3,8 +3,6 @@
 "In this assignment we’ll extend the application from last time, and add a real database backend to the application. [...] First part of this assignment will be to redesign the data repository interface and make a new implementation of this interface that uses a database." 
 If you need help with how to approach this check the following post on the forum:https://learnit.itu.dk/mod/forum/discuss.php?d=4116
 
-- Nice that you embedded the CSV files as resources! Even better would be if you created more specific test data to test on which you can better control/test, rather than the real dataset. This would prevent you from relying on weird constructs like 'if (item.OrderID != 10250) continue;' to test correctness.
-
 - You only test count, and not whether entries are correctly imported.
 
 - You are also missing unit tests for the reporting component.
