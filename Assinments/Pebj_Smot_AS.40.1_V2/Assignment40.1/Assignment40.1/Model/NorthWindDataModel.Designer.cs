@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\pebj\Desktop\GitHub\BDSA2014\Assinments\Pebj_Smot_AS.40.1_V2\Assignment40.1\Assignment40.1\Model\NorthWindDataModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\stin7054\Documents\GitHub\BDSA2014\Assinments\Pebj_Smot_AS.40.1_V2\Assignment40.1\Assignment40.1\Model\NorthWindDataModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

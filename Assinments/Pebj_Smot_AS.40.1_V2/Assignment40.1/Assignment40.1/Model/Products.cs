@@ -18,24 +18,7 @@ namespace Assignment40_1.Model
         {
             this.Order_Details = new HashSet<Order_Details>();
         }
-        public Products(int productID, string productName, Nullable<int> supplierID, Categories category, string quantityPerUnit, Nullable<decimal> unitPrice, Nullable<short> unitsInStock, Nullable<short> unitsOnOrder, Nullable<short> reorderLevel, bool discontinued)
-        {
-            this.ProductID = productID;
-            this.ProductName = productName;
-            this.SupplierID = supplierID;
-            if (category != null)
-            {
-                this.CategoryID = category.CategoryID;
-                this.Categories = category;
-            }
-            
-            this.QuantityPerUnit = quantityPerUnit;
-            this.UnitPrice = unitPrice;
-            this.UnitsInStock = unitsInStock;
-            this.UnitsOnOrder = unitsOnOrder;
-            this.ReorderLevel = reorderLevel;
-            this.Discontinued = discontinued;
-        }
+    
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public Nullable<int> SupplierID { get; set; }
@@ -45,7 +28,8 @@ namespace Assignment40_1.Model
         public Nullable<short> UnitsInStock { get; set; }
         public Nullable<short> UnitsOnOrder { get; set; }
         public Nullable<short> ReorderLevel { get; set; }
-        public bool Discontinued { get; set; }    
+        public bool Discontinued { get; set; }
+    
         public virtual Categories Categories { get; set; }
         public virtual ICollection<Order_Details> Order_Details { get; set; }
     }

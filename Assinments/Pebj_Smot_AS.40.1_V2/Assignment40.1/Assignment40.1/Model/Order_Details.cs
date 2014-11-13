@@ -14,21 +14,12 @@ namespace Assignment40_1.Model
     
     public partial class Order_Details
     {
-        public Order_Details(Orders order, Products product, decimal unitPrice, short quantity, float discount)
-        {
-            this.OrderID = order.OrderID;
-            this.ProductID = product.ProductID;
-            this.UnitPrice = unitPrice;
-            this.Quantity = quantity;
-            this.Discount = discount;
-            this.Orders = order;
-            this.Products = product;
-        }
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public decimal UnitPrice { get; set; }
         public short Quantity { get; set; }
-        public float Discount { get; set; }    
+        public float Discount { get; set; }
+    
         public virtual Orders Orders { get; set; }
         public virtual Products Products { get; set; }
     }
