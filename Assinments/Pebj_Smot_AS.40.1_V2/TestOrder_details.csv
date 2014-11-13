@@ -1,0 +1,3 @@
+OrderID;ProductID;UnitPrice;Quantity;Discount
+1;1;100;12;10
+2;1;100;10;0
