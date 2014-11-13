@@ -18,12 +18,16 @@ namespace Assignment40_1.Model
         {
             this.Products = new HashSet<Products>();
         }
-    
+        public Categories(int categoryID, string categoryName, string description)
+        {
+            CategoryID = categoryID;
+            CategoryName = categoryName;
+            Description = description;
+        }
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
-        public byte[] Picture { get; set; }
-    
+        public byte[] Picture { get; set; }    
         public virtual ICollection<Products> Products { get; set; }
     }
 }
