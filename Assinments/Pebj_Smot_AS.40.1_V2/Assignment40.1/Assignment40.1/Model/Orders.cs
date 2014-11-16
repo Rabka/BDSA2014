@@ -50,8 +50,7 @@ namespace Assignment40_1.Model
         public string ShipCity { get; set; }
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
-        public string ShipCountry { get; set; }
-    
+        public string ShipCountry { get; set; }    
         public virtual ICollection<Order_Details> Order_Details { get; set; }
     }
 }
