@@ -17,20 +17,14 @@ namespace Assignment40_1
         public Report<IList<OrdersByTotalPriceDto>, ReportError> TopOrdersByTotalPrice(int count)
         {
            var result = northWind.Orders()
-                      .GroupBy(order => order.OrderID)
-                      .Select(orders => new
-                      {
-                          OrderKey = orders.Key,
-                          TotalPrice = orders.Sum(o => o.Order_Details.Sum(
-                                                   l => l.Quantity * l.UnitPrice)),
-                          Discount = orders.Sum(o => o.Order_Details.Sum(
-                                                   l => l.Discount))
-                      })
-                      .OrderByDescending(x => x.TotalPrice).Take(count);
+                      .Select(x => x)
+                      .OrderByDescending(x => x.Order_Details.Sum(l => (float)(l.Quantity * l.UnitPrice) -  l.Discount)).Take(count);
             List<OrdersByTotalPriceDto> res = new List<OrdersByTotalPriceDto>();
            foreach (var o in result)
            {
-              
+               OrdersByTotalPriceDto order = new OrdersByTotalPriceDto();
+               order.TotalPrice = o.Order_Details.Sum(l => l.Quantity * l.UnitPrice);
+               order.TotalPriceWithDiscount = Convert.ToDecimal(o.Order_Details.Sum(l => (float)(l.Quantity * l.UnitPrice) - l.Discount));
            }
           Report<IList<OrdersByTotalPriceDto>,ReportError> report = new Report<IList<OrdersByTotalPriceDto>,ReportError>();
             report.Data = res;

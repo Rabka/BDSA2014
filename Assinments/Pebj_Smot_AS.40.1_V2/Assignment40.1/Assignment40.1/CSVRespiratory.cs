@@ -6,7 +6,8 @@ using Assignment40_1.Model;
 namespace Assignment40_1
 {
     /// <summary>
-    /// The Respiratory usesing IRespiratory interface and for contaning the data classes.
+    /// A CSV Respiratory that implements IRespiratory.
+    /// Handles communication with the CSV imported dataset.
     /// </summary>
     public class CSVRespiratory : IRespiratory
     {
