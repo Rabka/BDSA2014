@@ -27,76 +27,97 @@ namespace Assignment40_1.Tests
         }
 
         /// <summary>
-        /// Tests if ther is the rigth number of Categorys.
+        /// Tests if the data have been correctly imported.
         /// </summary>
         [TestMethod]
-        public void TestForNumberOfCategorys()
+        public void TestDataCorrectImported()
         {
-            Assert.AreEqual(8, respiratory.Categories().Count());
+            // for the one categori
+            Assert.AreEqual(1, respiratory.Categories().First().CategoryID);
+            Assert.AreEqual("TestBeverages", respiratory.Categories().First().CategoryName);
+            Assert.AreEqual("Test Soft drinks, coffees, teas, beers, and ales", respiratory.Categories().First().Description);
+
+            // for the two order_details
+            Assert.AreEqual(1, respiratory.Products().First().Order_Details.Select(x => x).Where((x =>x.OrderID == 1)).First().ProductID);
+            Assert.AreEqual(100, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 1)).First().UnitPrice);
+            Assert.AreEqual(12, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 1)).First().Quantity);
+            Assert.AreEqual(10, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 1)).First().Discount);
+
+            Assert.AreEqual(1, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 2)).First().ProductID);
+            Assert.AreEqual(100, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 2)).First().UnitPrice);
+            Assert.AreEqual(10, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 2)).First().Quantity);
+            Assert.AreEqual(0, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 2)).First().Discount);
+
+            // for the two orders
+            Assert.AreEqual("VINET", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().CustomerID);
+            Assert.AreEqual(5, respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().EmployeeID);
+            Assert.AreEqual(DateTime.Parse("1996-07-04 00:00:00"), respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().OrderDate);
+            Assert.AreEqual(DateTime.Parse("1996-08-01 00:00:00"), respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().RequiredDate);
+            Assert.AreEqual(DateTime.Parse("1996-07-16 00:00:00"), respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShippedDate);
+            Assert.AreEqual(3, respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShipVia);
+            Assert.AreEqual((decimal)32.38, respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().Freight);
+            Assert.AreEqual("Vins et alcools Chevalier", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShipName);
+            Assert.AreEqual("59 rue de l'Abbaye", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShipAddress);
+            Assert.AreEqual("Reims", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShipCity);
+            Assert.AreEqual("", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShipRegion);
+            Assert.AreEqual("51100", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShipPostalCode);
+            Assert.AreEqual("TestFrance", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().ShipCountry);
+
+            Assert.AreEqual("TOMSP", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().CustomerID);
+            Assert.AreEqual(6, respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().EmployeeID);
+            Assert.AreEqual(DateTime.Parse("1996-07-05 00:00:00"), respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().OrderDate);
+            Assert.AreEqual(DateTime.Parse("1996-08-16 00:00:00"), respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().RequiredDate);
+            Assert.AreEqual(DateTime.Parse("1996-07-10 00:00:00"), respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShippedDate);
+            Assert.AreEqual(1, respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShipVia);
+            Assert.AreEqual((decimal)11.61, respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().Freight);
+            Assert.AreEqual("Toms Spezialit„ten", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShipName);
+            Assert.AreEqual("Luisenstr. 48", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShipAddress);
+            Assert.AreEqual("Mnster", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShipCity);
+            Assert.AreEqual("", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShipRegion);
+            Assert.AreEqual("44087", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShipPostalCode);
+            Assert.AreEqual("TestGermany", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 2)).First().ShipCountry);
+
+            //for the one product
+            Assert.AreEqual(1, respiratory.Products().First().ProductID);
+            Assert.AreEqual("TestChai", respiratory.Products().First().ProductName);
+            Assert.AreEqual(1, respiratory.Products().First().SupplierID);
+            Assert.AreEqual(1, respiratory.Products().First().CategoryID);
+            Assert.AreEqual("10 TestBoxes x 20 TestBags", respiratory.Products().First().QuantityPerUnit);
+            Assert.AreEqual(100, respiratory.Products().First().UnitPrice);
+            Assert.AreEqual((Int16)10, respiratory.Products().First().UnitsInStock);
+            Assert.AreEqual((Int16)0, respiratory.Products().First().UnitsOnOrder);
+            Assert.AreEqual((Int16)10, respiratory.Products().First().ReorderLevel);
+            Assert.AreEqual(false, respiratory.Products().First().Discontinued);
         }
 
         /// <summary>
-        /// Tests if ther is the rigth number of Orders.
+        /// Tests if ther is the rigth number of entries in the respiratory.
         /// </summary>
         [TestMethod]
-        public void TestForNumberOfOrders()
+        public void TestCorrectNumberOfEntries()
         {
-            Assert.AreEqual(830, respiratory.Orders().Count());
+            Assert.AreEqual(1, respiratory.Categories().Count());
+            Assert.AreEqual(2, respiratory.Products().First().Order_Details.Count());
+            Assert.AreEqual(2, respiratory.Orders().Count());
+            Assert.AreEqual(1, respiratory.Products().Count());
         }
 
         /// <summary>
-        /// Tests if ther is the rigth number of OrderDetails.
+        /// Tests if all the references are right
         /// </summary>
         [TestMethod]
-        public void TestForNumberOfOrderDetails()
+        public void TestReferences()
         {
-            Assert.AreEqual(2155, respiratory.Orders().Sum(x => x.Order_Details.Count));
-        }
-
-        /// <summary>
-        /// Tests if ther is the rigth number of Products.
-        /// </summary>
-        [TestMethod]
-        public void TestForNumberOfProducts()
-        {
-            Assert.AreEqual(77, respiratory.Products().Count());
-        }
-
-        /// <summary>
-        /// Tests if alle the data classes, class referenceses is set right.
-        /// </summary>
-        [TestMethod]
-        public void TestClassReferenceses()
-        {
-            foreach (Order_Details item in respiratory.Orders().Select(x => x.Order_Details))
+            Assert.AreEqual(1, respiratory.Categories().First().Products.First().Categories.CategoryID);
+            foreach (var OD in respiratory.Products().First().Order_Details)
             {
-                Assert.IsNotNull(item.OrderID);
-                Assert.IsNotNull(item.ProductID);
-                Assert.IsNotNull(item.Products.CategoryID);
+                Assert.AreEqual(1, OD.Products.ProductID);
             }
-        }
-
-        /// <summary>
-        /// Tests if a specific order have been inportet correct.
-        /// </summary>
-        [TestMethod]
-        public void TestIfClassVariableAreCorrect()
-        {
-            foreach (Orders item in respiratory.Orders())
+            Assert.AreEqual(1, respiratory.Orders().First().Order_Details.First().Orders.OrderID);
+            Assert.AreEqual(2, respiratory.Orders().Last().Order_Details.First().Orders.OrderID);
+            foreach (var O in respiratory.Orders())
             {
-                if(item.OrderID != 10250)
-                    continue;
-                Assert.AreEqual(DateTime.Parse("1996-07-08 00:00:00"), item.OrderDate);
-                Assert.AreEqual(DateTime.Parse("1996-08-05 00:00:00"), item.RequiredDate);
-                Assert.AreEqual(DateTime.Parse("1996-07-12 00:00:00"), item.ShippedDate);
-                Assert.AreEqual(2, item.ShipVia);
-                Assert.AreEqual(65.83d, item.Freight);
-                Assert.AreEqual("Hanari Carnes", item.ShipName);
-                Assert.AreEqual("Rua do Pa‡o, 67", item.ShipAddress);
-                Assert.AreEqual("Rio de Janeiro", item.ShipCity);
-                Assert.AreEqual("RJ", item.ShipRegion);
-                Assert.AreEqual("05454-876", item.ShipPostalCode);
-                Assert.AreEqual("Brazil", item.ShipCountry);
+                Assert.AreEqual(1, O.Order_Details.First().Products.Categories.CategoryID);
             }
         }
     }

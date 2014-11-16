@@ -1,6 +1,4 @@
 
-- You only test count, and not whether entries are correctly imported.
-
 - You are also missing unit tests for the reporting component.
 
 - Missing unit tests for part 2.

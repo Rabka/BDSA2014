@@ -28,14 +28,14 @@ namespace Assignment40_1
             for (int k = 1; k < catLines.Length; k++)
             {
                 string[] catCol = catLines[k].Split(';');
-                categories.Add(catCol[0], new Categories(Convert.ToInt32(catCol[0]), catCol[1], catCol[2]));
+                categories.Add(catCol[0], new Categories(int.Parse(catCol[0]), catCol[1], catCol[2]));
             }
 
             string[] proLines = _products.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int k = 1; k < proLines.Length; k++)
             {
                 string[] proCol = proLines[k].Split(';');
-                products.Add(proCol[0], new Products(Convert.ToInt32(proCol[0]), proCol[1], null, categories[proCol[3]], proCol[4], decimal.Parse(proCol[5].Replace(".", ",")), short.Parse(proCol[6]), short.Parse(proCol[7]), short.Parse(proCol[8]), proCol[9] == "1" ? true : false));
+                products.Add(proCol[0], new Products(int.Parse(proCol[0]), proCol[1], int.Parse(proCol[2]), categories[proCol[3]], proCol[4], decimal.Parse(proCol[5].Replace(".", ",")), short.Parse(proCol[6]), short.Parse(proCol[7]), short.Parse(proCol[8]), proCol[9] == "1" ? true : false));
             }
             foreach (Categories category in categories.Values)
             {
@@ -50,7 +50,7 @@ namespace Assignment40_1
                 DateTime d2;
                 if (DateTime.TryParse(ordCol[5], out d2))
                     d = d2;
-                orders.Add(ordCol[0], new Orders(int.Parse(ordCol[0]), null, null, DateTime.Parse(ordCol[3]), DateTime.Parse(ordCol[4]), d, int.Parse(ordCol[6]), decimal.Parse(ordCol[7].Replace(".", ",")), ordCol[8], ordCol[9], ordCol[10], ordCol[11], ordCol[12], ordCol[13]));
+                orders.Add(ordCol[0], new Orders(int.Parse(ordCol[0]), ordCol[1], int.Parse(ordCol[2]), DateTime.Parse(ordCol[3]), DateTime.Parse(ordCol[4]), d, int.Parse(ordCol[6]), decimal.Parse(ordCol[7].Replace(".", ",")), ordCol[8], ordCol[9], ordCol[10], ordCol[11], ordCol[12], ordCol[13]));
             }
 
             string[] detLines = _orderDetails.Split(new string[] { System.Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
