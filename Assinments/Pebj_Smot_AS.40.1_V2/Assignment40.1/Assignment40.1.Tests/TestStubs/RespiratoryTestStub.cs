@@ -20,9 +20,14 @@ namespace Assignment40_1.Tests.TestStubs
         /// </summary>
         public RespiratoryTestStub()
         {
+            products = new List<Products>();
+            categories = new List<Categories>();
+            orders = new List<Orders>();
+            
             Categories category_electronics = new Categories();
             category_electronics.CategoryID = 0;
-            Orders order = new Orders();            
+            Orders order = new Orders();
+            order.OrderDate = new DateTime(2014, 10, 2);
             Products product_computer = new Products();
             product_computer.ProductID = 1;
             Order_Details order_details = new Order_Details();
@@ -31,6 +36,8 @@ namespace Assignment40_1.Tests.TestStubs
             order_details.Orders = order;
             order_details.ProductID = product_computer.ProductID;
             order_details.Products = product_computer;
+            order_details.Quantity = 1;
+            order_details.UnitPrice = 4000;
             Customers custommer = new Customers();
             custommer.ContactName = "Niels";
             custommer.CustomerID = "1";
@@ -45,7 +52,6 @@ namespace Assignment40_1.Tests.TestStubs
             product_computer.ProductName = "Laptop";
             product_computer.QuantityPerUnit = "0";
             product_computer.ReorderLevel = 0;
-            product_computer.UnitPrice = 4000;
             product_computer.UnitsInStock = 2;
             product_computer.UnitsOnOrder = 0;
             products.Add(product_computer);

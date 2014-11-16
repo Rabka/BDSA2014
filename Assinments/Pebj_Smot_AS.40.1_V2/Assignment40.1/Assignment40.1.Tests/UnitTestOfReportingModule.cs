@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assignment40_1.Properties;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Assignment40_1.Model;
-using Assignment40_1.Tests.Properties;
 using Assignment40_1.Tests.TestStubs;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace Assignment40_1.Tests
-{   
+{
     /// <summary>
     /// This UnitTest is responsible for chekking if the importer do import the right things.
     /// </summary>
     [TestClass]
-    class UnitTestOfReportingModule
+    public class UnitTestOfReportingModule
     {
         ReportingModule reportingModule;
 
@@ -53,7 +48,7 @@ namespace Assignment40_1.Tests
         public void TestOrdersByTotalPriceDto_OrderDate()
         {
             OrdersByTotalPriceDto dto = reportingModule.TopOrdersByTotalPrice(1).Data[0];
-            Assert.AreEqual(new DateTime(2014,10,2).Ticks, dto.OrderDate.Ticks);
+            Assert.AreEqual(new DateTime(2014, 10, 2).Ticks, dto.OrderDate.Ticks);
         }
 
         /// <summary>
@@ -90,8 +85,8 @@ namespace Assignment40_1.Tests
         public void TestTopProductsBySale()
         {
             OrdersByTotalPriceDto dto = reportingModule.TopOrdersByTotalPrice(1).Data[0];
-            Assert.AreEqual(0, dto.TopProductsBySale(0));
-            Assert.AreEqual(1, dto.TopProductsBySale(1));
+            Assert.AreEqual(0, dto.TopProductsBySale(0).Data.Count);
+            Assert.AreEqual(1, dto.TopProductsBySale(1).Data.Count);
         }
 
 

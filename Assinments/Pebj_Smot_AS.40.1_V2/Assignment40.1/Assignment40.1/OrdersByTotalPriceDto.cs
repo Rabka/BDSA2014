@@ -27,7 +27,7 @@ namespace Assignment40_1
 
         public int OrderId
         {
-            get { return OrderId; }
+            get { return order.OrderID; }
         }
         public DateTime OrderDate
         {
