@@ -114,7 +114,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Report.cs" />
-    <Compile Include="ReportError.cs" />
     <Compile Include="ReportingModule.cs" />
     <Compile Include="DBMSRespiratory.cs" />
     <Compile Include="CSVRespiratory.cs" />

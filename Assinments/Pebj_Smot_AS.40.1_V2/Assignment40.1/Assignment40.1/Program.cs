@@ -58,8 +58,8 @@ namespace Assignment40_1
             northWind.Products().Take(0);
 
             Console.WriteLine("Ready");
-            ReportingModule reportingModule = new ReportingModule(northWind);
-            IList<OrdersByTotalPriceDto> reportedOrders = reportingModule.TopOrdersByTotalPrice(5).Data;
+      //   ReportingModule reportingModule = new ReportingModule(northWind);
+      //   IList<OrdersByTotalPriceDto> reportedOrders = reportingModule.TopOrdersByTotalPrice(5).Data;
             northWind.newOrderEvent += subscription;
 
             Console.WriteLine("Adding an order to Denmark.");
