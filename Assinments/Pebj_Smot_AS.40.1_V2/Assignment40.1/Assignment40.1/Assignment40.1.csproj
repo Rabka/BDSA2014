@@ -74,36 +74,34 @@
     <Compile Include="CSVimporter.cs" />
     <Compile Include="IRespiratory.cs" />
     <Compile Include="Model\Categories.cs">
-      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+      <DependentUpon>NorthWindData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\NorthWindDataModel.Context.cs">
+    <Compile Include="Model\Customers.cs">
+      <DependentUpon>NorthWindData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NorthWindData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NorthWindDataModel.Context.tt</DependentUpon>
+      <DependentUpon>NorthWindData.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\NorthWindDataModel.cs">
+    <Compile Include="Model\NorthWindData.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NorthWindDataModel.tt</DependentUpon>
+      <DependentUpon>NorthWindData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\NorthWindDataModel.Designer.cs">
+    <Compile Include="Model\NorthWindData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\NorthWindDdContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+      <DependentUpon>NorthWindData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Orders.cs">
-      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+      <DependentUpon>NorthWindData.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Order_Details.cs">
-      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+      <DependentUpon>NorthWindData.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Products.cs">
-      <DependentUpon>NorthWindDdContext.tt</DependentUpon>
+      <DependentUpon>NorthWindData.tt</DependentUpon>
     </Compile>
     <Compile Include="NorthWind.cs" />
     <Compile Include="OrdersByTotalPriceDto.cs" />
@@ -123,27 +121,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Model\NorthWindDataModel.edmx">
+    <EntityDeploy Include="Model\NorthWindData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NorthWindDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NorthWindData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\NorthWindDataModel.Context.tt">
+    <None Include="Model\NorthWindData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
-      <LastGenOutput>NorthWindDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>NorthWindData.edmx</DependentUpon>
+      <LastGenOutput>NorthWindData.Context.cs</LastGenOutput>
     </None>
-    <None Include="Model\NorthWindDataModel.edmx.diagram">
-      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+    <None Include="Model\NorthWindData.edmx.diagram">
+      <DependentUpon>NorthWindData.edmx</DependentUpon>
     </None>
-    <None Include="Model\NorthWindDataModel.tt">
+    <None Include="Model\NorthWindData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
-      <LastGenOutput>NorthWindDataModel.cs</LastGenOutput>
-    </None>
-    <None Include="Model\NorthWindDdContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NorthWindDdContext.cs</LastGenOutput>
-      <DependentUpon>NorthWindDataModel.edmx</DependentUpon>
+      <DependentUpon>NorthWindData.edmx</DependentUpon>
+      <LastGenOutput>NorthWindData.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Resources\categories.csv" />
@@ -190,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="backup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

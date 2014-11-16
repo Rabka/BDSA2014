@@ -45,7 +45,7 @@ namespace Assignment40_1
                 case 1:
                     Console.WriteLine("DBMS respiratory chosen");
                     Console.WriteLine("Attaching NORTHWND.MDF");
-                    NORTHWNDEntities1 db = new NORTHWNDEntities1();
+                    NORTHWNDEntities2 db = new NORTHWNDEntities2();
                         Console.WriteLine("Connecting NORTHWND.MDF");
                         db.Database.Connection.Open();
                         respiratory = new DBMSRespiratory(db);

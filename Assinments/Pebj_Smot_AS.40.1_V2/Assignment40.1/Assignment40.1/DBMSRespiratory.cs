@@ -12,12 +12,12 @@ namespace Assignment40_1
     public class DBMSRespiratory : IRespiratory
     {
         //Entity-Framework powered NORTHWNDEntities1 dataContext
-        NORTHWNDEntities1 context;
+        NORTHWNDEntities2 context;
         /// <summary>
         /// Default constructor
         /// </summary>
         /// <param name="context">Entity-Framework NORTHWNDEntities1 dataContext</param>
-        public DBMSRespiratory(NORTHWNDEntities1 context)
+        public DBMSRespiratory(NORTHWNDEntities2 context)
         {
             this.context = context;
         }
