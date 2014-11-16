@@ -37,7 +37,7 @@ namespace Assignment40_1.Tests
             Assert.AreEqual("TestBeverages", respiratory.Categories().First().CategoryName);
             Assert.AreEqual("Test Soft drinks, coffees, teas, beers, and ales", respiratory.Categories().First().Description);
 
-            // for the two order_details
+            // for the three order_details
             Assert.AreEqual(1, respiratory.Products().First().Order_Details.Select(x => x).Where((x =>x.OrderID == 1)).First().ProductID);
             Assert.AreEqual(100, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 1)).First().UnitPrice);
             Assert.AreEqual(12, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 1)).First().Quantity);
@@ -48,7 +48,12 @@ namespace Assignment40_1.Tests
             Assert.AreEqual(10, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 2)).First().Quantity);
             Assert.AreEqual(0, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 2)).First().Discount);
 
-            // for the two orders
+            Assert.AreEqual(1, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 3)).First().ProductID);
+            Assert.AreEqual(50, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 3)).First().UnitPrice);
+            Assert.AreEqual(5, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 3)).First().Quantity);
+            Assert.AreEqual(5, respiratory.Products().First().Order_Details.Select(x => x).Where((x => x.OrderID == 3)).First().Discount);
+
+            // for the first two orders
             Assert.AreEqual("VINET", respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().CustomerID);
             Assert.AreEqual(5, respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().EmployeeID);
             Assert.AreEqual(DateTime.Parse("1996-07-04 00:00:00"), respiratory.Orders().Select(x => x).Where((x => x.OrderID == 1)).First().OrderDate);
@@ -97,9 +102,9 @@ namespace Assignment40_1.Tests
         public void TestCorrectNumberOfEntries()
         {
             Assert.AreEqual(1, respiratory.Categories().Count());
-            Assert.AreEqual(2, respiratory.Products().First().Order_Details.Count());
-            Assert.AreEqual(2, respiratory.Orders().Count());
-            Assert.AreEqual(1, respiratory.Products().Count());
+            Assert.AreEqual(3, respiratory.Products().First().Order_Details.Count());
+            Assert.AreEqual(3, respiratory.Orders().Count());
+            Assert.AreEqual(6, respiratory.Products().Count());
         }
 
         /// <summary>
@@ -114,7 +119,8 @@ namespace Assignment40_1.Tests
                 Assert.AreEqual(1, OD.Products.ProductID);
             }
             Assert.AreEqual(1, respiratory.Orders().First().Order_Details.First().Orders.OrderID);
-            Assert.AreEqual(2, respiratory.Orders().Last().Order_Details.First().Orders.OrderID);
+
+            Assert.AreEqual(3, respiratory.Orders().Last().Order_Details.First().Orders.OrderID);
             foreach (var o in respiratory.Orders())
             {
                 Assert.AreEqual(1, o.Order_Details.First().Products.Categories.CategoryID);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Assignment40_1.Tests.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assignment40_1.Model;
 
@@ -12,12 +13,42 @@ namespace Assignment40_1.Tests
     [TestClass]
     public class UnitTestOfLinQ
     {
+        IRespiratory respiratory;
+        private NorthWind northWind;
+
         /// <summary>
-        /// Tests the linq for making new order IDs, by adding and testing 5 new orders.
+        /// Sets up the respiratory.
+        /// </summary>
+        [TestInitialize]
+        public void SetUp()
+        {
+            respiratory = CSVimporter.ImportCSV(Resources.TestCategories, Resources.TestProducts, Resources.TestOrders, Resources.TestOrder_details);
+
+            Program.ConsoleLock.Clear();
+
+            northWind = new NorthWind(respiratory);
+        }
+
+        /// <summary>
+        /// Tests the linq for making new order IDs, by adding and testing 10 new orders.
         /// </summary>
         [TestMethod]
         public void TestOrderIdPlus1()
         {
+            for (int i = 0; i < 10; i++)
+            {
+                Orders order = new Orders(0,
+                                    null, null,
+                                    DateTime.Parse("1996-07-08 00:00:00"),
+                                    DateTime.Parse("1996-07-08 00:00:00"),
+                                    DateTime.Parse("1996-07-08 00:00:00"),
+                                    1, 2,
+                                    "name", "address", "city", "region", "pcode", "country");
+
+                respiratory.CreateOrder(order);
+
+                Assert.AreEqual(i + 4, order.OrderID);
+            }
         }
 
         /// <summary>
@@ -26,11 +57,21 @@ namespace Assignment40_1.Tests
         [TestMethod]
         public void TestFirst5Products()
         {
-            Program.ConsoleLock.Clear();
+            Program.First5Products(northWind);
 
-            for (int i = 0; i < 5; i++)
+            Assert.AreEqual("TestChai", Program.ConsoleLock[0]);
+            Assert.AreEqual("TestChai2", Program.ConsoleLock[1]);
+            Assert.AreEqual("TestChai3", Program.ConsoleLock[2]);
+            Assert.AreEqual("TestChai4", Program.ConsoleLock[3]);
+            Assert.AreEqual("TestChai5", Program.ConsoleLock[4]);
+            try
             {
-                Assert.AreEqual("name" + i, Program.ConsoleLock[i]);
+                Assert.AreNotEqual("TestChai6", Program.ConsoleLock[5]);
+                Assert.Fail("Error: exception not thrown");
+            }
+            catch (Exception)
+            {
+                Assert.IsTrue(true);
             }
         }
 
@@ -41,10 +82,10 @@ namespace Assignment40_1.Tests
         [TestMethod]
         public void TestOrdersByShippingCountry()
         {
-            Program.ConsoleLock.Clear();
+            Program.OrdersByShippingCountry(northWind);
 
-            Assert.AreEqual("ENG : 2", Program.ConsoleLock[0]);
-            Assert.AreEqual("DK : 3", Program.ConsoleLock[1]);
+            Assert.AreEqual("TestGermany : 1", Program.ConsoleLock[0]);
+            Assert.AreEqual("TestFrance : 2", Program.ConsoleLock[1]);
         }
     }
 }
