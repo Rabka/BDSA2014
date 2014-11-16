@@ -1,2 +1,7 @@
 ProductID;ProductName;SupplierID;CategoryID;QuantityPerUnit;UnitPrice;UnitsInStock;UnitsOnOrder;ReorderLevel;Discontinued
 1;TestChai;1;1;10 TestBoxes x 20 TestBags;100;10;0;10;0
+2;TestChai2;1;1;10 TestBoxes x 20 TestBags;100;10;0;10;0
+3;TestChai3;1;1;10 TestBoxes x 20 TestBags;100;10;0;10;0
+4;TestChai4;1;1;10 TestBoxes x 20 TestBags;100;10;0;10;0
+5;TestChai5;1;1;10 TestBoxes x 20 TestBags;100;10;0;10;0
+6;TestChai6;1;1;10 TestBoxes x 20 TestBags;100;10;0;10;0
