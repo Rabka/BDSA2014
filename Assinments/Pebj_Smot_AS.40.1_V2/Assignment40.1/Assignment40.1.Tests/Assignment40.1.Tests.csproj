@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="UnitTestOfCSVimporter.cs" />
     <Compile Include="UnitTestOfLinQ.cs" />
+    <Compile Include="UnitTestOfReportingModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
