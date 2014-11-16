@@ -1,4 +1,0 @@
-
-- You are also missing unit tests for the reporting component.
-
-- Missing unit tests for part 2.
