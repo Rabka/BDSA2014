@@ -9,7 +9,7 @@ namespace Assignment40_1
     /// An entity class returned by ReportingModule.
     /// Represents a stripped down Product with additional query functionality.
     /// </summary>
-    class ProductsBySaleDto
+    public class ProductsBySaleDto
     {
         private Products product;
         public ProductsBySaleDto(Products product)

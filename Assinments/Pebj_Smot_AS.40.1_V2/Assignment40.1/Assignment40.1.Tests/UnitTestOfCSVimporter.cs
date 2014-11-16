@@ -91,7 +91,7 @@ namespace Assignment40_1.Tests
         }
 
         /// <summary>
-        /// Tests if ther is the rigth number of entries in the respiratory.
+        /// Tests if there is the right number of entries in the respiratory.
         /// </summary>
         [TestMethod]
         public void TestCorrectNumberOfEntries()
@@ -103,7 +103,7 @@ namespace Assignment40_1.Tests
         }
 
         /// <summary>
-        /// Tests if all the references are right
+        /// Tests if all the references are correct
         /// </summary>
         [TestMethod]
         public void TestReferences()
@@ -115,9 +115,9 @@ namespace Assignment40_1.Tests
             }
             Assert.AreEqual(1, respiratory.Orders().First().Order_Details.First().Orders.OrderID);
             Assert.AreEqual(2, respiratory.Orders().Last().Order_Details.First().Orders.OrderID);
-            foreach (var O in respiratory.Orders())
+            foreach (var o in respiratory.Orders())
             {
-                Assert.AreEqual(1, O.Order_Details.First().Products.Categories.CategoryID);
+                Assert.AreEqual(1, o.Order_Details.First().Products.Categories.CategoryID);
             }
         }
     }

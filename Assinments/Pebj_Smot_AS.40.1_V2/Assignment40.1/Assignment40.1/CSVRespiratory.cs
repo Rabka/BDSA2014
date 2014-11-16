@@ -19,7 +19,7 @@ namespace Assignment40_1
         List<Orders> orders;
 
         /// <summary>
-        /// Set up the dataclasses to be containd.
+        /// Set up the dataclasses to be contained.
         /// </summary>
         /// <param name="products">A array of the Products</param>
         /// <param name="categories">A array of the Categories</param>

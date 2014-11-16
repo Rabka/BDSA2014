@@ -9,17 +9,17 @@ namespace Assignment40_1
     /// An entity class returned by ReportingModule.
     /// Represents a stripped down Order with additional query functionality.
     /// </summary>
-    class OrdersByTotalPriceDto
+    public class OrdersByTotalPriceDto
     {
         private Orders order;
-        private NorthWind northWind;
+        private INorthWind northWind;
 
         /// <summary>
         /// Default constructor
         /// </summary>
         /// <param name="northWind">NorthWind instance</param>
         /// <param name="order">Inherited order</param>
-        public OrdersByTotalPriceDto(NorthWind northWind, Orders order)
+        public OrdersByTotalPriceDto(INorthWind northWind, Orders order)
         {
             this.northWind = northWind;
             this.order = order;
@@ -33,12 +33,12 @@ namespace Assignment40_1
         {
             get { if (order.OrderDate.HasValue) return order.OrderDate.Value; return DateTime.Now; }
         }
-        /*
+        
         public string CustomerContactName
         {
-            get { return order.ContactName; }
+            get { return order.Customers.ContactName; }
         }
-         */
+        
         public decimal TotalPriceWithDiscount
         {
             get { return Convert.ToDecimal(order.Order_Details.Sum(l => (float)(l.Quantity * l.UnitPrice) - l.Discount)); }

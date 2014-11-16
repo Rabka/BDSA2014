@@ -52,7 +52,7 @@ namespace Assignment40_1
                         Console.WriteLine("Connected");
                     break;
             }
-            NorthWind northWind = new NorthWind(respiratory);
+            INorthWind northWind = new NorthWind(respiratory);
             Console.WriteLine("Preparing database meta data");
             //Dummy query
             northWind.Products().Take(0);
@@ -79,7 +79,7 @@ namespace Assignment40_1
         /// Uses linq to find the first 5 products in the NorthWind class
         /// </summary>
         /// <param name="northWind">A NorthWind class</param>
-        public static void First5Products(NorthWind northWind)
+        public static void First5Products(INorthWind northWind)
         {
             Console.WriteLine("");
             Console.WriteLine("First 5 products");
@@ -91,7 +91,7 @@ namespace Assignment40_1
         /// Uses linq to find the "Counting of orders by shipping country. Output by descending count" in the NorthWind class
         /// </summary>
         /// <param name="northWind">A NorthWind class</param>
-        public static void OrdersByShippingCountry(NorthWind northWind)
+        public static void OrdersByShippingCountry(INorthWind northWind)
         {
             Console.WriteLine("");
             Console.WriteLine("Counting of orders by shipping country. Output by descending count");

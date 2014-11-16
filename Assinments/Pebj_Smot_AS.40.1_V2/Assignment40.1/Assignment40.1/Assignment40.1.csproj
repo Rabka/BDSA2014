@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSVimporter.cs" />
+    <Compile Include="INorthWind.cs" />
     <Compile Include="IRespiratory.cs" />
     <Compile Include="Model\Categories.cs">
       <DependentUpon>NorthWindData.tt</DependentUpon>

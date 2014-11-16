@@ -56,6 +56,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestStubs\NorthWindTestStub.cs" />
+    <Compile Include="TestStubs\RespiratoryTestStub.cs" />
     <Compile Include="UnitTestOfCSVimporter.cs" />
     <Compile Include="UnitTestOfLinQ.cs" />
     <Compile Include="UnitTestOfReportingModule.cs" />

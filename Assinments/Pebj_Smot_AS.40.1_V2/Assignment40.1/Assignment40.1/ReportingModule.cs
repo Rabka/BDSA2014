@@ -9,13 +9,12 @@ namespace Assignment40_1
     /// <summary>
     /// The reporting module allows the user to get reports of orders.
     /// </summary>
-    class ReportingModule
+    public class ReportingModule
     {
-        NorthWind northWind;
-        public ReportingModule(NorthWind northWind)
+        INorthWind northWind;
+        public ReportingModule(INorthWind northWind)
         {
-            this.northWind = northWind;
-             
+            this.northWind = northWind;             
         }
         /// <summary>
         /// Returns a list of Top OrdersByTotalPriceDto ordered by TotalPrice.

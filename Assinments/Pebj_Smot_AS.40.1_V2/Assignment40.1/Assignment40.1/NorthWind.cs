@@ -10,12 +10,12 @@ namespace Assignment40_1
     public delegate void newOrderEventDelegate(Orders addedOrder);
 
     /// <summary>
-    /// A NorthWind class ther represent the top-level of the system.
+    /// NorthWind class represents the top-level of the system.
     /// </summary>
-    public class NorthWind
+    public class NorthWind : INorthWind
     {
         IRespiratory respiratory;
-        public newOrderEventDelegate newOrderEvent;
+        public event newOrderEventDelegate newOrderEvent;
 
         /// <summary>
         /// Sets the Respiratory
