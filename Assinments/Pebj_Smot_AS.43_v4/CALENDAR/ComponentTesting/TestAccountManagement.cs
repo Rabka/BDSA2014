@@ -108,7 +108,7 @@ namespace ComponentTesting
         /// Tests every if statement of TryCreateAccount
         /// </summary>
         [TestMethod]
-        public void PathTest_TryCreateAccount()
+        public void TryCreateAccount_PathTest()
         {
             Console.WriteLine("With individually aguments as Null");
             Assert.AreEqual(false, accountLogic.TryCreateAccount(null, "John", "StinusPassword", "stinus@gmail.com"));

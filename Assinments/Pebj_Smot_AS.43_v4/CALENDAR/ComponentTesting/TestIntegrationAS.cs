@@ -22,20 +22,20 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void EquivalenceTest_TryCreateAccount()
+        public void TryCreateAccount_EquivalenceTest()
         {
             Assert.AreEqual(true, accountLogic.TryCreateAccount("John Valdemird", "John", "JohnsPassword", "andentestmail@gmail.com"));
         }
 
         [TestMethod]
-        public void BoundaryTest_TryCreateAccount()
+        public void TryCreateAccount_BoundaryTest()
         {
             Assert.AreEqual(false, accountLogic.TryCreateAccount("","", "", ""));
             Assert.AreEqual(true, accountLogic.TryCreateAccount("n","u2", "p2", "testmail@gmail.com"));
         }
 
         [TestMethod]
-        public void TestPath_TryCreateAccount()
+        public void TryCreateAccount_TestPath()
         {
             Assert.AreEqual(true, accountLogic.TryCreateAccount("John Valdemird", "John", "JohnsPassword", "testmail@gmail.com"));
             Assert.AreEqual(false, accountLogic.TryCreateAccount("John Valdemird", "Mu", "p", "testmail@gmail.com"));
