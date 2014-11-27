@@ -6,10 +6,15 @@ using System;
 
 namespace ComponentTesting
 {
+    /// <summary>
+    /// Unit testing of Season.
+    /// Node: there is no Implamentation of Season so all the tests will fail.
+    /// Node: A Complete unit-test with description can be found in TestAccountManagement.cs
+    /// </summary>
     [TestClass]
     public class TestSeason
     {
-        private Season season;
+        private ISeason season;
 
         [TestInitialize]
         public void SetUp()
@@ -17,8 +22,12 @@ namespace ComponentTesting
             season = new Season();
         }
 
+        /// <summary>
+        /// As all ChangeCommands are to be treated equally, should there only be two equivalence classes.
+        /// this one, where Season gets a ChangeCommands and succeeds.
+        /// </summary>
         [TestMethod]
-        public void TestEquivalence_AddChangeCommand()
+        public void EquivalenceTest_AddChangeCommand()
         {
             try
             {
@@ -26,69 +35,31 @@ namespace ComponentTesting
             }
             catch (Exception ex)
             {
-                Assert.Fail("Expected no exception, but got: " + ex.Message);
+                Assert.Fail("Expected no exception, but got: " + ex);
             }
         }
+
+        /// <summary>
+        /// And this one where Season gets null and throws a Exception.
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Null is not acceptable argument")]
-        public void TestEquivalence_AddChangeCommand2()
+        public void EquivalenceTest_AddChangeCommand2()
         {
             season.AddChangeCommand(null);
         }
 
+        /// <summary>
+        /// There are only one Boundary test, at the “edges” of the equivalence classes. 
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(System.Exception),
             "ChangeCommand allready exists!")]
-        public void TestBoundary_AddChangeCommand()
+        public void BoundaryTest_AddChangeCommand()
         {
-                ChangeCommandStub commandStub = new ChangeCommandStub();
-                season.AddChangeCommand((IChangeCommand)commandStub);
-                season.AddChangeCommand(commandStub);
-        }
-
-        [TestMethod]
-        public void TestPath_SyncChangeCommands()
-        {
-            var changeCommand = new ChangeCommandStub();
-            season.AddChangeCommand(changeCommand);
-            season.SyncChangeCommands();
-            Assert.AreEqual(1, changeCommand.executeWasCalled);
-        }
-
-        [TestMethod]
-        public void TestPath_UndoAllChangeCommands()
-        {
-            var changeCommand1 = new ChangeCommandStub();
-            var changeCommand2 = new ChangeCommandStub();
-            season.AddChangeCommand(changeCommand1);
-            season.AddChangeCommand(changeCommand2);
-            season.UndoAllChangeCommands();
-            Assert.AreEqual(1, changeCommand1.undoWasCalled);
-            Assert.AreEqual(1, changeCommand2.undoWasCalled);
-        }
-
-
-        [TestMethod]
-        public void TestPolymorphism_Season()
-        {
-            try
-            {
-            season.SyncChangeCommands();
-            ((ISeason) season).SyncChangeCommands();
-            }
-            catch (Exception ex)
-            {
-                   Assert.Fail("Expected no exception, but got: " + ex.Message);
-            }
-        }
-
-        [TestMethod]
-        public void TestPolymorphism_AddChangeCommand()
-        {
-            ChangeCommandStub commandStub = new ChangeCommandStub();
-            season.AddChangeCommand((IChangeCommand)commandStub);
-            season.SyncChangeCommands();
-            Assert.AreEqual(1, commandStub.executeWasCalled);
+            var commandStub = new ChangeCommandStub();
+            season.AddChangeCommand(commandStub);
+            season.AddChangeCommand(commandStub);
         }
     }
 }

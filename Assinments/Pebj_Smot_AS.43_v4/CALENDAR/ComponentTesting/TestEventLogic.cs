@@ -9,7 +9,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ComponentTesting
 {
     /// <summary>
-    /// This class is a unit test of the EventLogic class
+    /// Unit testing of EventLogic.
+    /// Node: there is no Implamentation of EventLogic so all the tests will fail.
+    /// Node: We have chosen to leave the old test even though they are deficient (especially with testing null as agument).
+    /// Node: A Complete unit-test with description can be found in TestAccountManagement.cs
     /// </summary>
     [TestClass]
     public class TestEventLogic
@@ -28,10 +31,33 @@ namespace ComponentTesting
         [TestMethod]
         public void EquivalenceTest_AddEvent()
         {
-            EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
+            EventComponent e1 = eventLogic.AddEvent("event1", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
                                                     new INotification[] {new Notification(DateTime.Parse("11-11-9"), false)});
-            Assert.AreEqual(true,e.TableID != 0);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContext.GetEventComponent(e.TableID).TableID);
+            Assert.AreEqual(true,e1.TableID != 0);
+            Assert.AreEqual(e1.TableID, seasonStub.OnlineContext.GetEventComponent(e1.TableID).TableID);
+
+            EventComponent e2 = eventLogic.AddEvent("event2", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),new INotification[] {});
+            Assert.AreEqual(true, e2.TableID != 0);
+            Assert.AreEqual(e2.TableID, seasonStub.OnlineContext.GetEventComponent(e2.TableID).TableID);
+
+            EventComponent e3 = eventLogic.AddEvent("", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
+                                                    new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
+            Assert.AreEqual(true, e3.TableID != 0);
+            Assert.AreEqual(e3.TableID, seasonStub.OnlineContext.GetEventComponent(e3.TableID).TableID);
+
+            EventComponent e4 = eventLogic.AddEvent("event4", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),null);
+            Assert.AreEqual(true, e4.TableID != 0);
+            Assert.AreEqual(e4.TableID, seasonStub.OnlineContext.GetEventComponent(e4.TableID).TableID);
+
+            try
+            {
+                eventLogic.AddEvent(null, DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"), new INotification[] { });
+                Assert.Fail("Expected an exception");
+            }
+            catch (Exception)
+            {
+                Assert.IsTrue(true);
+            }
         }
 
         [TestMethod]
@@ -45,20 +71,26 @@ namespace ComponentTesting
             EventComponent e2 = eventLogic.AddEvent("e2", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"), null);
             Assert.AreEqual(true, e2.TableID != 0);
             Assert.AreEqual(e2.TableID, seasonStub.OnlineContext.GetEventComponent(e2.TableID).TableID);
-        }
 
-        [TestMethod]
-        public void PathTest_AddEvent()
-        {
-            EventComponent e = eventLogic.AddEvent("e", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
-                                                    new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
-            Assert.AreEqual(true, e.TableID != 0);
-            Assert.AreEqual(e.TableID, seasonStub.OnlineContext.GetEventComponent(e.TableID).TableID);
+            try
+            {
+                eventLogic.AddEvent(null, DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"), new INotification[] { });
+                Assert.Fail("Expected an exception");
+            }
+            catch (Exception)
+            {
+                Assert.IsTrue(true);
 
-            EventComponent e2 = eventLogic.AddEvent("", DateTime.Parse("11-11-11"), DateTime.Parse("11-11-11"),
-                                                    new INotification[] { new Notification(DateTime.Parse("11-11-9"), false) });
-            Assert.AreEqual(true, e2.TableID != 0);
-            Assert.AreEqual(e2.TableID, seasonStub.OnlineContext.GetEventComponent(e2.TableID).TableID);
+                try
+                {
+                    eventLogic.AddEvent("e", DateTime.Parse("11-11-15"), DateTime.Parse("11-11-10"), new INotification[] { });
+                    Assert.Fail("Expected an exception");
+                }
+                catch (Exception)
+                {
+                    Assert.IsTrue(true);
+                }
+            }
         }
 
         [TestMethod]
@@ -146,6 +178,16 @@ namespace ComponentTesting
 
             Assert.AreEqual(true, ec5.Select(x => x).Count(x => x.Title == "e4") == 1);
             Assert.AreEqual(true, ec5.Select(x => x).Count(x => x.Title == "e5") == 1);
+
+            try
+            {
+                eventLogic.GetEvents(DateTime.Parse("11-11-11"), DateTime.Parse("11-11-9"));
+                Assert.Fail("Expected an exception");
+            }
+            catch (Exception)
+            {
+                Assert.IsTrue(true);
+            }
         }
 
         [TestMethod]

@@ -16,7 +16,7 @@ namespace ComponentTesting
         private Account Maccount;
 
         [TestInitialize]
-        public void SetUp(int i)
+        public void SetUp()
         {
             seasonStub = new SeasonStub();
             accountLogic = new AccountLogic(seasonStub);
