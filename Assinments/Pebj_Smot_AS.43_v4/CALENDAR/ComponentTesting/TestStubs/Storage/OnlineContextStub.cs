@@ -53,9 +53,15 @@ namespace CALENDAR.Storage
         {
             return accounts[itemIndex];
         }
+        public IAccount GetAccount(string email, bool inputIsEmail)
+        {
+            if (inputIsEmail)
+                return accounts.Select(x => x).Where(x => x.Email == email).ToList().FirstOrDefault();
+            throw new FormatException();
+        }
         public IAccount GetAccount(string username)
         {
-            return accounts.Select(x => x).First(x => x.Username == username);
+            return accounts.Select(x => x).Where(x => x.Username == username).ToList().FirstOrDefault();
         }
         public int GetAccountsCount()
         {

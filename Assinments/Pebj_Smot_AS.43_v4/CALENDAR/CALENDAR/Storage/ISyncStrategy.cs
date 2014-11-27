@@ -13,9 +13,10 @@ namespace CALENDAR.Storage
         void AddAccount(Account newAccount);
         void RemoveAccount(Account account);
         void UpdateAccount(Account account);
-        Account[] GetAccounts(int from, int to);
-        Account GetAccountByUsername(string username);
-        Account GetAccountByTableID(string tableID);
+        IAccount[] GetAccounts(int from, int to);
+        IAccount GetAccount(string username);
+        IAccount GetAccount(string email, bool isEmail);
+        IAccount GetAccountByTableID(string tableID);
         int GetAccountsCount();
         void AddEvent(EventComponent newEvent);
         void RemoveEvent(EventComponent @event);

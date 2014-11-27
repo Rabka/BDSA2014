@@ -2,7 +2,7 @@
 using System.Linq;
 using CALENDAR.AccountManagement;
 using CALENDAR.EventManagement;
-using ComponentTesting.TestStubs;
+using ComponentTesting.TestStubs.Storage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 

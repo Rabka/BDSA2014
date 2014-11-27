@@ -44,6 +44,10 @@ namespace CALENDAR.Storage
         {
             throw new NotImplementedException();
         }
+        public IAccount GetAccount(string email, bool inputIsEmail)
+        {
+            throw new NotImplementedException();
+        }
         public int GetAccountsCount()
         {
             throw new NotImplementedException();

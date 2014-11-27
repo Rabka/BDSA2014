@@ -30,15 +30,19 @@ namespace CALENDAR.Storage
         {
             throw new NotImplementedException();
         }
-        public Account[] GetAccounts(int from, int to)
+        public IAccount[] GetAccounts(int from, int to)
         {
             throw new NotImplementedException();
         }
-        public Account GetAccountByUsername(string username)
+        public IAccount GetAccount(string username)
         {
             throw new NotImplementedException();
         }
-        public Account GetAccountByTableID(string tableID)
+        public IAccount GetAccount(string email, bool inputIsEmail)
+        {
+            throw new NotImplementedException();
+        }
+        public IAccount GetAccountByTableID(string tableID)
         {
             throw new NotImplementedException();
         }

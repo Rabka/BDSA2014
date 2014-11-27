@@ -5,7 +5,7 @@ using System.Text;
 using CALENDAR.Commands;
 using CALENDAR.AccountManagement;
 using CALENDAR.Storage;
-namespace ComponentTesting.TestStubs
+namespace ComponentTesting.TestStubs.Storage
 {
     public class SeasonStub : ISeason
     {
@@ -13,6 +13,8 @@ namespace ComponentTesting.TestStubs
         public SeasonStub()
         {
             OnlineContext = new OnlineContextStub();
+            //Initialized test content
+            OnlineContext.AddAccount(new Account("SeaasonStub person", "u", "p", true));
         }
         public void AddChangeCommand(IChangeCommand command)
         {

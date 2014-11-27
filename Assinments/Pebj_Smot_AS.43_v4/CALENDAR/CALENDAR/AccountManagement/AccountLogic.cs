@@ -26,9 +26,33 @@ namespace CALENDAR.AccountManagement
         /// <param name="password"></param>
         /// <param name="email"></param>
         /// <returns>Succeded boolean</returns>
-        public bool TryCreateAccount(string username, string password, string email)
+        public bool TryCreateAccount(string name,string username, string password, string email)
         {
-            throw new NotImplementedException();
+            //Is input parameters valid inputs? "" and null not allowed
+            if (name == null || username == null || password == null || email == null)
+                return false;
+            if (name == "" || username == "" || password == "" || email == "")
+                return false;
+            //Validate that we are online and that the username and email doesn't exist amoung allready existing accounts.
+            if (!season.OnlineContext.isOnline())
+                return false;
+            if (season.OnlineContext.GetAccount(username) != null)
+                return false;
+            if (season.OnlineContext.GetAccount(email,true) != null)
+                return false;
+            //Try creating the account, hitting the catch here could mean a connection issue or that
+            //the synchronizing server rejected the AddAccount action. Only methods inside AccountLogic except
+            //for TryLogin enforces for the OnlineContext to be in isOnline state.
+            IAccount account = new Account(name,username,email,false);
+            try
+            {
+                season.OnlineContext.AddAccount(account);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
         }
         /// <summary>
         /// Attempts a login and will return a seasonID if succeed.
