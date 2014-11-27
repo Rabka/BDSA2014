@@ -83,14 +83,6 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void PathTest_GetLeafs()
-        {
-            Assert.AreEqual(Event2, Event2.GetLeafs()[0]);
-            Assert.AreEqual(Event1, Event3.GetLeafs()[0]);
-            Assert.AreEqual(true, Event6.GetLeafs().Length == 7);
-        }
-
-        [TestMethod]
         public void StateBasedTest_GetLeafs()
         {
             Assert.AreEqual(true, Event1.SharedWithAccounts.Length == 0);
