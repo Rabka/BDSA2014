@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CALENDAR.Storage;
-
+using System.Text.RegularExpressions;
+using System.Globalization;
 namespace CALENDAR.AccountManagement
 {
     public class AccountLogic
@@ -26,24 +27,30 @@ namespace CALENDAR.AccountManagement
         /// <param name="password"></param>
         /// <param name="email"></param>
         /// <returns>Succeded boolean</returns>
-        public bool TryCreateAccount(string name,string username, string password, string email)
+        public bool TryCreateAccount(string name, string username, string password, string email)
         {
             //Is input parameters valid inputs? "" and null not allowed
-            if (name == null || username == null || password == null || email == null)
-                return false;
-            if (name == "" || username == "" || password == "" || email == "")
+            if (String.IsNullOrEmpty(name) || String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password) || String.IsNullOrEmpty(email))
                 return false;
             //Validate that we are online and that the username and email doesn't exist amoung allready existing accounts.
             if (!season.OnlineContext.isOnline())
                 return false;
             if (season.OnlineContext.GetAccount(username) != null)
                 return false;
-            if (season.OnlineContext.GetAccount(email,true) != null)
+            if (season.OnlineContext.GetAccount(email, true) != null)
                 return false;
+
+            //Is the value of email a valid e-mail format?
+            //Regex validation snippet from http://msdn.microsoft.com/en-us/library/01escwtf%28v=vs.110%29.aspx.
+            if (!Regex.IsMatch(email,
+             @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+             @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$"))
+                return false;
+
             //Try creating the account, hitting the catch here could mean a connection issue or that
             //the synchronizing server rejected the AddAccount action. Only methods inside AccountLogic except
             //for TryLogin enforces for the OnlineContext to be in isOnline state.
-            IAccount account = new Account(name,username,email,false);
+            IAccount account = new Account(name, username, email, false);
             try
             {
                 season.OnlineContext.AddAccount(account);
