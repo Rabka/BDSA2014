@@ -57,7 +57,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TestPath_TryLogin()
+        public void PathTest_TryLogin()
         {
             accountLogic.TryCreateAccount("n", "u", "p", "testmail@gmail.com");
             Assert.AreEqual(true, accountLogic.TryLogin("u", "p"));
@@ -85,7 +85,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TestPath_TryRemoveAccount()
+        public void PathTest_TryRemoveAccount()
         {
             accountLogic.TryCreateAccount("Ole Hansen", "Ole", "p", "newmail@123.com");
             Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContext.GetAccount("Ole",false)));
@@ -96,7 +96,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TestStateBased_TryRemoveAccount()
+        public void StateBasedTest_TryRemoveAccount()
         {
             accountLogic.TryCreateAccount("Ole Hansen", "Ole", "p", "newmail@123.com");
             Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContext.GetAccount("Ole", false)));
@@ -119,7 +119,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TestPath_TryListAccounts()
+        public void PathTest_TryListAccounts()
         {
             accountLogic.TryCreateAccount("Ole Hansen", "Ole1", "p", "1newmail@123.com");
             accountLogic.TryCreateAccount("Ole Hansen", "Ole2", "p", "2newmail@123.com");
@@ -137,7 +137,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TestPath_TryGetNumberOfAccounts()
+        public void PathTest_TryGetNumberOfAccounts()
         {
             seasonStub.CurrentAccount = new Account("NotModerater", "u", "newemail@", false);
             Assert.AreEqual(true, accountLogic.TryGetNumberOfAccounts() == 0);

@@ -15,7 +15,8 @@ namespace ComponentTesting
     /// 
     /// In your mail you stated we used a different naming convention, but we have decided to keep our naming convention to make it easier to show our use of the testing strategies.
     /// Our naming convention goes as follows: [MethodName]_[TestingStrategy] for all succeeding tests.
-    /// ** The old naming convention has been kept for the old tests. The naming convention of that is: [TestingStrategy]_[MethodName].
+    /// * The old naming convention has been kept for the old tests. The naming convention of that is: [TestingStrategy]_[MethodName].
+    /// ** We have: (25) Passed Tests, (67) Failed Tests.
     /// </summary>
     [TestClass]
     public class TestAccountManagement
