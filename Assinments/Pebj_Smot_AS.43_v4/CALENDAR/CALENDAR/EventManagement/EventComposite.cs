@@ -11,25 +11,67 @@ namespace CALENDAR.EventManagement
     {
         public EventComponent[] eventComponents;
 
-        public EventComposite(string title, string description, Account ownedByAccount)
+        public EventComposite(string title, string description, Account ownedByAccount,IAccount[] sharedWithAccount)
         {
+            SharedWithAccounts = sharedWithAccount;
+            eventComponents = new EventComponent[0];
             OwnedByAccount = ownedByAccount;
             Description = description;
             Title = title;
         }
 
         public int TableID { get; set; }
-        public DateTime DateFrom { get; set; }
-        public DateTime DateTo { get; set; }
+        public DateTime DateFrom
+        {
+            get
+            {
+                return eventComponents.Select(x => x.DateFrom).Min();
+            }
+            set
+            {
+
+            }
+        }
+        public DateTime DateTo
+        {
+            get
+            {
+                return eventComponents.Select(x => x.DateTo).Max();
+            }
+            set
+            {
+
+            }
+        }
         public string Title { get; set; }
         public string Description { get; set; }
         public IAccount OwnedByAccount { get; private set; }
         public IAccount[] SharedWithAccounts { get; private set; }
-        public INotification[] Notifications { get; set; }
+        public INotification[] Notifications
+        {
+            get
+            {
+                List<INotification> notifications = new List<INotification>();
+                foreach (EventComponent component in eventComponents)
+                {
+                    notifications.AddRange(component.Notifications);
+                }
+                return notifications.ToArray();
+            }
+            set
+            {
+
+            }
+        }
 
         public EventComponent[] GetLeafs()
         {
-            throw new NotImplementedException();
+            List<EventComponent> leafs = new List<EventComponent>();
+            foreach (EventComponent component in eventComponents)
+            {
+               leafs.AddRange(component.GetLeafs());
+            }
+            return leafs.ToArray();
         }
 
         public void Draw()
@@ -39,7 +81,7 @@ namespace CALENDAR.EventManagement
 
         public bool IsLeaf()
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

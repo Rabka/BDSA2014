@@ -6,7 +6,16 @@ using ComponentTesting.TestStubs.Storage;
 namespace ComponentTesting
 {
     /// <summary>
-    /// This class is a unit test of the AccountManagement class
+    /// This class is a unit test of the AccountManagement class.
+    /// As in response to the email exchange we have chosen to implmenet and test TryCreateAccount and everything related to EventComponent except for Draw.
+    /// For this reason you should expect tests related to TryCreateAccount and EventComponent to succeed and any test methods to fail.
+    /// TryCreateAccount tests covers equivalence, boundary and path tests. 
+    /// As for polymorphism testing, these types of testing can be found in TestEventComponent.cs.
+    /// We could not find a way to create a State-based test given what we chose to test. 
+    /// 
+    /// In your mail you stated we used a different naming convention, but we have decided to keep our naming convention to make it easier to show our use of the testing strategies.
+    /// Our naming convention goes as follows: [MethodName]_[TestingStrategy] for all succeeding tests.
+    /// ** The old naming convention has been kept for the old tests. The naming convention of that is: [TestingStrategy]_[MethodName].
     /// </summary>
     [TestClass]
     public class TestAccountManagement
@@ -80,7 +89,7 @@ namespace ComponentTesting
             Assert.AreEqual(false, accountLogic.TryCreateAccount(null, null, null, null));
 
             Console.WriteLine("With minimal aguments");
-            Assert.AreEqual(true, accountLogic.TryCreateAccount("n", "u", "p", "t@m.com"));
+            Assert.AreEqual(true, accountLogic.TryCreateAccount("n", "q", "p", "t@m.com"));
 
             Console.WriteLine("With large aguments");
             Assert.AreEqual(true, accountLogic.TryCreateAccount("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", 
@@ -99,7 +108,7 @@ namespace ComponentTesting
         /// Tests every if statement of TryCreateAccount
         /// </summary>
         [TestMethod]
-        public void TryCreateAccount_PathTest()
+        public void PathTest_TryCreateAccount()
         {
             Console.WriteLine("With individually aguments as Null");
             Assert.AreEqual(false, accountLogic.TryCreateAccount(null, "John", "StinusPassword", "stinus@gmail.com"));
@@ -126,9 +135,8 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TryLogin_EquivalenceTest()
+        public void EquivalenceTest_TryLogin()
         {
-            accountLogic.TryCreateAccount("n","u", "p", "testmail@gmail.com");
             Assert.AreEqual(true, accountLogic.TryLogin("u", "p"));
             Assert.AreEqual(false, accountLogic.TryLogin("", ""));
             Assert.AreEqual(false, accountLogic.TryLogin("u", ""));
@@ -147,14 +155,14 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TryLogin_BoundaryTest()
+        public void BoundaryTest_TryLogin()
         {
             accountLogic.TryCreateAccount("n","u", "p", "testmail@gmail.com");
             Assert.AreEqual(false, accountLogic.TryLogin("u", "wrongpassword"));
         }
 
         [TestMethod]
-        public void TryRemoveAccount_EquivalenceTest()
+        public void EquivalenceTest_TryRemoveAccount()
         {
             Assert.AreEqual(true, accountLogic.TryRemoveAccount(Maccount));
 
@@ -172,7 +180,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TryRemoveAccount_BoundaryTest()
+        public void BoundaryTest_TryRemoveAccount()
         {
             accountLogic.TryCreateAccount("Ole Hansen","Ole", "p", "newmail@123.com");
             Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContext.GetAccount("Ole", false)));
@@ -183,7 +191,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TryRemoveAccount_StateBasedTest()
+        public void StateBasedTest_TryRemoveAccount()
         {
             accountLogic.TryCreateAccount("Ole Hansen", "Ole", "p", "newmail@123.com");
             Assert.AreEqual(true, accountLogic.TryRemoveAccount(seasonStub.OnlineContext.GetAccount("Ole")));
@@ -195,7 +203,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TryListAccounts_EquivalenceTest()
+        public void EquivalenceTest_TryListAccounts()
         {
             Assert.AreEqual(true, accountLogic.TryListAccounts(0, 1).Length == 1);
 
@@ -214,7 +222,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TryListAccounts_BoundaryTest()
+        public void BoundaryTest_TryListAccounts()
         {
             Assert.AreEqual(true, accountLogic.TryListAccounts(1, 0).Length == 0);
             Assert.AreEqual(true, accountLogic.TryListAccounts(0, 3).Length == 1);
@@ -224,7 +232,7 @@ namespace ComponentTesting
         }
 
         [TestMethod]
-        public void TryGetNumberOfAccounts_EquivalenceTest()
+        public void EquivalenceTest_TryGetNumberOfAccounts()
         {
             Assert.AreEqual(true, accountLogic.TryGetNumberOfAccounts() == 1);
 

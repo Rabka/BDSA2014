@@ -42,7 +42,7 @@ namespace CALENDAR.EventManagement
 
         public bool IsLeaf()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
