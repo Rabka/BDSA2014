@@ -7,7 +7,11 @@ namespace ComponentTesting
 {
 
     /// <summary>
-    /// this class is a unit test of the EventComponent, EventLeaf og EventComposite data class structure
+    /// Unit testing of EventComponent.
+    /// Node: there is no Implamentation of EventComponent so almost all the tests will fail, 
+    /// as EventComponent is a data class and the data is stored in properties, there is implamented.
+    /// Node: We have chosen to leave the old test even though they are deficient (especially with testing null as agument).
+    /// Node: A Complete unit-test with description can be found in TestAccountManagement.cs
     /// </summary>
     [TestClass]
     public class TestEventComponent
